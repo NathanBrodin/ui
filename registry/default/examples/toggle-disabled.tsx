@@ -1,6 +1,6 @@
 import { Underline } from "lucide-react"
 
-import { Toggle } from "@/registry/new-york-v4/ui/toggle"
+import { Toggle } from "@/registry/default/ui/toggle"
 
 export default function ToggleDisabled() {
   return (

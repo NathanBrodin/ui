@@ -1,4 +1,4 @@
-import { Checkbox } from "@/registry/new-york-v4/ui/checkbox"
+import { Checkbox } from "@/registry/default/ui/checkbox"
 
 export default function CheckboxDisabled() {
   return (

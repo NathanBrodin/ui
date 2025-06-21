@@ -12,7 +12,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from "@/registry/new-york-v4/ui/menubar"
+} from "@/registry/default/ui/menubar"
 
 export default function MenubarDemo() {
   return (

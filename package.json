@@ -11,7 +11,8 @@
     "lint:fix": "next lint --fix",
     "typecheck": "tsc --noEmit",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
-    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
+    "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
@@ -41,11 +42,18 @@
     "@radix-ui/react-toggle": "^1.1.9",
     "@radix-ui/react-toggle-group": "^1.1.10",
     "@radix-ui/react-tooltip": "^1.2.7",
+    "@tabler/icons-react": "^3.34.0",
+    "@tanstack/react-table": "^8.21.3",
+    "@types/mdx": "^2.0.13",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
+    "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "fumadocs-core": "^15.5.3",
+    "fumadocs-mdx": "^11.6.9",
+    "fumadocs-ui": "^15.5.3",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.521.0",
     "next": "15.3.4",
