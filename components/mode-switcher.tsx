@@ -3,9 +3,8 @@
 import * as React from "react"
 import { useTheme } from "next-themes"
 
+import { useMetaColor } from "@/hooks/use-meta-color"
 import { Button } from "@/registry/default/ui/button"
-
-import { useMetaColor } from "./use-meta-color"
 
 export function ModeSwitcher() {
   const { setTheme, resolvedTheme } = useTheme()

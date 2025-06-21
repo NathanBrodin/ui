@@ -1,14 +1,15 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 
-import "./globals.css"
+import "@/styles/globals.css"
 
 import { RootProvider } from "fumadocs-ui/provider"
 
 import { siteConfig } from "@/lib/config"
 import { LayoutProvider } from "@/hooks/use-layout"
+import { META_THEME_COLORS } from "@/hooks/use-meta-color"
+import { ActiveThemeProvider } from "@/components/active-theme"
 import { ThemeProvider } from "@/components/theme-provider"
-import { META_THEME_COLORS } from "@/components/use-meta-color"
 import { Toaster } from "@/registry/default/ui/sonner"
 
 const geistSans = Geist({
@@ -102,8 +103,10 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <LayoutProvider>
-              {children}
-              <Toaster position="top-center" />
+              <ActiveThemeProvider>
+                {children}
+                <Toaster position="top-center" />
+              </ActiveThemeProvider>
             </LayoutProvider>
           </ThemeProvider>
         </RootProvider>

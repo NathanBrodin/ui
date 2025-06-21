@@ -3,11 +3,8 @@
 import * as React from "react"
 import { useRouter } from "next/navigation"
 import { type DialogProps } from "@radix-ui/react-dialog"
-import {
-  ArrowRightIcon,
-  CornerDownLeftIcon,
-  SquareDashedIcon,
-} from "lucide-react"
+import { IconArrowRight } from "@tabler/icons-react"
+import { CornerDownLeftIcon, SquareDashedIcon } from "lucide-react"
 
 import { siteConfig } from "@/lib/config"
 import { source } from "@/lib/source"
@@ -178,7 +175,7 @@ export function CommandMenu({
                           {isComponent ? (
                             <div className="border-muted-foreground aspect-square size-4 rounded-full border border-dashed" />
                           ) : (
-                            <ArrowRightIcon />
+                            <IconArrowRight />
                           )}
                           {item.name}
                         </CommandMenuItem>
