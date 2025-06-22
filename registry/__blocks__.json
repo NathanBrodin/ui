@@ -1,0 +1,10 @@
+[
+  {
+    "name": "login-05",
+    "description": "A simple email-only login page.",
+    "categories": [
+      "authentication",
+      "login"
+    ]
+  }
+]
