@@ -83,7 +83,6 @@ export default async function Page(props: {
   const MDX = doc.body
   const neighbours = findNeighbour(source.pageTree, page.url)
 
-  // @ts-expect-error - revisit fumadocs types.
   const links = doc.links
 
   return (
