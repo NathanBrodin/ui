@@ -1,77 +1,43 @@
 ---
 title: Introduction
-description: brodin/ui is a set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks and AI models. Open Source. Open Code.
+description: A personal component library built on top of shadcn/ui, designed to share consistent styles and components across my projects. Inspired by zed.dev, fully compatible with shadcn/ui.
 ---
 
-**This is not a component library. It is how you build your component library.**
+**This is my fork of shadcn/ui — made to unify design and component logic across my projects.**
 
-You know how most traditional component libraries work: you install a package from NPM, import the components, and use them in your app.
+I've always loved the way [zed.dev](https://zed.dev) feels — fast, minimal, and focused. I wanted to bring that energy into my web projects, without reinventing the wheel each time. This is a personal collection of components, built on top of [shadcn/ui](https://ui.shadcn.com), with a design system that reflects my own taste and needs.
 
-This approach works well until you need to customize a component to fit your design system or require one that isn’t included in the library. **Often, you end up wrapping library components, writing workarounds to override styles, or mixing components from different libraries with incompatible APIs.**
+My goal is to:
 
-This is what shadcn/ui aims to solve. It is built around the following principles:
+- Share consistent **styles, themes, and UX patterns** across apps.
+- Stay **fully compatible with shadcn/ui**, using the same CLI and registry system.
+- Keep **component code open and accessible** — easy to read, tweak, and extend.
+- Maintain **clean defaults** inspired by Zed’s aesthetic: sharp contrasts, subtle motion, and zero clutter.
 
-- **Open Code:** The top layer of your component code is open for modification.
-- **Composition:** Every component uses a common, composable interface, making them predictable.
-- **Distribution:** A flat-file schema and command-line tool make it easy to distribute components.
-- **Beautiful Defaults:** Carefully chosen default styles, so you get great design out-of-the-box.
-- **AI-Ready:** Open code for LLMs to read, understand, and improve.
+This is not just a library to install — it’s a toolkit to help me move fast while keeping my UI consistent and expressive.
 
-## Open Code
+## Why fork shadcn/ui?
 
-shadcn/ui hands you the actual component code. You have full control to customize and extend the components to your needs. This means:
+shadcn/ui already nailed a lot of what I wanted: open components, composable patterns, and a powerful CLI for distributing them. Instead of building something from scratch, I decided to build on top of it:
 
-- **Full Transparency:** You see exactly how each component is built.
-- **Easy Customization:** Modify any part of a component to fit your design and functionality requirements.
-- **AI Integration:** Access to the code makes it straightforward for LLMs to read, understand, and even improve your components.
+- I reuse the **shadcn/ui registry system** to distribute my components.
+- The core architecture (Radix UI, Tailwind, etc.) remains intact.
+- My focus is mainly on **styling, UX details, and organization** — making components feel more "me".
 
-_In a typical library, if you need to change a button’s behavior, you have to override styles or wrap the component. With shadcn/ui, you simply edit the button code directly._
+You can think of this as a theme-aware fork of shadcn/ui, adapted to my own ecosystem.
 
-<Accordion collapsible>
-  <AccordionItem value="faq-1" className="border-none">
-    <AccordionTrigger>
-      How do I pull upstream updates in an Open Code approach?
-    </AccordionTrigger>
-    <AccordionContent>
-      <p>
-        shadcn/ui follows a headless component architecture. This means the core
-        of your app can receive fixes by updating your dependencies, for
-        instance, radix-ui or input-otp.
-      </p>
-      <p className="mt-4">
-        The topmost layer, i.e., the one closest to your design system, is not
-        coupled with the implementation of the library. It stays open for
-        modification.
-      </p>
-    </AccordionContent>
-  </AccordionItem>
-</Accordion>
+## Key principles
 
-## Composition
+- **shadcn Compatible:** Use the same CLI, same schema, same workflows.
+- **Consistent Design:** Styles are unified, inspired by [zed.dev](https://zed.dev) — minimal, and expressive.
+- **Open Code:** Like shadcn, every component is copied into your codebase so you can freely modify it.
+- **Project Sharing:** I use this system across all my apps — whether personal tools, experiments, or production apps.
+- **Framework-Friendly:** Works great with Next.js, TailwindCSS, and anything that integrates with the shadcn CLI.
 
-Every component in shadcn/ui shares a common, composable interface. **If a component does not exist, we bring it in, make it composable, and adjust its style to match and work with the rest of the design system.**
+---
 
-_A shared, composable interface means it's predictable for both your team and LLMs. You are not learning different APIs for every new component. Even for third-party ones._
+## What's next?
 
-## Distribution
+Check out the [Installation](docs/installation) guide to get started, or explore the components to see how everything fits together.
 
-shadcn/ui is also a code distribution system. It defines a schema for components and a CLI to distribute them.
-
-- **Schema:** A flat-file structure that defines the components, their dependencies, and properties.
-- **CLI:** A command-line tool to distribute and install components across projects with cross-framework support.
-
-_You can use the schema to distribute your components to other projects or have AI generate completely new components based on existing schema._
-
-## Beautiful Defaults
-
-shadcn/ui comes with a large collection of components that have carefully chosen default styles. They are designed to look good on their own and to work well together as a consistent system:
-
-- **Good Out-of-the-Box:** Your UI has a clean and minimal look without extra work.
-- **Unified Design:** Components naturally fit with one another. Each component is built to match the others, keeping your UI consistent.
-- **Easily Customizable:** If you want to change something, it's simple to override and extend the defaults.
-
-## AI-Ready
-
-The design of shadcn/ui makes it easy for AI tools to work with your code. Its open code and consistent API allow AI models to read, understand, and even generate new components.
-
-_An AI model can learn how your components work and suggest improvements or even create new components that integrate with your existing design._
+You’re also free to fork this yourself — that’s the beauty of open code.

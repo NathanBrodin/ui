@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="container-wrapper px-4 xl:px-6">
         <div className="flex h-(--footer-height) items-center justify-between">
           <div className="text-muted-foreground w-full text-center text-xs leading-loose sm:text-sm">
-            Built by{" "}
+            Built(forked) by{" "}
             <a
               href={siteConfig.links.twitter}
               target="_blank"
@@ -14,7 +14,7 @@ export function SiteFooter() {
               className="font-medium underline underline-offset-4"
             >
               Nathan Brodin
-            </a>{" "}
+            </a>
             . The source code is available on{" "}
             <a
               href={siteConfig.links.github}
