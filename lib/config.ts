@@ -26,7 +26,7 @@ export const siteConfig = {
       label: "Themes",
     },
     {
-      href: "/typography",
+      href: "/docs/components/typography",
       label: "Typography",
     },
   ],
