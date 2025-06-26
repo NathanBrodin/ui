@@ -6,5 +6,12 @@
       "authentication",
       "login"
     ]
+  },
+  {
+    "name": "page-main",
+    "description": "Temporary",
+    "categories": [
+      "page-layout"
+    ]
   }
 ]

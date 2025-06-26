@@ -19,4 +19,18 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["authentication", "login"],
   },
+  {
+    name: "page-main",
+    description: "Temporary",
+    type: "registry:block",
+    registryDependencies: [],
+    files: [
+      {
+        path: "blocks/page-main/page.tsx",
+        target: "app/page-main/page.tsx",
+        type: "registry:page",
+      },
+    ],
+    categories: ["page-layout"],
+  },
 ]

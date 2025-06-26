@@ -1157,6 +1157,30 @@ export const Index: Record<string, any> = {
     categories: ["authentication", "login"],
     meta: undefined,
   },
+  "page-main": {
+    name: "page-main",
+    description: "Temporary",
+    type: "registry:block",
+    registryDependencies: [],
+    files: [
+      {
+        path: "registry/default/blocks/page-main/page.tsx",
+        type: "registry:page",
+        target: "app/page-main/page.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/blocks/page-main/page.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["page-layout"],
+    meta: undefined,
+  },
   utils: {
     name: "utils",
     description: "",

@@ -738,6 +738,22 @@
       ]
     },
     {
+      "name": "page-main",
+      "type": "registry:block",
+      "description": "Temporary",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/blocks/page-main/page.tsx",
+          "type": "registry:page",
+          "target": "app/page-main/page.tsx"
+        }
+      ],
+      "categories": [
+        "page-layout"
+      ]
+    },
+    {
       "name": "utils",
       "type": "registry:lib",
       "dependencies": [

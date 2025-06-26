@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "page-main",
+  "type": "registry:block",
+  "description": "Temporary",
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/blocks/page-main/page.tsx",
+      "content": "export default function MainPage() {\n  return (\n    <div className=\"bg-background flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10\">\n      <div className=\"w-full max-w-sm\">Main page</div>\n    </div>\n  )\n}\n",
+      "type": "registry:page",
+      "target": "app/page-main/page.tsx"
+    }
+  ],
+  "categories": [
+    "page-layout"
+  ]
+}
