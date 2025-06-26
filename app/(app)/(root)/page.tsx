@@ -68,18 +68,18 @@ export default function IndexPage() {
         <div className="container overflow-hidden">
           <section className="border-border/50 -mx-4 w-[160vw] overflow-hidden rounded-lg border md:hidden md:w-[150vw]">
             <Image
-              src="/r/styles/default/dashboard-01-light.png"
+              src="/r/styles/default/page-main-light.png"
               width={1400}
               height={875}
-              alt="Dashboard"
+              alt="Main Page"
               className="block dark:hidden"
               priority
             />
             <Image
-              src="/r/styles/default/dashboard-01-dark.png"
+              src="/r/styles/default/page-main-dark.png"
               width={1400}
               height={875}
-              alt="Dashboard"
+              alt="Main Page"
               className="hidden dark:block"
               priority
             />
