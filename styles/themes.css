@@ -77,24 +77,6 @@
 
 .theme-mono .theme-container {
   --font-sans: var(--font-mono);
-  --primary: var(--color-stone-600);
-  --primary-foreground: var(--color-stone-50);
-  --chart-1: var(--color-stone-300);
-  --chart-2: var(--color-stone-500);
-  --chart-3: var(--color-stone-600);
-  --chart-4: var(--color-stone-700);
-  --chart-5: var(--color-stone-800);
-  --sidebar-primary: var(--color-stone-600);
-  --sidebar-primary-foreground: var(--color-stone-50);
-  --sidebar-ring: var(--color-stone-400);
-
-  @variant dark {
-    --primary: var(--color-stone-500);
-    --primary-foreground: var(--color-stone-50);
-    --sidebar-primary: var(--color-stone-500);
-    --sidebar-primary-foreground: var(--color-stone-50);
-    --sidebar-ring: var(--color-stone-900);
-  }
 
   @media (min-width: 1024px) {
     --font-sans: var(--font-mono);
@@ -136,12 +118,6 @@
 }
 
 .theme-scaled .theme-container {
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-
   @media (min-width: 1024px) {
     --radius: 0.45em;
     --text-lg: 1rem;
