@@ -154,6 +154,31 @@
     @apply bg-background text-foreground;
   }
 
+  [class*="heading-"],
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-primary scroll-mt-24;
+  }
+
+  h1,
+  heading-1 {
+    @apply text-4xl font-normal tracking-tight text-balance lg:text-5xl;
+  }
+  h2,
+  heading-2 {
+    @apply text-3xl font-medium tracking-[-.005em] text-balance lg:text-4xl;
+  }
+  h3,
+  heading-3 {
+    @apply text-xl font-medium tracking-[-.005em] text-pretty;
+  }
+  h4,
+  heading-4 {
+    @apply text-lg font-medium tracking-[-.005em] text-pretty;
+  }
+
   @supports (font: -apple-system-body) and (-webkit-appearance: none) {
     [data-wrapper] {
       @apply min-[1800px]:border-t;

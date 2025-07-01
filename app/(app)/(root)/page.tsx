@@ -16,7 +16,7 @@ import { Button } from "@/registry/default/ui/button"
 
 const title = "Nathan's Component Library"
 const description =
-  "My own set of components — styled, structured, and fully compatible with shadcn/ui. Built to move fast and stay consistent across all my projects."
+  "My own set of components. Built to move fast and stay consistent across all my projects. Fully compatible with shadcn/ui"
 
 export const dynamic = "force-static"
 export const revalidate = false
