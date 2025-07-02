@@ -87,6 +87,11 @@ export default function ThemeVisualizer() {
 
   const borderColors = [
     { name: "Border", cssVar: "--border", description: "Default borders" },
+    {
+      name: "Grid Border",
+      cssVar: "--border-grid",
+      description: "Grid borders",
+    },
     { name: "Input", cssVar: "--input", description: "Input borders" },
     { name: "Ring", cssVar: "--ring", description: "Focus rings" },
   ]
