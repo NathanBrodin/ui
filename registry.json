@@ -281,6 +281,19 @@
       ]
     },
     {
+      "name": "diamond",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/diamond.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "drawer",
       "type": "registry:ui",
       "dependencies": [
@@ -747,6 +760,21 @@
           "path": "registry/default/blocks/page-main/page.tsx",
           "type": "registry:page",
           "target": "app/page-main/page.tsx"
+        }
+      ],
+      "categories": [
+        "page-layout"
+      ]
+    },
+    {
+      "name": "page-Header",
+      "type": "registry:block",
+      "description": "Page Heading",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/blocks/page-header/page-header.tsx",
+          "type": "registry:block"
         }
       ],
       "categories": [
@@ -1787,6 +1815,19 @@
       "files": [
         {
           "path": "registry/default/examples/dialog-close-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "diamond-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "diamond"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/diamond-demo.tsx",
           "type": "registry:example"
         }
       ]

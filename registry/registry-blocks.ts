@@ -33,4 +33,17 @@ export const blocks: Registry["items"] = [
     ],
     categories: ["page-layout"],
   },
+  {
+    name: "page-Header",
+    description: "Page Heading",
+    type: "registry:block",
+    registryDependencies: [],
+    files: [
+      {
+        path: "blocks/page-header/page-header.tsx",
+        type: "registry:block",
+      },
+    ],
+    categories: ["page-layout"],
+  },
 ]

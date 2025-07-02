@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "diamond-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "diamond"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/diamond-demo.tsx",
+      "content": "import { Diamond } from \"@/registry/default/ui/diamond\"\n\nexport default function DiamondDemo() {\n  return (\n    <div className=\"relative px-4 py-8\">\n      <div className=\"border-grid border-x border-b\">\n        <Diamond bottom left />\n        <Diamond bottom right />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

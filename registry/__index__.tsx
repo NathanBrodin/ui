@@ -424,6 +424,30 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  diamond: {
+    name: "diamond",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/default/ui/diamond.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/ui/diamond.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   drawer: {
     name: "drawer",
     description: "",
@@ -1171,6 +1195,32 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/blocks/page-main/page.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["page-layout"],
+    meta: undefined,
+  },
+  "page-Header": {
+    name: "page-Header",
+    description: "Page Heading",
+    type: "registry:block",
+    registryDependencies: [],
+    files: [
+      {
+        path: "registry/default/blocks/page-header/page-header.tsx",
+        type: "registry:block",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/default/blocks/page-header/page-header.tsx"
+      )
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -2653,6 +2703,30 @@ export const Index: Record<string, any> = {
       const mod = await import(
         "@/registry/default/examples/dialog-close-button.tsx"
       )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "diamond-demo": {
+    name: "diamond-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["diamond"],
+    files: [
+      {
+        path: "registry/default/examples/diamond-demo.tsx",
+        type: "registry:example",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/examples/diamond-demo.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>

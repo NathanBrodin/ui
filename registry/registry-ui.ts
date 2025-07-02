@@ -214,6 +214,17 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "diamond",
+    type: "registry:ui",
+    dependencies: ["@radix-ui/react-dialog"],
+    files: [
+      {
+        path: "ui/diamond.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "drawer",
     type: "registry:ui",
     dependencies: ["vaul", "@radix-ui/react-dialog"],

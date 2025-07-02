@@ -13,5 +13,12 @@
     "categories": [
       "page-layout"
     ]
+  },
+  {
+    "name": "page-Header",
+    "description": "Page Heading",
+    "categories": [
+      "page-layout"
+    ]
   }
 ]

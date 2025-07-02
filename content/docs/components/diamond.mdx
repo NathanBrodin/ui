@@ -1,0 +1,73 @@
+---
+title: Diamond
+description: A decorative diamond shape for grid intersections.
+component: true
+---
+
+<ComponentPreview
+  name="diamond-demo"
+  title="Diamond"
+  description="Decorative elements for grid intersections"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ui.brodin.dev/r/diamond.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="diamond" title="components/ui/diamond.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { Diamond } from "@/components/ui/diamond"
+```
+
+The Diamond component is designed to be placed at grid intersections as a decorative element. Position it absolutely within a relatively positioned container with grid borders.
+
+## Examples
+### Basic Grid Intersection
+
+```tsx showLineNumbers
+<div className="border-grid relative h-32 w-full border">
+  <Diamond top left />
+  <Diamond top right />
+  <Diamond bottom left />
+  <Diamond bottom right />
+</div>
+```
+
+### Header Navigation
+
+```tsx showLineNumbers
+<header className="border-grid relative flex h-16 items-center border">
+  <Diamond left bottom />
+  <Diamond right bottom />
+  {/* header content */}
+</header>
+```

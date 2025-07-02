@@ -89,7 +89,7 @@ export default function ThemeVisualizer() {
     { name: "Border", cssVar: "--border", description: "Default borders" },
     {
       name: "Grid Border",
-      cssVar: "--border-grid",
+      cssVar: "--grid",
       description: "Grid borders",
     },
     { name: "Input", cssVar: "--input", description: "Input borders" },

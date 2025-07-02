@@ -4,8 +4,6 @@ import localFont from "next/font/local"
 
 import "@/styles/globals.css"
 
-import { RootProvider } from "fumadocs-ui/provider"
-
 import { siteConfig } from "@/lib/config"
 import { LayoutProvider } from "@/hooks/use-layout"
 import { META_THEME_COLORS } from "@/hooks/use-meta-color"
@@ -101,21 +99,19 @@ export default function RootLayout({
       <body
         className={`${lora.variable} ${writer.variable} ${geistMono.variable} overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]`}
       >
-        <RootProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <LayoutProvider>
-              <ActiveThemeProvider>
-                {children}
-                <Toaster position="top-center" />
-              </ActiveThemeProvider>
-            </LayoutProvider>
-          </ThemeProvider>
-        </RootProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <LayoutProvider>
+            <ActiveThemeProvider>
+              {children}
+              <Toaster position="top-center" />
+            </ActiveThemeProvider>
+          </LayoutProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

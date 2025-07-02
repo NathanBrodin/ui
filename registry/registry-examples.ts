@@ -633,6 +633,17 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "diamond-demo",
+    type: "registry:example",
+    registryDependencies: ["diamond"],
+    files: [
+      {
+        path: "examples/diamond-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "drawer-demo",
     type: "registry:example",
     registryDependencies: ["drawer"],
