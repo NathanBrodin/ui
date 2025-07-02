@@ -230,7 +230,9 @@ function BlockViewerToolbar() {
           }}
         >
           {isCopied ? <Check /> : <Terminal />}
-          <span>{command}</span>
+          <span className="max-w-sm overflow-hidden overflow-ellipsis whitespace-nowrap xl:max-w-xl">
+            {command}
+          </span>
         </Button>
         <Separator orientation="vertical" className="mx-1 !h-4" />
       </div>
