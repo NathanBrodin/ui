@@ -4,7 +4,7 @@ import * as React from "react"
 import { useRouter } from "next/navigation"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { IconArrowRight } from "@tabler/icons-react"
-import { CornerDownLeftIcon, SquareDashedIcon } from "lucide-react"
+import { CornerDownLeftIcon, SearchIcon, SquareDashedIcon } from "lucide-react"
 
 import { siteConfig } from "@/lib/config"
 import { source } from "@/lib/source"
@@ -30,6 +30,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/registry/default/ui/dialog"
+import { Kbd } from "@/registry/default/ui/kbd"
 import { Separator } from "@/registry/default/ui/separator"
 
 export function CommandMenu({
@@ -118,17 +119,13 @@ export function CommandMenu({
         <Button
           variant="secondary"
           className={cn(
-            "bg-surface text-surface-foreground/60 dark:bg-card relative h-8 w-full justify-start pl-2.5 font-normal shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
+            "bg-surface text-surface-foreground/60 dark:bg-card relative h-8 w-full justify-start font-normal shadow-none"
           )}
           onClick={() => setOpen(true)}
           {...props}
         >
-          <span className="hidden lg:inline-flex">Search documentation...</span>
-          <span className="inline-flex lg:hidden">Search...</span>
-          <div className="absolute top-1.5 right-1.5 hidden gap-1 sm:flex">
-            <CommandMenuKbd>{isMac ? "⌘" : "Ctrl"}</CommandMenuKbd>
-            <CommandMenuKbd className="aspect-square">K</CommandMenuKbd>
-          </div>
+          <SearchIcon />
+          <Kbd>{isMac ? "⌘" : "Ctrl"} K</Kbd>
         </Button>
       </DialogTrigger>
       <DialogContent
@@ -224,9 +221,9 @@ export function CommandMenu({
         </Command>
         <div className="text-muted-foreground absolute inset-x-0 bottom-0 z-20 flex h-10 items-center gap-2 rounded-b-xl border-t border-t-neutral-100 bg-neutral-50 px-4 text-xs font-medium dark:border-t-neutral-700 dark:bg-neutral-800">
           <div className="flex items-center gap-2">
-            <CommandMenuKbd>
+            <Kbd>
               <CornerDownLeftIcon />
-            </CommandMenuKbd>{" "}
+            </Kbd>{" "}
             {selectedType === "page" || selectedType === "component"
               ? "Go to Page"
               : null}
@@ -235,8 +232,7 @@ export function CommandMenu({
             <>
               <Separator orientation="vertical" className="!h-4" />
               <div className="flex items-center gap-1">
-                <CommandMenuKbd>{isMac ? "⌘" : "Ctrl"}</CommandMenuKbd>
-                <CommandMenuKbd>C</CommandMenuKbd>
+                <Kbd>{isMac ? "⌘" : "Ctrl"} C</Kbd>
                 {copyPayload}
               </div>
             </>
@@ -282,17 +278,5 @@ function CommandMenuItem({
     >
       {children}
     </CommandItem>
-  )
-}
-
-function CommandMenuKbd({ className, ...props }: React.ComponentProps<"kbd">) {
-  return (
-    <kbd
-      className={cn(
-        "bg-background text-muted-foreground pointer-events-none flex h-5 items-center justify-center gap-1 rounded border px-1 font-sans text-[0.7rem] font-medium select-none [&_svg:not([class*='size-'])]:size-3",
-        className
-      )}
-      {...props}
-    />
   )
 }

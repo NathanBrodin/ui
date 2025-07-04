@@ -61,7 +61,8 @@
 
 :root {
   --radius: 0.4rem;
-  --background: color-mix(in oklab, #e8e6d9 20%, transparent);
+  /* --background: color-mix(in oklab, #e8e6d9 20%, transparent); */
+  --background: oklch(100% 0 0);
   --foreground: oklch(44.37% 0.024 260.13);
   --nav-background: oklch(97.47571565757396% 0.007 106.52144027618351);
   --card: oklch(100% 0 0);
