@@ -13,6 +13,28 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "kbd-demo",
+    type: "registry:example",
+    registryDependencies: ["kbd"],
+    files: [
+      {
+        path: "examples/kbd-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "kbd-shortcuts",
+    type: "registry:example",
+    registryDependencies: ["kbd", "separator"],
+    files: [
+      {
+        path: "examples/kbd-shortcuts.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "alert-demo",
     type: "registry:example",
     registryDependencies: ["alert"],

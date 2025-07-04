@@ -378,6 +378,16 @@
       ]
     },
     {
+      "name": "kbd",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/default/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "label",
       "type": "registry:ui",
       "dependencies": [
@@ -1046,6 +1056,33 @@
       "files": [
         {
           "path": "registry/default/examples/accordion-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kbd-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "kbd"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/kbd-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kbd-shortcuts",
+      "type": "registry:example",
+      "registryDependencies": [
+        "kbd",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/kbd-shortcuts.tsx",
           "type": "registry:example"
         }
       ]

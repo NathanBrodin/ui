@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/examples/diamond-demo.tsx",
-      "content": "import { Diamond } from \"@/registry/default/ui/diamond\"\n\nexport default function DiamondDemo() {\n  return (\n    <div className=\"relative px-4 py-8\">\n      <div className=\"border-grid border-x border-b\">\n        <Diamond bottom left />\n        <Diamond bottom right />\n      </div>\n    </div>\n  )\n}\n",
+      "content": "import { Diamond } from \"@/registry/default/ui/diamond\"\n\nexport default function DiamondDemo() {\n  return (\n    <div className=\"w-full space-y-8 p-4\">\n      <div className=\"border-grid relative h-32 w-full border\">\n        <Diamond top left />\n        <Diamond top right />\n        <Diamond bottom left />\n        <Diamond bottom right />\n      </div>\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ]

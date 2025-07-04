@@ -592,6 +592,30 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  kbd: {
+    name: "kbd",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/default/ui/kbd.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/ui/kbd.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   label: {
     name: "label",
     description: "",
@@ -1293,6 +1317,54 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/examples/accordion-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "kbd-demo": {
+    name: "kbd-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["kbd"],
+    files: [
+      {
+        path: "registry/default/examples/kbd-demo.tsx",
+        type: "registry:example",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/examples/kbd-demo.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "kbd-shortcuts": {
+    name: "kbd-shortcuts",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["kbd", "separator"],
+    files: [
+      {
+        path: "registry/default/examples/kbd-shortcuts.tsx",
+        type: "registry:example",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/examples/kbd-shortcuts.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>

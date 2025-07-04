@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-shortcuts",
+  "type": "registry:example",
+  "registryDependencies": [
+    "kbd",
+    "separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/kbd-shortcuts.tsx",
+      "content": "import { Kbd } from \"@/registry/default/ui/kbd\"\nimport { Separator } from \"@/registry/default/ui/separator\"\n\nexport default function KbdShortcuts() {\n  return (\n    <div className=\"space-y-4\">\n      <div className=\"text-center\">\n        <h3 className=\"text-lg font-semibold\">Keyboard Shortcuts</h3>\n        <p className=\"text-muted-foreground text-sm\">\n          Common keyboard shortcuts for your application\n        </p>\n      </div>\n\n      <div className=\"space-y-3\">\n        <div className=\"flex items-center justify-between\">\n          <span className=\"text-sm\">Open command palette</span>\n          <div className=\"flex items-center gap-1\">\n            <Kbd>⌘ K</Kbd>\n          </div>\n        </div>\n\n        <div className=\"flex items-center justify-between\">\n          <span className=\"text-sm\">Quick search</span>\n          <div className=\"flex items-center gap-1\">\n            <Kbd>⌘ S</Kbd>\n          </div>\n        </div>\n\n        <div className=\"flex items-center justify-between\">\n          <span className=\"text-sm\">Toggle sidebar</span>\n          <div className=\"flex items-center gap-1\">\n            <Kbd>⌘ B</Kbd>\n          </div>\n        </div>\n\n        <Separator />\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

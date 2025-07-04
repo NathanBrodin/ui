@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "registry/default/ui/kbd.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\nexport function Kbd({ className, ...props }: React.ComponentProps<\"kbd\">) {\n  return (\n    <kbd\n      className={cn(\n        \"bg-background text-muted-foreground pointer-events-none flex h-5 items-center justify-center gap-1 rounded border px-1 font-sans text-[0.7rem] font-medium select-none [&_svg:not([class*='size-'])]:size-3\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}
