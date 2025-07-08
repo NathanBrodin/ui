@@ -19,7 +19,7 @@ function Footer({
       {...props}
     >
       <Noise variant="lighter" />
-      <div className="border-grid/10 relative mx-3 flex border-x px-4 py-2 sm:px-6 md:mx-8 lg:mx-12">
+      <div className="border-grid/30 relative mx-3 flex border-x px-4 py-2 sm:px-6 md:mx-8 lg:mx-12">
         <Diamond top left />
         <Diamond top right />
 

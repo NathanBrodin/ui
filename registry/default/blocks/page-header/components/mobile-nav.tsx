@@ -30,13 +30,7 @@ export function MobileNav({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Button
-          variant="ghost"
-          className={cn(
-            "extend-touch-target flex size-8 touch-manipulation items-center justify-center rounded-md border !p-0 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 active:bg-transparent dark:hover:bg-transparent",
-            className
-          )}
-        >
+        <Button variant="ghost" className={cn("border", className)}>
           <MenuIcon className="text-primary size-4" />
         </Button>
       </DrawerTrigger>
