@@ -90,6 +90,21 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "backgrounds",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/backgrounds.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "assets/backgrounds/noise.png",
+        type: "registry:file",
+        target: "~/public/backgrounds/noise.png",
+      },
+    ],
+  },
+  {
     name: "breadcrumb",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-slot"],

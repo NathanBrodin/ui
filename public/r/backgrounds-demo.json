@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "backgrounds-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "backgrounds"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/backgrounds-demo.tsx",
+      "content": "import { Noise } from \"@/registry/default/ui/backgrounds\"\n\nexport default function BackgroundsDemo() {\n  return (\n    <div className=\"bg-background relative h-64 w-full overflow-hidden rounded-lg border\">\n      <Noise />\n      <div className=\"relative z-10 flex h-full items-center justify-center\">\n        <div className=\"text-center\">\n          <h3 className=\"text-2xl font-semibold\">Noise Background</h3>\n          <p className=\"text-muted-foreground mt-2\">\n            Subtle texture adds depth without distraction\n          </p>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

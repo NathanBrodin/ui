@@ -127,6 +127,21 @@
       ]
     },
     {
+      "name": "backgrounds",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/default/ui/backgrounds.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/assets/backgrounds/noise.png",
+          "type": "registry:file",
+          "target": "~/public/backgrounds/noise.png"
+        }
+      ]
+    },
+    {
       "name": "breadcrumb",
       "type": "registry:ui",
       "dependencies": [
@@ -1201,6 +1216,32 @@
       "files": [
         {
           "path": "registry/default/examples/badge-secondary.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "backgrounds-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "backgrounds"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/backgrounds-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "backgrounds-noise",
+      "type": "registry:example",
+      "registryDependencies": [
+        "backgrounds"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/backgrounds-noise.tsx",
           "type": "registry:example"
         }
       ]

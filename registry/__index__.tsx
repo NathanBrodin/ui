@@ -160,6 +160,35 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  backgrounds: {
+    name: "backgrounds",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/default/ui/backgrounds.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+      {
+        path: "registry/default/assets/backgrounds/noise.png",
+        type: "registry:file",
+        target: "~/public/backgrounds/noise.png",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/ui/backgrounds.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   breadcrumb: {
     name: "breadcrumb",
     description: "",
@@ -1590,6 +1619,58 @@ export const Index: Record<string, any> = {
     component: React.lazy(async () => {
       const mod = await import(
         "@/registry/default/examples/badge-secondary.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "backgrounds-demo": {
+    name: "backgrounds-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["backgrounds"],
+    files: [
+      {
+        path: "registry/default/examples/backgrounds-demo.tsx",
+        type: "registry:example",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/default/examples/backgrounds-demo.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "backgrounds-noise": {
+    name: "backgrounds-noise",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["backgrounds"],
+    files: [
+      {
+        path: "registry/default/examples/backgrounds-noise.tsx",
+        type: "registry:example",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/default/examples/backgrounds-noise.tsx"
       )
       const exportName =
         Object.keys(mod).find(

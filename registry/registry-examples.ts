@@ -134,6 +134,28 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "backgrounds-demo",
+    type: "registry:example",
+    registryDependencies: ["backgrounds"],
+    files: [
+      {
+        path: "examples/backgrounds-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "backgrounds-noise",
+    type: "registry:example",
+    registryDependencies: ["backgrounds"],
+    files: [
+      {
+        path: "examples/backgrounds-noise.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "breadcrumb-demo",
     type: "registry:example",
     registryDependencies: ["breadcrumb"],
