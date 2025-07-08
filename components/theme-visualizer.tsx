@@ -54,6 +54,16 @@ export default function ThemeVisualizer() {
       description: "Text on primary",
     },
     {
+      name: "Fixed Primary",
+      cssVar: "--primary-fixed",
+      description: "Primary brand color",
+    },
+    {
+      name: "Fixed Primary Foreground",
+      cssVar: "--primary-foreground-fixed",
+      description: "Text on primary fixed",
+    },
+    {
       name: "Secondary",
       cssVar: "--secondary",
       description: "Secondary elements",
