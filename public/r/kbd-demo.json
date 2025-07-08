@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "kbd"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/kbd-demo.tsx",
+      "content": "import { Kbd } from \"@/registry/default/ui/kbd\"\n\nexport default function KbdDemo() {\n  return (\n    <div className=\"flex flex-col items-center gap-4\">\n      <div className=\"flex flex-wrap items-center gap-2\">\n        <Kbd>⌘ K</Kbd>\n        <Kbd>⌥ C</Kbd>\n        <Kbd>⇧ E</Kbd>\n        <Kbd>⌃ L</Kbd>\n      </div>\n\n      <div className=\"flex flex-wrap items-center gap-2\">\n        <Kbd>F1</Kbd>\n        <Kbd>F2</Kbd>\n        <Kbd>F12</Kbd>\n        <Kbd>Esc</Kbd>\n      </div>\n\n      <div className=\"flex flex-wrap items-center gap-2\">\n        <Kbd>←</Kbd>\n        <Kbd>↑</Kbd>\n        <Kbd>→</Kbd>\n        <Kbd>↓</Kbd>\n      </div>\n\n      <div className=\"text-center\">\n        <p className=\"text-muted-foreground flex gap-1 text-sm\">\n          Press <Kbd>⌘ K</Kbd> to open the command palette\n        </p>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

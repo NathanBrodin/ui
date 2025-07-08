@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-demo",
+  "type": "registry:example",
+  "registryDependencies": [
+    "hero"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/hero-demo.tsx",
+      "content": "import Link from \"next/link\"\n\nimport { Button } from \"@/registry/default/ui/button\"\nimport {\n  Hero,\n  HeroActions,\n  HeroDescription,\n  HeroHeading,\n} from \"@/registry/default/ui/hero\"\n\nconst title = \"Nathan's Component Library\"\nconst description =\n  \"My own set of components. Built to move fast and stay consistent across all my projects. Fully compatible with shadcn/ui\"\n\nexport default function HeroDemo() {\n  return (\n    <Hero className=\"-translate-x-[48px]\">\n      <HeroHeading>{title}</HeroHeading>\n      <HeroDescription>{description}</HeroDescription>\n      <HeroActions>\n        <Button asChild>\n          <Link href=\"/docs\">Get Started</Link>\n        </Button>\n        <Button asChild variant=\"outline\">\n          <Link href=\"/blocks\">Browse Blocks</Link>\n        </Button>\n      </HeroActions>\n    </Hero>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

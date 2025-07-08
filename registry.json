@@ -127,6 +127,21 @@
       ]
     },
     {
+      "name": "backgrounds",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/default/ui/backgrounds.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/assets/backgrounds/noise.png",
+          "type": "registry:file",
+          "target": "~/public/backgrounds/noise.png"
+        }
+      ]
+    },
+    {
       "name": "breadcrumb",
       "type": "registry:ui",
       "dependencies": [
@@ -281,6 +296,19 @@
       ]
     },
     {
+      "name": "diamond",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-dialog"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/diamond.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "drawer",
       "type": "registry:ui",
       "dependencies": [
@@ -342,6 +370,19 @@
       ]
     },
     {
+      "name": "hero",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "backgrounds, diamond, separator"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/hero.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "input",
       "type": "registry:ui",
       "files": [
@@ -360,6 +401,16 @@
       "files": [
         {
           "path": "registry/default/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/default/ui/kbd.tsx",
           "type": "registry:ui"
         }
       ]
@@ -738,6 +789,111 @@
       ]
     },
     {
+      "name": "demo",
+      "type": "registry:block",
+      "description": "A demo of this library",
+      "dependencies": [
+        "recharts",
+        "@tanstack/react-table",
+        "date-fns",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "card",
+        "chart",
+        "calendar",
+        "input",
+        "label",
+        "checkbox",
+        "radio-group",
+        "textarea",
+        "avatar",
+        "command",
+        "dialog",
+        "tooltip",
+        "dropdown-menu",
+        "table",
+        "popover",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/demo/index.tsx",
+          "type": "registry:block",
+          "target": "components/demo/index.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/activity-goal.tsx",
+          "type": "registry:component",
+          "target": "components/demo/activity-goal.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/calendar.tsx",
+          "type": "registry:component",
+          "target": "components/demo/calendar.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/chat.tsx",
+          "type": "registry:component",
+          "target": "components/demo/chat.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/cookie-settings.tsx",
+          "type": "registry:component",
+          "target": "components/demo/cookie-settings.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/create-account.tsx",
+          "type": "registry:component",
+          "target": "components/demo/create-account.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/exercise-minutes.tsx",
+          "type": "registry:component",
+          "target": "components/demo/exercise-minutes.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/forms.tsx",
+          "type": "registry:component",
+          "target": "components/demo/forms.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/payment-method.tsx",
+          "type": "registry:component",
+          "target": "components/demo/payment-method.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/payments.tsx",
+          "type": "registry:component",
+          "target": "components/demo/payments.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/report-issue.tsx",
+          "type": "registry:component",
+          "target": "components/demo/report-issue.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/share.tsx",
+          "type": "registry:component",
+          "target": "components/demo/share.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/stats.tsx",
+          "type": "registry:component",
+          "target": "components/demo/stats.tsx"
+        },
+        {
+          "path": "registry/default/blocks/demo/team-members.tsx",
+          "type": "registry:component",
+          "target": "components/demo/team-members.tsx"
+        }
+      ],
+      "categories": [
+        "page-layout"
+      ]
+    },
+    {
       "name": "page-main",
       "type": "registry:block",
       "description": "Temporary",
@@ -747,6 +903,21 @@
           "path": "registry/default/blocks/page-main/page.tsx",
           "type": "registry:page",
           "target": "app/page-main/page.tsx"
+        }
+      ],
+      "categories": [
+        "page-layout"
+      ]
+    },
+    {
+      "name": "page-Header",
+      "type": "registry:block",
+      "description": "Page Heading",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/blocks/page-header/page-header.tsx",
+          "type": "registry:block"
         }
       ],
       "categories": [
@@ -776,6 +947,64 @@
           "type": "registry:hook"
         }
       ]
+    },
+    {
+      "name": "theme-blue",
+      "type": "registry:theme",
+      "cssVars": {
+        "light": {
+          "background": "0 0% 100%",
+          "foreground": "240 10% 14%",
+          "card": "0 0% 100%",
+          "card-foreground": "240 10% 14%",
+          "popover": "0 0% 100%",
+          "popover-foreground": "240 10% 14%",
+          "primary": "240 80% 62%",
+          "primary-foreground": "240 100% 97%",
+          "secondary": "240 5% 97%",
+          "secondary-foreground": "240 10% 21%",
+          "muted": "240 5% 97%",
+          "muted-foreground": "240 10% 55%",
+          "accent": "240 5% 97%",
+          "accent-foreground": "240 10% 21%",
+          "destructive": "15 80% 58%",
+          "destructive-foreground": "0 0% 98%",
+          "border": "240 10% 92%",
+          "input": "240 10% 92%",
+          "ring": "240 80% 62%",
+          "chart-1": "35 90% 65%",
+          "chart-2": "180 60% 60%",
+          "chart-3": "220 40% 40%",
+          "chart-4": "80 80% 83%",
+          "chart-5": "65 80% 77%"
+        },
+        "dark": {
+          "background": "240 10% 14%",
+          "foreground": "0 0% 98%",
+          "card": "240 10% 21%",
+          "card-foreground": "0 0% 98%",
+          "popover": "240 10% 21%",
+          "popover-foreground": "0 0% 98%",
+          "primary": "245 90% 55%",
+          "primary-foreground": "245 60% 38%",
+          "secondary": "240 10% 27%",
+          "secondary-foreground": "0 0% 98%",
+          "muted": "240 10% 27%",
+          "muted-foreground": "240 10% 70%",
+          "accent": "240 10% 27%",
+          "accent-foreground": "0 0% 98%",
+          "destructive": "20 80% 70%",
+          "destructive-foreground": "0 0% 98%",
+          "border": "0 0% 100% / 10%",
+          "input": "0 0% 100% / 15%",
+          "ring": "245 90% 49%",
+          "chart-1": "245 90% 49%",
+          "chart-2": "160 70% 70%",
+          "chart-3": "65 80% 77%",
+          "chart-4": "305 80% 63%",
+          "chart-5": "15 90% 65%"
+        }
+      }
     },
     {
       "name": "theme-daylight",
@@ -965,6 +1194,33 @@
       ]
     },
     {
+      "name": "kbd-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "kbd"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/kbd-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "kbd-shortcuts",
+      "type": "registry:example",
+      "registryDependencies": [
+        "kbd",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/kbd-shortcuts.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
       "name": "alert-demo",
       "type": "registry:example",
       "registryDependencies": [
@@ -1078,6 +1334,45 @@
       "files": [
         {
           "path": "registry/default/examples/badge-secondary.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "backgrounds-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "backgrounds"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/backgrounds-demo.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "backgrounds-noise",
+      "type": "registry:example",
+      "registryDependencies": [
+        "backgrounds"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/backgrounds-noise.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hero-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "hero"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/hero-demo.tsx",
           "type": "registry:example"
         }
       ]
@@ -1729,6 +2024,19 @@
       "files": [
         {
           "path": "registry/default/examples/dialog-close-button.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "diamond-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "diamond"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/diamond-demo.tsx",
           "type": "registry:example"
         }
       ]

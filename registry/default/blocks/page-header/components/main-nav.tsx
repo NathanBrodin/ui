@@ -11,7 +11,7 @@ export function MainNav({
   className,
   ...props
 }: React.ComponentProps<"nav"> & {
-  items: { href: string; label: string }[]
+  items: { href: string; label?: string }[]
 }) {
   const pathname = usePathname()
 

@@ -13,6 +13,28 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "kbd-demo",
+    type: "registry:example",
+    registryDependencies: ["kbd"],
+    files: [
+      {
+        path: "examples/kbd-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "kbd-shortcuts",
+    type: "registry:example",
+    registryDependencies: ["kbd", "separator"],
+    files: [
+      {
+        path: "examples/kbd-shortcuts.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "alert-demo",
     type: "registry:example",
     registryDependencies: ["alert"],
@@ -107,6 +129,39 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/badge-secondary.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "backgrounds-demo",
+    type: "registry:example",
+    registryDependencies: ["backgrounds"],
+    files: [
+      {
+        path: "examples/backgrounds-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "backgrounds-noise",
+    type: "registry:example",
+    registryDependencies: ["backgrounds"],
+    files: [
+      {
+        path: "examples/backgrounds-noise.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "hero-demo",
+    type: "registry:example",
+    registryDependencies: ["hero"],
+    files: [
+      {
+        path: "examples/hero-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -628,6 +683,17 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/dialog-close-button.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "diamond-demo",
+    type: "registry:example",
+    registryDependencies: ["diamond"],
+    files: [
+      {
+        path: "examples/diamond-demo.tsx",
         type: "registry:example",
       },
     ],

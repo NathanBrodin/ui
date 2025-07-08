@@ -25,4 +25,12 @@ function Separator({
   )
 }
 
-export { Separator }
+function Divider() {
+  return (
+    <section className="-mx-3 flex items-center justify-center md:-mx-12">
+      <hr className="border-grid w-full border-t" />
+    </section>
+  )
+}
+
+export { Separator, Divider }

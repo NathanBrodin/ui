@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "diamond",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-dialog"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/diamond.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\ntype DiamondProps = {\n  top?: boolean\n  right?: boolean\n  bottom?: boolean\n  left?: boolean\n  className?: string\n}\n\nexport function Diamond({ top, right, bottom, left, className }: DiamondProps) {\n  return (\n    <div\n      className={cn(\n        \"border-grid absolute z-10 size-2 rotate-45 rounded-[1px] border bg-white dark:bg-black\",\n        top && \"top-[-4.5px]\",\n        right && \"right-[-4.5px]\",\n        bottom && \"bottom-[-4.5px]\",\n        left && \"left-[-4.5px]\",\n        className\n      )}\n    />\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,15 +1,14 @@
 import { Metadata } from "next"
 
-import { Announcement } from "@/components/announcement"
 import { BlocksNav } from "@/components/blocks-nav"
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header"
 import { PageNav } from "@/components/page-nav"
 import { Button } from "@/registry/default/ui/button"
+import {
+  Hero,
+  HeroActions,
+  HeroDescription,
+  HeroHeading,
+} from "@/registry/default/ui/hero"
 
 const title = "UI Blocks That Just Work"
 const description =
@@ -46,16 +45,15 @@ export default function BlocksLayout({
 }) {
   return (
     <>
-      <PageHeader>
-        <Announcement />
-        <PageHeaderHeading>{title}</PageHeaderHeading>
-        <PageHeaderDescription>{description}</PageHeaderDescription>
-        <PageActions>
-          <Button asChild size="sm">
+      <Hero>
+        <HeroHeading>{title}</HeroHeading>
+        <HeroDescription>{description}</HeroDescription>
+        <HeroActions>
+          <Button asChild>
             <a href="#blocks">Browse Blocks</a>
           </Button>
-        </PageActions>
-      </PageHeader>
+        </HeroActions>
+      </Hero>
       <PageNav id="blocks">
         <BlocksNav />
       </PageNav>

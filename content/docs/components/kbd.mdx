@@ -1,0 +1,73 @@
+---
+title: Kbd
+description: A component to display keyboard keys and shortcuts.
+component: true
+---
+
+<ComponentPreview
+  name="kbd-demo"
+  title="Kbd"
+  description="A default keyboard key display"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ui.brodin.dev/r/kbd.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="kbd" title="components/ui/kbd.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Kbd } from "@/components/ui/kbd"
+```
+
+```tsx
+<Kbd>Ctrl K</Kbd>
+```
+
+## Examples
+
+### Shortcuts List
+
+Create a comprehensive list of keyboard shortcuts for your application.
+
+<ComponentPreview
+  name="kbd-shortcuts"
+  title="Kbd Shortcuts"
+  description="A list of common keyboard shortcuts"
+/>
+
+### Cross-Platform
+
+```tsx
+const isMac = typeof navigator !== "undefined" && navigator.platform.toUpperCase().indexOf("MAC") >= 0
+
+<Kbd>{isMac ? "⌘" : "Ctrl"}</Kbd>
+```

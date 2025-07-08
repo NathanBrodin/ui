@@ -1,0 +1,74 @@
+---
+title: Backgrounds
+description: Background components for adding visual texture and depth to your layouts.
+component: true
+---
+
+<ComponentPreview
+  name="backgrounds-demo"
+  title="Backgrounds"
+  description="A default noise background effect"
+/>
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add https://ui.brodin.dev/r/backgrounds.json
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="backgrounds" title="components/ui/backgrounds.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Usage
+
+```tsx
+import { Noise } from "@/components/ui/backgrounds"
+```
+
+```tsx
+<div className="relative">
+  <Noise />
+  <div className="relative">
+    {/* Your content here */}
+  </div>
+</div>
+```
+
+## Components
+
+### Noise
+
+A subtle noise texture background that adds visual depth without being distracting.
+
+## Examples
+
+### Basic Noise
+
+<ComponentPreview
+  name="backgrounds-noise"
+  title="Noise Background"
+  description="Basic noise background with default styling"
+/>

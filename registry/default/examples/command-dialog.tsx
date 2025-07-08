@@ -10,6 +10,7 @@ import {
   User,
 } from "lucide-react"
 
+import { Button } from "@/registry/default/ui/button"
 import {
   CommandDialog,
   CommandEmpty,
@@ -20,6 +21,7 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/registry/default/ui/command"
+import { Kbd } from "@/registry/default/ui/kbd"
 
 export default function CommandDialogDemo() {
   const [open, setOpen] = React.useState(false)
@@ -38,12 +40,14 @@ export default function CommandDialogDemo() {
 
   return (
     <>
-      <p className="text-muted-foreground text-sm">
-        Press{" "}
-        <kbd className="bg-muted text-muted-foreground pointer-events-none inline-flex h-5 items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100 select-none">
-          <span className="text-xs">⌘</span>J
-        </kbd>
-      </p>
+      <Button
+        variant="secondary"
+        className="bg-surface text-surface-foreground/60 dark:bg-card relative h-8 justify-start font-normal shadow-none"
+        onClick={() => setOpen(true)}
+      >
+        Press
+        <Kbd>⌘ J</Kbd>
+      </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>

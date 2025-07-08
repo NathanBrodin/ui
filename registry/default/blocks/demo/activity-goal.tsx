@@ -120,7 +120,7 @@ export function CardsActivityGoal() {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full" variant="secondary">
+        <Button className="w-full" variant="outline">
           Set Goal
         </Button>
       </CardFooter>

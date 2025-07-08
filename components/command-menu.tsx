@@ -4,7 +4,7 @@ import * as React from "react"
 import { useRouter } from "next/navigation"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { IconArrowRight } from "@tabler/icons-react"
-import { CornerDownLeftIcon, SquareDashedIcon } from "lucide-react"
+import { CornerDownLeftIcon, SearchIcon, SquareDashedIcon } from "lucide-react"
 
 import { siteConfig } from "@/lib/config"
 import { source } from "@/lib/source"
@@ -15,21 +15,18 @@ import { useMutationObserver } from "@/hooks/use-mutation-observer"
 import { copyToClipboard } from "@/components/copy-button"
 import { Button } from "@/registry/default/ui/button"
 import {
-  Command,
+  CommandDialog,
   CommandEmpty,
+  CommandFooter,
   CommandGroup,
   CommandInput,
   CommandItem,
   CommandList,
 } from "@/registry/default/ui/command"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog"
+
+import "@/registry/default/ui/dialog"
+
+import { Kbd } from "@/registry/default/ui/kbd"
 import { Separator } from "@/registry/default/ui/separator"
 
 export function CommandMenu({
@@ -113,137 +110,119 @@ export function CommandMenu({
   }, [copyPayload, runCommand, selectedType, packageManager])
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button
-          variant="secondary"
-          className={cn(
-            "bg-surface text-surface-foreground/60 dark:bg-card relative h-8 w-full justify-start pl-2.5 font-normal shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
-          )}
-          onClick={() => setOpen(true)}
-          {...props}
-        >
-          <span className="hidden lg:inline-flex">Search documentation...</span>
-          <span className="inline-flex lg:hidden">Search...</span>
-          <div className="absolute top-1.5 right-1.5 hidden gap-1 sm:flex">
-            <CommandMenuKbd>{isMac ? "⌘" : "Ctrl"}</CommandMenuKbd>
-            <CommandMenuKbd className="aspect-square">K</CommandMenuKbd>
-          </div>
-        </Button>
-      </DialogTrigger>
-      <DialogContent
-        showCloseButton={false}
-        className="rounded-xl border-none bg-clip-padding p-2 pb-11 shadow-2xl ring-4 ring-neutral-200/80 dark:bg-neutral-900 dark:ring-neutral-800"
+    <>
+      <Button
+        variant="secondary"
+        className={cn(
+          "bg-surface text-surface-foreground/60 relative h-8 w-full justify-start font-normal shadow-none"
+        )}
+        onClick={() => setOpen(true)}
+        {...props}
       >
-        <DialogHeader className="sr-only">
-          <DialogTitle>Search documentation...</DialogTitle>
-          <DialogDescription>Search for a command to run...</DialogDescription>
-        </DialogHeader>
-        <Command className="**:data-[slot=command-input-wrapper]:bg-input/50 **:data-[slot=command-input-wrapper]:border-input rounded-none bg-transparent **:data-[slot=command-input]:!h-9 **:data-[slot=command-input]:py-0 **:data-[slot=command-input-wrapper]:mb-0 **:data-[slot=command-input-wrapper]:!h-9 **:data-[slot=command-input-wrapper]:rounded-md **:data-[slot=command-input-wrapper]:border">
-          <CommandInput placeholder="Search documentation..." />
-          <CommandList className="no-scrollbar min-h-80 scroll-pt-2 scroll-pb-1.5">
-            <CommandEmpty className="text-muted-foreground py-12 text-center text-sm">
-              No results found.
-            </CommandEmpty>
-            {tree.children.map((group) => (
-              <CommandGroup
-                key={group.$id}
-                heading={group.name}
-                className="!p-0 [&_[cmdk-group-heading]]:scroll-mt-16 [&_[cmdk-group-heading]]:!p-3 [&_[cmdk-group-heading]]:!pb-1"
-              >
-                {group.type === "folder" &&
-                  group.children.map((item) => {
-                    if (item.type === "page") {
-                      const isComponent = item.url.includes("/components/")
+        <SearchIcon />
+        <Kbd>{isMac ? "⌘" : "Ctrl"} K</Kbd>
+      </Button>
+      <CommandDialog
+        title="Search documentation..."
+        description="Search for a command to run..."
+        open={open}
+        onOpenChange={setOpen}
+      >
+        <CommandInput placeholder="Search documentation..." />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          {tree.children.map((group) => (
+            <CommandGroup key={group.$id} heading={group.name}>
+              {group.type === "folder" &&
+                group.children.map((item) => {
+                  if (item.type === "page") {
+                    const isComponent = item.url.includes("/components/")
 
-                      return (
-                        <CommandMenuItem
-                          key={item.url}
-                          value={
-                            item.name?.toString()
-                              ? `${group.name} ${item.name}`
-                              : ""
-                          }
-                          keywords={isComponent ? ["component"] : undefined}
-                          onHighlight={() =>
-                            handlePageHighlight(isComponent, item)
-                          }
-                          onSelect={() => {
-                            runCommand(() => router.push(item.url))
-                          }}
-                        >
-                          {isComponent ? (
-                            <div className="border-muted-foreground aspect-square size-4 rounded-full border border-dashed" />
-                          ) : (
-                            <IconArrowRight />
-                          )}
-                          {item.name}
-                        </CommandMenuItem>
+                    return (
+                      <CommandMenuItem
+                        key={item.url}
+                        value={
+                          item.name?.toString()
+                            ? `${group.name} ${item.name}`
+                            : ""
+                        }
+                        keywords={isComponent ? ["component"] : undefined}
+                        onHighlight={() =>
+                          handlePageHighlight(isComponent, item)
+                        }
+                        onSelect={() => {
+                          runCommand(() => router.push(item.url))
+                        }}
+                      >
+                        {isComponent ? (
+                          <div className="border-muted-foreground aspect-square size-4 rounded-full border border-dashed" />
+                        ) : (
+                          <IconArrowRight />
+                        )}
+                        {item.name}
+                      </CommandMenuItem>
+                    )
+                  }
+                  return null
+                })}
+            </CommandGroup>
+          ))}
+          {blocks?.length ? (
+            <CommandGroup heading="Blocks">
+              {blocks.map((block) => (
+                <CommandMenuItem
+                  key={block.name}
+                  value={block.name}
+                  onHighlight={() => {
+                    handleBlockHighlight(block)
+                  }}
+                  keywords={[
+                    "block",
+                    block.name,
+                    block.description,
+                    ...block.categories,
+                  ]}
+                  onSelect={() => {
+                    runCommand(() =>
+                      router.push(
+                        `/blocks/${block.categories[0]}#${block.name}`
                       )
-                    }
-                    return null
-                  })}
-              </CommandGroup>
-            ))}
-            {blocks?.length ? (
-              <CommandGroup
-                heading="Blocks"
-                className="!p-0 [&_[cmdk-group-heading]]:!p-3"
-              >
-                {blocks.map((block) => (
-                  <CommandMenuItem
-                    key={block.name}
-                    value={block.name}
-                    onHighlight={() => {
-                      handleBlockHighlight(block)
-                    }}
-                    keywords={[
-                      "block",
-                      block.name,
-                      block.description,
-                      ...block.categories,
-                    ]}
-                    onSelect={() => {
-                      runCommand(() =>
-                        router.push(
-                          `/blocks/${block.categories[0]}#${block.name}`
-                        )
-                      )
-                    }}
-                  >
-                    <SquareDashedIcon />
-                    {block.description}
-                    <span className="text-muted-foreground ml-auto font-mono text-xs font-normal tabular-nums">
-                      {block.name}
-                    </span>
-                  </CommandMenuItem>
-                ))}
-              </CommandGroup>
-            ) : null}
-          </CommandList>
-        </Command>
-        <div className="text-muted-foreground absolute inset-x-0 bottom-0 z-20 flex h-10 items-center gap-2 rounded-b-xl border-t border-t-neutral-100 bg-neutral-50 px-4 text-xs font-medium dark:border-t-neutral-700 dark:bg-neutral-800">
-          <div className="flex items-center gap-2">
-            <CommandMenuKbd>
+                    )
+                  }}
+                >
+                  <SquareDashedIcon />
+                  {block.description}
+                  <span className="text-muted-foreground ml-auto font-mono text-xs font-normal tabular-nums">
+                    {block.name}
+                  </span>
+                </CommandMenuItem>
+              ))}
+            </CommandGroup>
+          ) : null}
+        </CommandList>
+        <CommandFooter>
+          <div className="flex min-w-0 shrink-0 items-center gap-2">
+            <Kbd>
               <CornerDownLeftIcon />
-            </CommandMenuKbd>{" "}
-            {selectedType === "page" || selectedType === "component"
-              ? "Go to Page"
-              : null}
+            </Kbd>{" "}
+            <span className="">
+              {selectedType === "page" || selectedType === "component"
+                ? "Go to Page"
+                : null}
+            </span>
           </div>
           {copyPayload && (
             <>
               <Separator orientation="vertical" className="!h-4" />
-              <div className="flex items-center gap-1">
-                <CommandMenuKbd>{isMac ? "⌘" : "Ctrl"}</CommandMenuKbd>
-                <CommandMenuKbd>C</CommandMenuKbd>
-                {copyPayload}
+              <div className="flex min-w-0 items-center gap-1">
+                <Kbd className="shrink-0">{isMac ? "⌘" : "Ctrl"} C</Kbd>
+                <span className="truncate">{copyPayload}</span>
               </div>
             </>
           )}
-        </div>
-      </DialogContent>
-    </Dialog>
+        </CommandFooter>
+      </CommandDialog>
+    </>
   )
 }
 
@@ -272,27 +251,8 @@ function CommandMenuItem({
   })
 
   return (
-    <CommandItem
-      ref={ref}
-      className={cn(
-        "data-[selected=true]:border-input data-[selected=true]:bg-input/50 h-9 rounded-md border border-transparent !px-3 font-medium",
-        className
-      )}
-      {...props}
-    >
+    <CommandItem ref={ref} className={cn(className)} {...props}>
       {children}
     </CommandItem>
-  )
-}
-
-function CommandMenuKbd({ className, ...props }: React.ComponentProps<"kbd">) {
-  return (
-    <kbd
-      className={cn(
-        "bg-background text-muted-foreground pointer-events-none flex h-5 items-center justify-center gap-1 rounded border px-1 font-sans text-[0.7rem] font-medium select-none [&_svg:not([class*='size-'])]:size-3",
-        className
-      )}
-      {...props}
-    />
   )
 }

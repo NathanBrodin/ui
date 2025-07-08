@@ -15,9 +15,14 @@ import { Color } from "./color"
 export default function ThemeVisualizer() {
   const primaryColors = [
     {
+      name: "Main Background",
+      cssVar: "--main-background",
+      description: "Default page background",
+    },
+    {
       name: "Background",
       cssVar: "--background",
-      description: "Default page background",
+      description: "Default background",
     },
     {
       name: "Foreground",
@@ -54,6 +59,16 @@ export default function ThemeVisualizer() {
       description: "Text on primary",
     },
     {
+      name: "Fixed Primary",
+      cssVar: "--primary-fixed",
+      description: "Primary brand color",
+    },
+    {
+      name: "Fixed Primary Foreground",
+      cssVar: "--primary-foreground-fixed",
+      description: "Text on primary fixed",
+    },
+    {
       name: "Secondary",
       cssVar: "--secondary",
       description: "Secondary elements",
@@ -87,6 +102,11 @@ export default function ThemeVisualizer() {
 
   const borderColors = [
     { name: "Border", cssVar: "--border", description: "Default borders" },
+    {
+      name: "Grid Border",
+      cssVar: "--grid",
+      description: "Grid borders",
+    },
     { name: "Input", cssVar: "--input", description: "Input borders" },
     { name: "Ring", cssVar: "--ring", description: "Focus rings" },
   ]

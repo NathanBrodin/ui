@@ -2,21 +2,20 @@ import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
-import { Announcement } from "@/components/announcement"
-import { CardsDemo } from "@/components/cards"
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header"
 import { PageNav } from "@/components/page-nav"
 import { ThemeSelector } from "@/components/theme-selector"
+import { Demo } from "@/registry/default/blocks/demo"
 import { Button } from "@/registry/default/ui/button"
+import {
+  Hero,
+  HeroActions,
+  HeroDescription,
+  HeroHeading,
+} from "@/registry/default/ui/hero"
 
 const title = "Nathan's Component Library"
 const description =
-  "My own set of components — styled, structured, and fully compatible with shadcn/ui. Built to move fast and stay consistent across all my projects."
+  "My own set of components. Built to move fast and stay consistent across all my projects. Fully compatible with shadcn/ui"
 
 export const dynamic = "force-static"
 export const revalidate = false
@@ -48,19 +47,18 @@ export const metadata: Metadata = {
 export default function IndexPage() {
   return (
     <div className="flex flex-1 flex-col">
-      <PageHeader>
-        <Announcement />
-        <PageHeaderHeading>{title}</PageHeaderHeading>
-        <PageHeaderDescription>{description}</PageHeaderDescription>
-        <PageActions>
-          <Button asChild size="sm">
+      <Hero>
+        <HeroHeading>{title}</HeroHeading>
+        <HeroDescription>{description}</HeroDescription>
+        <HeroActions>
+          <Button asChild>
             <Link href="/docs">Get Started</Link>
           </Button>
-          <Button asChild size="sm" variant="ghost">
+          <Button asChild variant="outline">
             <Link href="/blocks">Browse Blocks</Link>
           </Button>
-        </PageActions>
-      </PageHeader>
+        </HeroActions>
+      </Hero>
       <PageNav className="hidden md:flex">
         <ThemeSelector className="mr-4 hidden md:flex" />
       </PageNav>
@@ -68,24 +66,24 @@ export default function IndexPage() {
         <div className="container overflow-hidden">
           <section className="border-border/50 -mx-4 w-[160vw] overflow-hidden rounded-lg border md:hidden md:w-[150vw]">
             <Image
-              src="/r/styles/default/page-main-light.png"
+              src="/r/styles/default/demo-light.png"
               width={1400}
               height={875}
-              alt="Main Page"
+              alt="Demo of this library's components"
               className="block dark:hidden"
               priority
             />
             <Image
-              src="/r/styles/default/page-main-dark.png"
+              src="/r/styles/default/demo-dark.png"
               width={1400}
               height={875}
-              alt="Main Page"
+              alt="Demo of this library's components"
               className="hidden dark:block"
               priority
             />
           </section>
           <section className="theme-container hidden md:block">
-            <CardsDemo />
+            <Demo />
           </section>
         </div>
       </div>

@@ -90,6 +90,21 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "backgrounds",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/backgrounds.tsx",
+        type: "registry:ui",
+      },
+      {
+        path: "assets/backgrounds/noise.png",
+        type: "registry:file",
+        target: "~/public/backgrounds/noise.png",
+      },
+    ],
+  },
+  {
     name: "breadcrumb",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-slot"],
@@ -214,6 +229,17 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "diamond",
+    type: "registry:ui",
+    dependencies: ["@radix-ui/react-dialog"],
+    files: [
+      {
+        path: "ui/diamond.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "drawer",
     type: "registry:ui",
     dependencies: ["vaul", "@radix-ui/react-dialog"],
@@ -265,6 +291,17 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "hero",
+    type: "registry:ui",
+    registryDependencies: ["backgrounds, diamond, separator"],
+    files: [
+      {
+        path: "ui/hero.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "input",
     type: "registry:ui",
     files: [
@@ -281,6 +318,16 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/input-otp.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "kbd",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/kbd.tsx",
         type: "registry:ui",
       },
     ],

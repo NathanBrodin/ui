@@ -14,13 +14,12 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
   CommandShortcut,
 } from "@/registry/default/ui/command"
 
 export default function CommandDemo() {
   return (
-    <Command className="rounded-lg border shadow-md md:min-w-[450px]">
+    <Command className="md:min-w-[450px]">
       <CommandInput placeholder="Type a command or search..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
@@ -38,7 +37,6 @@ export default function CommandDemo() {
             <span>Calculator</span>
           </CommandItem>
         </CommandGroup>
-        <CommandSeparator />
         <CommandGroup heading="Settings">
           <CommandItem>
             <User />

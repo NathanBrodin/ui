@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "backgrounds-noise",
+  "type": "registry:example",
+  "registryDependencies": [
+    "backgrounds"
+  ],
+  "files": [
+    {
+      "path": "registry/default/examples/backgrounds-noise.tsx",
+      "content": "import { Noise } from \"@/registry/default/ui/backgrounds\"\n\nexport default function BackgroundsNoise() {\n  return (\n    <div className=\"bg-background relative h-48 w-full overflow-hidden rounded-lg border\">\n      <Noise />\n      <div className=\"relative z-10 flex h-full flex-col justify-center p-6\">\n        <div className=\"space-y-2\">\n          <h4 className=\"text-lg font-medium\">Content with Noise Background</h4>\n          <p className=\"text-muted-foreground text-sm\">\n            The noise background provides a subtle texture that enhances the\n            visual depth of your interface without overwhelming the content.\n          </p>\n          <div className=\"mt-4 flex gap-2\">\n            <div className=\"bg-primary h-2 w-12 rounded-full\"></div>\n            <div className=\"bg-primary/60 h-2 w-8 rounded-full\"></div>\n            <div className=\"bg-primary/30 h-2 w-6 rounded-full\"></div>\n          </div>\n        </div>\n      </div>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}
