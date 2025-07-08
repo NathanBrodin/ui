@@ -15,9 +15,14 @@ import { Color } from "./color"
 export default function ThemeVisualizer() {
   const primaryColors = [
     {
+      name: "Main Background",
+      cssVar: "--main-background",
+      description: "Default page background",
+    },
+    {
       name: "Background",
       cssVar: "--background",
-      description: "Default page background",
+      description: "Default background",
     },
     {
       name: "Foreground",

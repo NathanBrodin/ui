@@ -10,8 +10,8 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <Noise />
-      <div className="bg-nav-background/12 absolute top-0 left-0 z-[-1] h-full w-3 md:w-8 lg:w-12 dark:bg-[hsl(218,_13%,_5%,_0.2)]" />
-      <div className="bg-nav-background/12 absolute top-0 right-0 z-[-1] h-full w-3 md:w-8 lg:w-12 dark:bg-[hsl(218,_13%,_5%,_0.2)]" />
+      <div className="absolute top-0 left-0 z-[-1] h-full w-3 md:w-8 lg:w-12" />
+      <div className="absolute top-0 right-0 z-[-1] h-full w-3 md:w-8 lg:w-12" />
       <SiteFooter />
     </div>
   )

@@ -4,15 +4,15 @@ import Link from "next/link"
 
 import { Announcement } from "@/components/announcement"
 import { CardsDemo } from "@/components/cards"
-import {
-  PageActions,
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header"
 import { PageNav } from "@/components/page-nav"
 import { ThemeSelector } from "@/components/theme-selector"
 import { Button } from "@/registry/default/ui/button"
+import {
+  Hero,
+  HeroActions,
+  HeroDescription,
+  HeroHeading,
+} from "@/registry/default/ui/hero"
 
 const title = "Nathan's Component Library"
 const description =
@@ -48,19 +48,19 @@ export const metadata: Metadata = {
 export default function IndexPage() {
   return (
     <div className="flex flex-1 flex-col">
-      <PageHeader>
+      <Hero>
         <Announcement />
-        <PageHeaderHeading>{title}</PageHeaderHeading>
-        <PageHeaderDescription>{description}</PageHeaderDescription>
-        <PageActions>
-          <Button asChild size="sm">
+        <HeroHeading>{title}</HeroHeading>
+        <HeroDescription>{description}</HeroDescription>
+        <HeroActions>
+          <Button asChild>
             <Link href="/docs">Get Started</Link>
           </Button>
-          <Button asChild size="sm" variant="ghost">
+          <Button asChild variant="outline">
             <Link href="/blocks">Browse Blocks</Link>
           </Button>
-        </PageActions>
-      </PageHeader>
+        </HeroActions>
+      </Hero>
       <PageNav className="hidden md:flex">
         <ThemeSelector className="mr-4 hidden md:flex" />
       </PageNav>

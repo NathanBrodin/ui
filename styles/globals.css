@@ -16,6 +16,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-main-background: var(--main-background);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-nav-background: var(--nav-background);
@@ -63,7 +64,7 @@
 
 :root {
   --radius: 0.4rem;
-  /* --background: color-mix(in oklab, #e8e6d9 20%, transparent); */
+  --main-background: color-mix(in oklab, #e8e6d9 20%, transparent);
   --background: oklch(100% 0 0);
   --foreground: oklch(44.37% 0.024 260.13);
   --nav-background: oklch(97.47571565757396% 0.007 106.52144027618351);
@@ -110,6 +111,7 @@
 }
 
 .dark {
+  --main-background: oklch(18.29% 0.008 274.43);
   --background: oklch(18.29% 0.008 274.43);
   --foreground: oklch(79.75% 0.015 264.48);
   --nav-background: oklch(20.423564960316032% 0.009 264.3666987591157);
@@ -164,7 +166,7 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-main-background text-foreground;
   }
 
   [class*="heading-"],
@@ -209,7 +211,7 @@
 }
 
 @utility section-soft {
-  @apply from-background to-surface/40 dark:bg-background 3xl:fixed:bg-none bg-gradient-to-b;
+  @apply 3xl:fixed:bg-none;
 }
 
 @utility theme-container {
