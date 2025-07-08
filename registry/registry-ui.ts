@@ -291,6 +291,17 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "hero",
+    type: "registry:ui",
+    registryDependencies: ["backgrounds, diamond, separator"],
+    files: [
+      {
+        path: "ui/hero.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "input",
     type: "registry:ui",
     files: [

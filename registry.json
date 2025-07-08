@@ -370,6 +370,19 @@
       ]
     },
     {
+      "name": "hero",
+      "type": "registry:ui",
+      "registryDependencies": [
+        "backgrounds, diamond, separator"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/hero.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "input",
       "type": "registry:ui",
       "files": [
@@ -1242,6 +1255,19 @@
       "files": [
         {
           "path": "registry/default/examples/backgrounds-noise.tsx",
+          "type": "registry:example"
+        }
+      ]
+    },
+    {
+      "name": "hero-demo",
+      "type": "registry:example",
+      "registryDependencies": [
+        "hero"
+      ],
+      "files": [
+        {
+          "path": "registry/default/examples/hero-demo.tsx",
           "type": "registry:example"
         }
       ]

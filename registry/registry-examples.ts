@@ -156,6 +156,17 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "hero-demo",
+    type: "registry:example",
+    registryDependencies: ["hero"],
+    files: [
+      {
+        path: "examples/hero-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "breadcrumb-demo",
     type: "registry:example",
     registryDependencies: ["breadcrumb"],

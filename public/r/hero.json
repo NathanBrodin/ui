@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero",
+  "type": "registry:ui",
+  "registryDependencies": [
+    "backgrounds, diamond, separator"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/hero.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\nimport { Tiles } from \"@/registry/default/ui/backgrounds\"\nimport { Diamond } from \"@/registry/default/ui/diamond\"\nimport { Divider } from \"@/registry/default/ui/separator\"\n\nfunction Hero({\n  className,\n  children,\n  ...props\n}: React.ComponentProps<\"section\">) {\n  return (\n    <>\n      <section className={cn(\"border-grid\", className)} {...props}>\n        <div className=\"container-wrapper from-primary/2 relative bg-linear-to-t\">\n          <div className=\"container flex flex-col items-center gap-2 py-8 text-center md:py-16 lg:py-30 xl:gap-4\">\n            {children}\n          </div>\n          <Diamond left bottom />\n          <Diamond right bottom />\n          <Tiles />\n        </div>\n      </section>\n      <Divider />\n    </>\n  )\n}\n\nfunction HeroHeading({ className, ...props }: React.ComponentProps<\"h1\">) {\n  return <h1 className={cn(\"max-w-2xl text-center\", className)} {...props} />\n}\n\nfunction HeroDescription({ className, ...props }: React.ComponentProps<\"p\">) {\n  return (\n    <p\n      className={cn(\n        \"text-foreground max-w-xl text-base tracking-tight text-pretty\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nfunction HeroActions({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      className={cn(\n        \"flex w-full items-center justify-center gap-2 pt-2\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\nexport { HeroActions, Hero, HeroDescription, HeroHeading }\n",
+      "type": "registry:ui"
+    }
+  ]
+}
