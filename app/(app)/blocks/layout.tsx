@@ -1,6 +1,5 @@
 import { Metadata } from "next"
 
-import { Announcement } from "@/components/announcement"
 import { BlocksNav } from "@/components/blocks-nav"
 import { PageNav } from "@/components/page-nav"
 import { Button } from "@/registry/default/ui/button"
@@ -47,7 +46,6 @@ export default function BlocksLayout({
   return (
     <>
       <Hero>
-        <Announcement />
         <HeroHeading>{title}</HeroHeading>
         <HeroDescription>{description}</HeroDescription>
         <HeroActions>

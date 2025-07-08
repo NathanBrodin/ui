@@ -2,7 +2,6 @@ import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
-import { Announcement } from "@/components/announcement"
 import { PageNav } from "@/components/page-nav"
 import { ThemeSelector } from "@/components/theme-selector"
 import { Demo } from "@/registry/default/blocks/demo"
@@ -49,7 +48,6 @@ export default function IndexPage() {
   return (
     <div className="flex flex-1 flex-col">
       <Hero>
-        <Announcement />
         <HeroHeading>{title}</HeroHeading>
         <HeroDescription>{description}</HeroDescription>
         <HeroActions>
