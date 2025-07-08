@@ -3,9 +3,9 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Announcement } from "@/components/announcement"
-import { CardsDemo } from "@/components/cards"
 import { PageNav } from "@/components/page-nav"
 import { ThemeSelector } from "@/components/theme-selector"
+import { Demo } from "@/registry/default/blocks/demo"
 import { Button } from "@/registry/default/ui/button"
 import {
   Hero,
@@ -68,24 +68,24 @@ export default function IndexPage() {
         <div className="container overflow-hidden">
           <section className="border-border/50 -mx-4 w-[160vw] overflow-hidden rounded-lg border md:hidden md:w-[150vw]">
             <Image
-              src="/r/styles/default/page-main-light.png"
+              src="/r/styles/default/demo-light.png"
               width={1400}
               height={875}
-              alt="Main Page"
+              alt="Demo of this library's components"
               className="block dark:hidden"
               priority
             />
             <Image
-              src="/r/styles/default/page-main-dark.png"
+              src="/r/styles/default/demo-dark.png"
               width={1400}
               height={875}
-              alt="Main Page"
+              alt="Demo of this library's components"
               className="hidden dark:block"
               priority
             />
           </section>
           <section className="theme-container hidden md:block">
-            <CardsDemo />
+            <Demo />
           </section>
         </div>
       </div>

@@ -1258,6 +1258,113 @@ export const Index: Record<string, any> = {
     categories: ["authentication", "login"],
     meta: undefined,
   },
+  demo: {
+    name: "demo",
+    description: "A demo of this library",
+    type: "registry:block",
+    registryDependencies: [
+      "button",
+      "card",
+      "chart",
+      "calendar",
+      "input",
+      "label",
+      "checkbox",
+      "radio-group",
+      "textarea",
+      "avatar",
+      "command",
+      "dialog",
+      "tooltip",
+      "dropdown-menu",
+      "table",
+      "popover",
+      "select",
+    ],
+    files: [
+      {
+        path: "registry/default/blocks/demo/index.tsx",
+        type: "registry:block",
+        target: "components/demo/index.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/activity-goal.tsx",
+        type: "registry:component",
+        target: "components/demo/activity-goal.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/calendar.tsx",
+        type: "registry:component",
+        target: "components/demo/calendar.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/chat.tsx",
+        type: "registry:component",
+        target: "components/demo/chat.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/cookie-settings.tsx",
+        type: "registry:component",
+        target: "components/demo/cookie-settings.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/create-account.tsx",
+        type: "registry:component",
+        target: "components/demo/create-account.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/exercise-minutes.tsx",
+        type: "registry:component",
+        target: "components/demo/exercise-minutes.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/forms.tsx",
+        type: "registry:component",
+        target: "components/demo/forms.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/payment-method.tsx",
+        type: "registry:component",
+        target: "components/demo/payment-method.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/payments.tsx",
+        type: "registry:component",
+        target: "components/demo/payments.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/report-issue.tsx",
+        type: "registry:component",
+        target: "components/demo/report-issue.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/share.tsx",
+        type: "registry:component",
+        target: "components/demo/share.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/stats.tsx",
+        type: "registry:component",
+        target: "components/demo/stats.tsx",
+      },
+      {
+        path: "registry/default/blocks/demo/team-members.tsx",
+        type: "registry:component",
+        target: "components/demo/team-members.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/blocks/demo/index.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: ["page-layout"],
+    meta: undefined,
+  },
   "page-main": {
     name: "page-main",
     description: "Temporary",

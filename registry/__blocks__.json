@@ -8,6 +8,13 @@
     ]
   },
   {
+    "name": "demo",
+    "description": "A demo of this library",
+    "categories": [
+      "page-layout"
+    ]
+  },
+  {
     "name": "page-main",
     "description": "Temporary",
     "categories": [
