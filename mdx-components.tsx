@@ -319,7 +319,7 @@ export const mdxComponents = {
   }: React.ComponentProps<typeof TabsTrigger>) => (
     <TabsTrigger
       className={cn(
-        "text-muted-foreground data-[state=active]:text-foreground px-0 text-base data-[state=active]:shadow-none dark:data-[state=active]:border-transparent dark:data-[state=active]:bg-transparent",
+        "text-muted-foreground data-[state=active]:text-primary px-0 text-base data-[state=active]:bg-transparent data-[state=active]:shadow-none dark:data-[state=active]:border-transparent",
         className
       )}
       {...props}

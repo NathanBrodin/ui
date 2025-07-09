@@ -1,17 +1,40 @@
-import { GithubIcon, StarIcon } from "lucide-react"
+import {
+  DownloadIcon,
+  EyeIcon,
+  LinkIcon,
+  PlayIcon,
+  SettingsIcon,
+  TrashIcon,
+} from "lucide-react"
 
 import { Button } from "@/registry/default/ui/button"
 
 export default function ButtonDemo() {
   return (
-    <div className="flex flex-wrap items-center gap-2 md:flex-row">
+    <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
       <Button>
-        <StarIcon />
-        Get started
+        <PlayIcon />
+        Get Started
+      </Button>
+      <Button variant="destructive">
+        <TrashIcon />
+        Delete
       </Button>
       <Button variant="outline">
-        <GithubIcon />
-        View Source
+        <DownloadIcon />
+        Download
+      </Button>
+      <Button variant="secondary">
+        <SettingsIcon />
+        Settings
+      </Button>
+      <Button variant="ghost">
+        <EyeIcon />
+        Preview
+      </Button>
+      <Button variant="link">
+        <LinkIcon />
+        Learn More
       </Button>
     </div>
   )
