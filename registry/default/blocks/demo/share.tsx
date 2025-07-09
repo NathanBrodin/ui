@@ -28,22 +28,18 @@ const people = [
   {
     name: "Olivia Martin",
     email: "m@example.com",
-    avatar: "/avatars/03.png",
   },
   {
     name: "Isabella Nguyen",
     email: "b@example.com",
-    avatar: "/avatars/04.png",
   },
   {
     name: "Sofia Davis",
     email: "p@example.com",
-    avatar: "/avatars/05.png",
   },
   {
     name: "Ethan Thompson",
     email: "e@example.com",
-    avatar: "/avatars/01.png",
   },
 ]
 export function CardsShare() {
@@ -81,7 +77,7 @@ export function CardsShare() {
               >
                 <div className="flex items-center gap-4">
                   <Avatar>
-                    <AvatarImage src={person.avatar} alt="Image" />
+                    <AvatarImage src="" alt="Image" />
                     <AvatarFallback>{person.name.charAt(0)}</AvatarFallback>
                   </Avatar>
                   <div>

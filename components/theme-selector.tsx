@@ -63,7 +63,7 @@ export function ThemeSelector({ className }: React.ComponentProps<"div">) {
         <DropdownMenuTrigger asChild>
           <Button variant="secondary" id="theme-selector" size="sm">
             <span className="font-medium">Theme:</span>
-            <span>
+            <span className="font-light">
               {activeTheme.base === "default" && activeTheme.color === "default"
                 ? "Default"
                 : `${getThemeDisplayName(activeTheme.base, BASE_THEMES)} - ${getThemeDisplayName(activeTheme.color, COLOR_THEMES)}`}

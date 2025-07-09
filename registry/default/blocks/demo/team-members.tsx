@@ -33,19 +33,16 @@ const teamMembers = [
   {
     name: "Sofia Davis",
     email: "m@example.com",
-    avatar: "/avatars/01.png",
     role: "Owner",
   },
   {
     name: "Jackson Lee",
     email: "p@example.com",
-    avatar: "/avatars/02.png",
     role: "Developer",
   },
   {
     name: "Isabella Nguyen",
     email: "i@example.com",
-    avatar: "/avatars/03.png",
     role: "Billing",
   },
 ]
@@ -86,7 +83,7 @@ export function CardsTeamMembers() {
           >
             <div className="flex items-center gap-4">
               <Avatar className="border">
-                <AvatarImage src={member.avatar} alt="Image" />
+                <AvatarImage src="" alt="Image" />
                 <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
               </Avatar>
               <div className="flex flex-col gap-0.5">
