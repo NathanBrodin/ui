@@ -25,7 +25,7 @@ function Noise({
   return (
     <div
       style={{
-        backgroundImage: "url(backgrounds/noise.png)",
+        backgroundImage: "url(./backgrounds/noise.png)",
       }}
       className={cn(noiseVariants({ variant, className }))}
       {...props}

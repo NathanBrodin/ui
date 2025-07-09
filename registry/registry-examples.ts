@@ -1638,7 +1638,7 @@ export const examples: Registry["items"] = [
     meta: {
       iframeHeight: "600px",
       container:
-        "w-full bg-surface min-h-svh flex px-4 py-12 items-start md:py-20 justify-center min-w-0",
+        "w-full bg-card min-h-svh flex px-4 py-12 items-start md:py-20 justify-center min-w-0",
       mobile: "component",
     },
   },

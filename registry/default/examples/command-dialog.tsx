@@ -42,7 +42,7 @@ export default function CommandDialogDemo() {
     <>
       <Button
         variant="secondary"
-        className="bg-surface text-surface-foreground/60 dark:bg-card relative h-8 justify-start font-normal shadow-none"
+        className="bg-card text-card-foreground/60 dark:bg-card relative h-8 justify-start font-normal shadow-none"
         onClick={() => setOpen(true)}
       >
         Press
