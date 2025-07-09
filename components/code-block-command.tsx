@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { CheckIcon, ClipboardIcon, TerminalIcon } from "lucide-react"
+import { CheckIcon, CopyIcon, TerminalIcon } from "lucide-react"
 
 import { useConfig } from "@/hooks/use-config"
 import { copyToClipboard } from "@/components/copy-button"
@@ -117,7 +117,7 @@ export function CodeBlockCommand({
             onClick={copyCommand}
           >
             <span className="sr-only">Copy</span>
-            {hasCopied ? <CheckIcon /> : <ClipboardIcon />}
+            {hasCopied ? <CheckIcon /> : <CopyIcon />}
           </Button>
         </TooltipTrigger>
         <TooltipContent>

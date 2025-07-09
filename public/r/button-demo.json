@@ -8,7 +8,7 @@
   "files": [
     {
       "path": "registry/default/examples/button-demo.tsx",
-      "content": "import { GithubIcon, StarIcon } from \"lucide-react\"\n\nimport { Button } from \"@/registry/default/ui/button\"\n\nexport default function ButtonDemo() {\n  return (\n    <div className=\"flex flex-wrap items-center gap-2 md:flex-row\">\n      <Button>\n        <StarIcon />\n        Get started\n      </Button>\n      <Button variant=\"outline\">\n        <GithubIcon />\n        View Source\n      </Button>\n    </div>\n  )\n}\n",
+      "content": "import {\n  DownloadIcon,\n  EyeIcon,\n  LinkIcon,\n  PlayIcon,\n  SettingsIcon,\n  TrashIcon,\n} from \"lucide-react\"\n\nimport { Button } from \"@/registry/default/ui/button\"\n\nexport default function ButtonDemo() {\n  return (\n    <div className=\"grid grid-cols-2 gap-4 md:grid-cols-3\">\n      <Button>\n        <PlayIcon />\n        Get Started\n      </Button>\n      <Button variant=\"destructive\">\n        <TrashIcon />\n        Delete\n      </Button>\n      <Button variant=\"outline\">\n        <DownloadIcon />\n        Download\n      </Button>\n      <Button variant=\"secondary\">\n        <SettingsIcon />\n        Settings\n      </Button>\n      <Button variant=\"ghost\">\n        <EyeIcon />\n        Preview\n      </Button>\n      <Button variant=\"link\">\n        <LinkIcon />\n        Learn More\n      </Button>\n    </div>\n  )\n}\n",
       "type": "registry:example"
     }
   ]

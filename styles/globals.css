@@ -58,6 +58,9 @@
   --color-code-number: var(--code-number);
   --color-selection: var(--selection);
   --color-selection-foreground: var(--selection-foreground);
+
+  --shadow-default: var(--shadow);
+  --shadow-alt: var(--shadow-alt);
 }
 
 :root {
@@ -104,6 +107,9 @@
   --code-number: oklch(0.56 0 0);
   --selection: oklch(0.145 0 0);
   --selection-foreground: oklch(1 0 0);
+
+  --shadow: 6px 6px 0 #074dcf0f, -6px -6px 0 #074dcf0f;
+  --shadow-alt: 6px 6px 0 #074dcf0f;
 }
 
 .dark {
@@ -149,6 +155,9 @@
   --code-number: oklch(0.72 0 0);
   --selection: oklch(0.922 0 0);
   --selection-foreground: oklch(0.205 0 0);
+
+  --shadow: 5px 5px 0 #3d7df51a, -5px -5px 0 #3a7df826;
+  --shadow-alt: 5px 5px 0 #3d7df514;
 }
 
 @layer base {
@@ -273,7 +282,8 @@
     color: var(--color-code-foreground);
     border-radius: var(--radius-lg);
     border-width: 1px;
-    border-color: var(--border);
+    border-color: var(--grid);
+    box-shadow: var(--shadow-alt);
     margin-top: calc(var(--spacing) * 6);
     overflow: hidden;
     font-size: var(--text-sm);

@@ -61,16 +61,12 @@ export function ThemeSelector({ className }: React.ComponentProps<"div">) {
     <div className={cn("flex items-center", className)}>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button
-            variant="outline"
-            id="theme-selector"
-            size="sm"
-            className="bg-secondary text-secondary-foreground border-secondary justify-start shadow-none *:data-[slot=select-value]:w-12"
-          >
+          <Button variant="secondary" id="theme-selector" size="sm">
             <span className="font-medium">Theme:</span>
             <span>
-              {getThemeDisplayName(activeTheme.base, BASE_THEMES)} -{" "}
-              {getThemeDisplayName(activeTheme.color, COLOR_THEMES)}
+              {activeTheme.base === "default" && activeTheme.color === "default"
+                ? "Default"
+                : `${getThemeDisplayName(activeTheme.base, BASE_THEMES)} - ${getThemeDisplayName(activeTheme.color, COLOR_THEMES)}`}
             </span>
             <ChevronDownIcon className="size-3" />
           </Button>
