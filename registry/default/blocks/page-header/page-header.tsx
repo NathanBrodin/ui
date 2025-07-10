@@ -24,7 +24,7 @@ export function PageHeader() {
       <MainNav items={siteConfig.navItems} className="hidden lg:flex" />
       <Toolbar>
         <div className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
-          <CommandMenu tree={pageTree} />
+          <CommandMenu tree={pageTree} navItems={siteConfig.navItems} />
         </div>
         <Separator orientation="vertical" className="ml-2 hidden lg:block" />
         <GitHubLink />

@@ -31,10 +31,12 @@ import { Separator } from "@/registry/default/ui/separator"
 
 export function CommandMenu({
   tree,
+  navItems,
   blocks,
   ...props
 }: DialogProps & {
   tree: typeof source.pageTree
+  navItems?: { href: string; label: string }[]
   blocks?: { name: string; description: string; categories: string[] }[]
 }) {
   const router = useRouter()
@@ -131,6 +133,27 @@ export function CommandMenu({
         <CommandInput placeholder="Search documentation..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
+          {navItems ? (
+            <CommandGroup heading="Pages">
+              {navItems.map((item) => (
+                <CommandMenuItem
+                  key={item.href}
+                  value={`Navigation ${item.label}`}
+                  keywords={["nav", "navigation", item.label.toLowerCase()]}
+                  onHighlight={() => {
+                    setSelectedType("page")
+                    setCopyPayload("")
+                  }}
+                  onSelect={() => {
+                    runCommand(() => router.push(item.href))
+                  }}
+                >
+                  <IconArrowRight />
+                  {item.label}
+                </CommandMenuItem>
+              ))}
+            </CommandGroup>
+          ) : null}
           {tree.children.map((group) => (
             <CommandGroup key={group.$id} heading={group.name}>
               {group.type === "folder" &&
