@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Tiles } from "@/registry/default/ui/backgrounds"
-import { Diamond } from "@/registry/default/ui/diamond"
-import { Divider } from "@/registry/default/ui/separator"
+import { SectionDivider } from "@/registry/default/ui/separator"
 
 function Hero({
   className,
@@ -15,12 +14,10 @@ function Hero({
           <div className="container flex flex-col items-center gap-2 py-8 text-center md:py-16 lg:py-30 xl:gap-4">
             {children}
           </div>
-          <Diamond left bottom />
-          <Diamond right bottom />
           <Tiles />
         </div>
       </section>
-      <Divider />
+      <SectionDivider />
     </>
   )
 }
