@@ -9,7 +9,7 @@ export const baseColors = [
   },
   {
     name: "blue",
-    label: "Blue",
+    label: "Zed",
     activeColor: {
       light: "oklch(0.59 0.2 355.89)",
       dark: "oklch(0.59 0.2 355.89)",

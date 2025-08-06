@@ -1,80 +1,46 @@
 .theme-blue {
-  --primary: var(--color-blue-600);
-  --primary-foreground: var(--color-blue-50);
-  --primary-fixed: var(--color-blue-600);
-  --primary-foreground-fixed: var(--color-blue-50);
-  --secondary: var(--color-blue-100);
-  --secondary-foreground: var(--color-blue-800);
-  --muted: var(--color-blue-100);
-  --muted-foreground: var(--color-blue-500);
-  --accent: var(--color-blue-100);
-  --accent-foreground: var(--color-blue-800);
-  --destructive: var(--color-red-600);
-  --border: var(--color-blue-200);
-  --input: var(--color-blue-200);
-  --ring: var(--color-blue-400);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --sidebar-accent: var(--color-blue-100);
-  --sidebar-accent-foreground: var(--color-blue-800);
-  --sidebar-border: var(--color-blue-200);
-  --sidebar-ring: var(--color-blue-400);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --shadow-button-primary-inset: color-mix(
-      in oklab,
-      var(--color-blue-800) 80%,
-      black
-    )
-    0 -2px 0 0 inset;
-  --shadow-button-primary-outer: color-mix(
-      in oklab,
-      var(--color-blue-200) 60%,
-      white
-    )
-    0 1px 3px 0;
+  /* --primary-foreground: var(--color-blue-50); */
+  /* --primary-foreground-fixed: var(--color-blue-50); */
+  /* --secondary: var(--color-blue-100); */
+  /* --secondary-foreground: var(--color-blue-800); */
+  /* --muted: var(--color-blue-100); */
+  /* --muted-foreground: var(--color-blue-500); */
+  /* --accent: var(--color-blue-100); */
+  /* --accent-foreground: var(--color-blue-800); */
+  /* --destructive: var(--color-red-600); */
+  /* --border: var(--color-blue-200); */
+  /* --input: var(--color-blue-200); */
+  /* --ring: var(--color-blue-400); */
+
+  --primary: #0751cf;
+  --primary-fixed: #0751cf;
+  --secondary: var(--color-blue-50);
+  --secondary-foreground: var(--color-blue-700);
+  --grid: color-mix(in oklab, var(--color-blue-200) 50%, transparent);
+  --shadow-button-primary-inset: hsl(219, 93%, 30%) 0 -2px 0 0 inset;
+  --shadow-button-primary-outer: hsl(219, 93%, 95%) 0 1px 3px 0;
   --shadow-button-primary:
     var(--shadow-button-primary-inset), var(--shadow-button-primary-outer);
 
   @variant dark {
-    --primary: var(--color-blue-500);
-    --primary-foreground: var(--color-blue-50);
-    --primary-fixed: var(--color-blue-600);
-    --primary-foreground-fixed: var(--color-blue-50);
-    --secondary: var(--color-blue-800);
+    --main-background: hsl(218, 13%, 7.5%);
+    --nav-background: #15171bf2;
+    --background: hsl(218, 13%, 7.5%);
+    --primary: var(--color-blue-300);
+    --primary-foreground-fixed: var(--color-white);
+    --secondary: color-mix(in oklab, var(--color-blue-500) 10%, transparent);
     --secondary-foreground: var(--color-blue-50);
-    --muted: var(--color-blue-800);
-    --muted-foreground: var(--color-blue-400);
-    --accent: var(--color-blue-800);
-    --accent-foreground: var(--color-blue-50);
-    --destructive: var(--color-red-500);
-    --border: color-mix(in oklab, var(--color-blue-50) 10%, transparent);
-    --input: color-mix(in oklab, var(--color-blue-50) 15%, transparent);
-    --ring: var(--color-blue-500);
-    --sidebar-primary: var(--color-blue-500);
-    --sidebar-primary-foreground: var(--color-blue-50);
-    --sidebar-accent: var(--color-blue-800);
-    --sidebar-accent-foreground: var(--color-blue-50);
-    --sidebar-border: color-mix(
-      in oklab,
-      var(--color-blue-50) 10%,
-      transparent
-    );
-    --sidebar-ring: var(--color-blue-500);
-    --shadow-button-primary-inset: color-mix(
-        in oklab,
-        var(--color-blue-700) 80%,
-        black
-      )
-      0 -2px 0 0 inset;
-    --shadow-button-primary-outer: color-mix(in oklab, black 40%, transparent) 0
-      1px 3px 0;
+    --card: hsl(218, 13%, 6%, 0.95);
+
+    --shadow-button-primary-inset: hsl(219, 93%, 30%) 0 -2px 0 0 inset;
+    --shadow-button-primary-outer: hsl(0, 0%, 0%, 0.4) 0 1px 3px 0;
     --shadow-button-primary:
       var(--shadow-button-primary-inset), var(--shadow-button-primary-outer);
   }
+}
+
+.theme-green {
+  --primary: #075236;
 }
 
 .theme-amber {
