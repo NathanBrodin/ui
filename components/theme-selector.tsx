@@ -1,14 +1,15 @@
 "use client"
 
-import { ChevronDownIcon } from "lucide-react"
+import * as React from "react"
+import { useTheme } from "next-themes"
 
-import { cn } from "@/lib/utils"
+import { baseColors } from "@/lib/colors"
+import { useMetaColor } from "@/hooks/use-meta-color"
 import { useThemeConfig } from "@/components/active-theme"
 import { Button } from "@/registry/default/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
@@ -16,93 +17,42 @@ import {
   DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
 
-const BASE_THEMES = [
-  {
-    name: "Default",
-    value: "default",
-  },
-  {
-    name: "Scaled",
-    value: "scaled",
-  },
-  {
-    name: "Mono",
-    value: "mono",
-  },
-]
+export function ThemeSelector() {
+  const { activeTheme, setActiveTheme } = useThemeConfig()
+  const { setTheme, resolvedTheme: theme } = useTheme()
+  const { setMetaColor, metaColor } = useMetaColor()
 
-const COLOR_THEMES = [
-  {
-    name: "Default",
-    value: "default",
-  },
-  {
-    name: "Blue",
-    value: "blue",
-  },
-  {
-    name: "Amber",
-    value: "amber",
-  },
-  {
-    name: "Rose",
-    value: "rose",
-  },
-]
-
-export function ThemeSelector({ className }: React.ComponentProps<"div">) {
-  const { activeTheme, setBaseTheme, setColorTheme } = useThemeConfig()
-
-  const getThemeDisplayName = (value: string, themes: typeof BASE_THEMES) => {
-    return themes.find((theme) => theme.value === value)?.name || value
-  }
+  React.useEffect(() => {
+    setMetaColor(metaColor)
+  }, [metaColor, setMetaColor])
 
   return (
-    <div className={cn("flex items-center", className)}>
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="secondary" id="theme-selector" size="sm">
-            <span className="font-medium">Theme:</span>
-            <span className="font-light">
-              {activeTheme.base === "default" && activeTheme.color === "default"
-                ? "Default"
-                : `${getThemeDisplayName(activeTheme.base, BASE_THEMES)} - ${getThemeDisplayName(activeTheme.color, COLOR_THEMES)}`}
-            </span>
-            <ChevronDownIcon className="size-3" />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="start" className="w-48">
-          <DropdownMenuGroup>
-            <DropdownMenuLabel>Base Theme</DropdownMenuLabel>
-            <DropdownMenuRadioGroup
-              value={activeTheme.base}
-              onValueChange={setBaseTheme}
-            >
-              {BASE_THEMES.map((theme) => (
-                <DropdownMenuRadioItem key={theme.value} value={theme.value}>
-                  {theme.name}
-                </DropdownMenuRadioItem>
-              ))}
-            </DropdownMenuRadioGroup>
-          </DropdownMenuGroup>
-
-          <DropdownMenuSeparator />
-
-          <DropdownMenuGroup>
-            <DropdownMenuLabel>Color Theme</DropdownMenuLabel>
-            <DropdownMenuRadioGroup
-              value={activeTheme.color}
-              onValueChange={setColorTheme}
-            >
-              {COLOR_THEMES.map((theme) => (
-                <DropdownMenuRadioItem key={theme.value} value={theme.value}>
-                  {theme.name}
-                </DropdownMenuRadioItem>
-              ))}
-            </DropdownMenuRadioGroup>
-          </DropdownMenuGroup>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="outline">Change theme</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56">
+        <DropdownMenuLabel>Theme</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuRadioGroup
+          value={activeTheme}
+          onValueChange={setActiveTheme}
+        >
+          {baseColors.map((color) => (
+            <DropdownMenuRadioItem key={color.name} value={color.name}>
+              {color.label}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuLabel>Mode</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
+          <DropdownMenuRadioItem value="light">Light</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="dark">Dark</DropdownMenuRadioItem>
+        </DropdownMenuRadioGroup>
+        <DropdownMenuSeparator />
+      </DropdownMenuContent>
+    </DropdownMenu>
   )
 }

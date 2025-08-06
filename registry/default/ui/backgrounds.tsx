@@ -38,7 +38,7 @@ function Tiles({ className }: { className?: string }) {
     <svg
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-0 [z-index:-1] size-full [mask-image:linear-gradient(to_top,_#ffffffad,_transparent)] fill-blue-500/50 stroke-blue-500/50 opacity-[.30]",
+        "fill-primary/30 stroke-primary/30 pointer-events-none absolute inset-0 [z-index:-1] size-full [mask-image:linear-gradient(to_top,_#ffffffad,_transparent)] opacity-[.30]",
         className
       )}
       style={{

@@ -8,101 +8,74 @@ import {
   useState,
 } from "react"
 
-const DEFAULT_BASE_THEME = "default"
-const DEFAULT_COLOR_THEME = "default"
+const COOKIE_NAME = "active_theme"
+const DEFAULT_THEME = "default"
 
-type ThemeConfig = {
-  base: string
-  color: string
+function setThemeCookie(theme: string) {
+  if (typeof window === "undefined") return
+
+  document.cookie = `${COOKIE_NAME}=${theme}; path=/; max-age=31536000; SameSite=Lax; ${
+    window.location.protocol === "https:" ? "Secure;" : ""
+  }`
 }
 
 type ThemeContextType = {
-  activeTheme: ThemeConfig
-  setActiveTheme: (theme: ThemeConfig) => void
-  setBaseTheme: (base: string) => void
-  setColorTheme: (color: string) => void
+  activeTheme: string
+  setActiveTheme: (theme: string) => void
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
-export function ActiveThemeProvider({
-  children,
-  initialTheme,
-}: {
-  children: ReactNode
-  initialTheme?: ThemeConfig
-}) {
-  const [activeTheme, setActiveTheme] = useState<ThemeConfig>(() => {
-    if (initialTheme) return initialTheme
-
-    // Try to load from localStorage
-    if (typeof window !== "undefined") {
-      try {
-        const stored = localStorage.getItem("theme-config")
-        if (stored) {
-          const parsed = JSON.parse(stored)
-          if (parsed.base && parsed.color) {
-            return parsed
-          }
-        }
-      } catch (error) {
-        console.warn("Failed to parse stored theme config:", error)
-      }
-    }
-
-    return { base: DEFAULT_BASE_THEME, color: DEFAULT_COLOR_THEME }
-  })
-
-  const setBaseTheme = (base: string) => {
-    setActiveTheme((prev) => {
-      const newTheme = { ...prev, base }
-      if (typeof window !== "undefined") {
-        localStorage.setItem("theme-config", JSON.stringify(newTheme))
-      }
-      return newTheme
-    })
-  }
-
-  const setColorTheme = (color: string) => {
-    setActiveTheme((prev) => {
-      const newTheme = { ...prev, color }
-      if (typeof window !== "undefined") {
-        localStorage.setItem("theme-config", JSON.stringify(newTheme))
-      }
-      return newTheme
-    })
-  }
+export function ActiveThemeProvider({ children }: { children: ReactNode }) {
+  const [activeTheme, setActiveTheme] = useState<string>(DEFAULT_THEME)
 
   useEffect(() => {
-    // Remove all existing theme classes
+    const cookie = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith(`${COOKIE_NAME}=`))
+    if (cookie) {
+      const cookieTheme = cookie.split("=")[1]
+      if (cookieTheme && cookieTheme !== activeTheme) {
+        setActiveTheme(cookieTheme)
+      }
+    }
+    // eslint-disable-next-line
+  }, [])
+
+  useEffect(() => {
+    setThemeCookie(activeTheme)
+
     Array.from(document.body.classList)
       .filter((className) => className.startsWith("theme-"))
       .forEach((className) => {
         document.body.classList.remove(className)
       })
 
-    // Apply base theme
-    if (activeTheme.base !== "default") {
-      document.body.classList.add(`theme-${activeTheme.base}`)
-    }
-
-    // Apply color theme
-    if (activeTheme.color !== "default") {
-      document.body.classList.add(`theme-${activeTheme.color}`)
-    }
-  }, [activeTheme])
-
-  // Save to localStorage whenever activeTheme changes
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("theme-config", JSON.stringify(activeTheme))
+    document.body.classList.add(`theme-${activeTheme}`)
+    if (activeTheme.endsWith("-scaled")) {
+      document.body.classList.add("theme-scaled")
     }
   }, [activeTheme])
 
   return (
-    <ThemeContext.Provider
-      value={{ activeTheme, setActiveTheme, setBaseTheme, setColorTheme }}
-    >
+    <ThemeContext.Provider value={{ activeTheme, setActiveTheme }}>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+          (function() {
+            try {
+              const themeCookie = document.cookie
+                .split('; ')
+                .find(row => row.startsWith('active_theme='));
+              if (themeCookie) {
+                const theme = themeCookie.split('=')[1];
+                document.body.classList.add('theme-' + theme);
+              }
+            } catch (e) {}
+          })();
+        `,
+        }}
+      />
       {children}
     </ThemeContext.Provider>
   )

@@ -1,12 +1,4 @@
-.theme-default .theme-container {
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-}
-
-.theme-blue .theme-container {
+.theme-blue {
   --primary: var(--color-blue-600);
   --primary-foreground: var(--color-blue-50);
   --primary-fixed: var(--color-blue-600);
@@ -85,7 +77,7 @@
   }
 }
 
-.theme-amber .theme-container {
+.theme-amber {
   --primary: var(--color-amber-600);
   --primary-foreground: var(--color-amber-50);
   --primary-fixed: var(--color-amber-600);
@@ -164,7 +156,7 @@
   }
 }
 
-.theme-rose .theme-container {
+.theme-rose {
   --primary: var(--color-rose-600);
   --primary-foreground: var(--color-rose-50);
   --primary-fixed: var(--color-rose-600);
@@ -243,7 +235,7 @@
   }
 }
 
-.theme-mono .theme-container {
+.theme-mono {
   --font-sans: var(--font-mono);
 
   @media (min-width: 1024px) {
@@ -285,7 +277,7 @@
   }
 }
 
-.theme-scaled .theme-container {
+.theme-scaled {
   @media (min-width: 1024px) {
     --radius: 0.45em;
     --text-lg: 1rem;
