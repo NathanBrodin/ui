@@ -7,6 +7,8 @@
     "build": "next build",
     "registry:build": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.ts && prettier --loglevel silent --write \"registry/**/*.{ts,tsx,mdx}\" --cache",
     "registry:capture": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/capture-registry.ts",
+    "registry:validate": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/validate-registry.ts",
+    "registry:fix": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/fix-registry.ts",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",

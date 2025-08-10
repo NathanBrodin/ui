@@ -129,7 +129,7 @@ export const ui: Registry["items"] = [
   {
     name: "calendar",
     type: "registry:ui",
-    dependencies: ["react-day-picker@latest", "date-fns"],
+    dependencies: ["react-day-picker@latest", "date-fns", "react-day-picker"],
     registryDependencies: ["button"],
     files: [
       {
@@ -638,4 +638,31 @@ export const ui: Registry["items"] = [
       },
     ],
   },
-]
+
+  {
+    name: "footer",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/footer.tsx",
+        type: "registry:ui"
+      }
+    ],
+    dependencies: [
+      "next/link"
+    ],
+    registryDependencies: [
+      "backgrounds",
+      "diamond"
+    ]
+  },
+  {
+    name: "typography",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/typography.tsx",
+        type: "registry:ui"
+      }
+    ]
+  }]
