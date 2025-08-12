@@ -6,13 +6,13 @@ import { type DialogProps } from "@radix-ui/react-dialog"
 import { IconArrowRight } from "@tabler/icons-react"
 import { CornerDownLeftIcon, SearchIcon, SquareDashedIcon } from "lucide-react"
 
-import { siteConfig } from "@/lib/config"
 import { source } from "@/lib/source"
 import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
 import { useIsMac } from "@/hooks/use-is-mac"
 import { useMutationObserver } from "@/hooks/use-mutation-observer"
 import { copyToClipboard } from "@/components/copy-button"
+import { siteConfig } from "@/registry/default/lib/config"
 import { Button } from "@/registry/default/ui/button"
 import {
   CommandDialog,

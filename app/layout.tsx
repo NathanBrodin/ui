@@ -2,13 +2,13 @@ import type { Metadata } from "next"
 import { Geist_Mono, Lora } from "next/font/google"
 import localFont from "next/font/local"
 
-import "@/styles/globals.css"
+import "@/registry/default/styles/globals.css"
 
-import { siteConfig } from "@/lib/config"
 import { LayoutProvider } from "@/hooks/use-layout"
 import { META_THEME_COLORS } from "@/hooks/use-meta-color"
 import { ActiveThemeProvider } from "@/components/active-theme"
 import { ThemeProvider } from "@/components/theme-provider"
+import { siteConfig } from "@/registry/default/lib/config"
 import { Toaster } from "@/registry/default/ui/sonner"
 
 const lora = Lora({

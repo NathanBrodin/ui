@@ -5,7 +5,6 @@ import { blocks } from "@/registry/registry-blocks"
 import { examples } from "@/registry/registry-examples"
 import { hooks } from "@/registry/registry-hooks"
 import { lib } from "@/registry/registry-lib"
-import { themes } from "@/registry/registry-themes"
 import { ui } from "@/registry/registry-ui"
 
 export const registry = {
@@ -19,13 +18,21 @@ export const registry = {
       devDependencies: ["tw-animate-css"],
       registryDependencies: ["utils"],
       cssVars: {},
-      files: [],
+      files: [
+        {
+          path: "styles/globals.css",
+          type: "registry:style",
+        },
+        {
+          path: "styles/themes.css",
+          type: "registry:style",
+        },
+      ],
     },
     ...ui,
     ...blocks,
     ...lib,
     ...hooks,
-    ...themes,
     ...examples,
   ]),
 } satisfies Registry
