@@ -104,7 +104,7 @@ export default async function Page(props: {
                     <Button
                       variant="secondary"
                       size="icon"
-                      className="extend-touch-target size-8 shadow-none md:size-7"
+                      className="size-8 shadow-none md:size-7"
                       asChild
                     >
                       <Link href={neighbours.previous.url}>
@@ -117,7 +117,7 @@ export default async function Page(props: {
                     <Button
                       variant="secondary"
                       size="icon"
-                      className="extend-touch-target size-8 shadow-none md:size-7"
+                      className="size-8 shadow-none md:size-7"
                       asChild
                     >
                       <Link href={neighbours.next.url}>

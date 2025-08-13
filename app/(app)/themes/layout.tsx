@@ -57,8 +57,8 @@ export default function BlocksLayout({
       <PageNav id="themes">
         <ThemeSelector className="mr-4 hidden md:flex" />
       </PageNav>
-      <div className="container-wrapper section-soft flex-1 pb-6">
-        <div className="theme-container container">{children}</div>
+      <div className="container-wrapper flex-1 pb-6">
+        <div className="container">{children}</div>
       </div>
     </>
   )

@@ -44,7 +44,7 @@ export function ThemeSelector({
           <Button
             variant="ghost"
             size="icon"
-            className="group/toggle extend-touch-target size-8"
+            className="group/toggle size-8"
             title="Toggle theme"
           >
             <svg

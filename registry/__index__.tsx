@@ -15,7 +15,12 @@ export const Index: Record<string, any> = {
       {
         path: "registry/default/styles/globals.css",
         type: "registry:style",
-        target: "",
+        target: "app/globals.css",
+      },
+      {
+        path: "registry/default/assets/fonts/writer.ttf",
+        type: "registry:file",
+        target: "public/fonts/writer.ttf",
       },
     ],
     component: React.lazy(async () => {
@@ -1359,11 +1364,6 @@ export const Index: Record<string, any> = {
         path: "registry/default/blocks/app/app/layout.tsx",
         type: "registry:page",
         target: "app/layout.tsx",
-      },
-      {
-        path: "registry/default/assets/fonts/writer.ttf",
-        type: "registry:file",
-        target: "public/fonts/writer.ttf",
       },
     ],
     component: React.lazy(async () => {

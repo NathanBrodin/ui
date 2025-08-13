@@ -21,11 +21,6 @@ export const blocks: Registry["items"] = [
         target: "app/layout.tsx",
         type: "registry:page",
       },
-      {
-        path: "assets/fonts/writer.ttf",
-        target: "public/fonts/writer.ttf",
-        type: "registry:file",
-      },
     ],
   },
   {

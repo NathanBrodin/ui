@@ -24,6 +24,12 @@ export const registry = {
         {
           path: "styles/globals.css",
           type: "registry:style",
+          target: "app/globals.css",
+        },
+        {
+          path: "assets/fonts/writer.ttf",
+          target: "public/fonts/writer.ttf",
+          type: "registry:file",
         },
       ],
     },

@@ -62,7 +62,7 @@ export default function IndexPage() {
       <PageNav className="hidden md:flex">
         <ThemeSelector className="mr-4 hidden md:flex" />
       </PageNav>
-      <div className="container-wrapper section-soft flex-1 pb-6">
+      <div className="container-wrapper flex-1 pb-6">
         <div className="container overflow-hidden">
           <section className="border-border/50 -mx-4 w-[160vw] overflow-hidden rounded-lg border md:hidden md:w-[150vw]">
             <Image
@@ -82,7 +82,7 @@ export default function IndexPage() {
               priority
             />
           </section>
-          <section className="theme-container hidden md:block">
+          <section className="hidden md:block">
             <Demo />
           </section>
         </div>

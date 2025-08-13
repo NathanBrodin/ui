@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Geist_Mono, Lora } from "next/font/google"
 import localFont from "next/font/local"
 
-import "@/registry/default/styles/globals.css"
+import "./globals.css"
 
 import { ActiveThemeProvider } from "@/registry/default/components/active-theme"
 import { ThemeProvider } from "@/registry/default/components/theme-provider"
