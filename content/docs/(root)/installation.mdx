@@ -5,13 +5,37 @@ description: Install and configure brodin/ui for any framework.
 
 <Steps>
 
-### Create project
+### Set up Next.js
+
+Run the following command to set up a Next.js project:
+
+```bash
+npx create-next-app@latest
+```
+
+### Set up shadcn/ui
 
 Run the `init` command to create a new project or to setup an existing one:
 
 ```bash
 npx shadcn@latest init
 ```
+
+### Set up brodin/ui
+
+Add the `app` component that will set up all required files:
+
+```bash
+npx shadcn@latest add https://ui.brodin.dev/r/app.json --yes --overwrite
+```
+
+Install the fonts and place them in the [/public/fonts/](./public/fonts/) folder:
+- [iA Writer Quattro](
+https://github.com/iaolo/iA-Fonts/raw/master/iA%20Writer%20Quattro/Variable/iAWriterQuattroV.ttf
+)
+- [iA Writer Mono](https://github.com/iaolo/iA-Fonts/raw/master/iA%20Writer%20Mono/Variable/iAWriterMonoV.ttf)
+
+A base next.js app is now set up with the Brodin style!
 
 ### Add Components
 

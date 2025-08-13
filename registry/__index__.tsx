@@ -1346,12 +1346,12 @@ export const Index: Record<string, any> = {
     description: "Setup a full next.js app with this block",
     type: "registry:block",
     registryDependencies: [
-      "http://localhost:3000/r/use-layout.json",
-      "http://localhost:3000/r/use-meta-color.json",
-      "http://localhost:3000/r/active-theme.json",
-      "http://localhost:3000/r/theme-provider.json",
-      "http://localhost:3000/r/config.json",
-      "http://localhost:3000/r/index.json",
+      "https://ui.brodin.dev/r/use-layout.json",
+      "https://ui.brodin.dev/r/use-meta-color.json",
+      "https://ui.brodin.dev/r/active-theme.json",
+      "https://ui.brodin.dev/r/theme-provider.json",
+      "https://ui.brodin.dev/r/config.json",
+      "https://ui.brodin.dev/r/index.json",
       "sonner",
     ],
     files: [
@@ -1359,11 +1359,6 @@ export const Index: Record<string, any> = {
         path: "registry/default/blocks/app/app/layout.tsx",
         type: "registry:page",
         target: "app/layout.tsx",
-      },
-      {
-        path: "registry/default/blocks/app/public/fonts/writer.ttf",
-        type: "registry:file",
-        target: "public/fonts/writer.ttf",
       },
       {
         path: "registry/default/blocks/app/.prettierrc.json",

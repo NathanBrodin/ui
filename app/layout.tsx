@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist_Mono, Lora } from "next/font/google"
+import { Lora } from "next/font/google"
 import localFont from "next/font/local"
 
 import "./globals.css"
@@ -17,13 +17,13 @@ const lora = Lora({
 })
 
 const writer = localFont({
-  src: "../public/fonts/writer.ttf",
+  src: "../public/fonts/iAWriterQuattroV.ttf",
   variable: "--font-sans",
 })
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const writerMono = localFont({
+  src: "../public/fonts/iAWriterMonoV.ttf",
+  variable: "--font-mono",
 })
 
 export const metadata: Metadata = {
@@ -97,7 +97,7 @@ export default function RootLayout({
         <meta name="theme-color" content={META_THEME_COLORS.light} />
       </head>
       <body
-        className={`${lora.variable} ${writer.variable} ${geistMono.variable} overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]`}
+        className={`${lora.variable} ${writer.variable} ${writerMono.variable} overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]`}
       >
         <ThemeProvider
           attribute="class"
