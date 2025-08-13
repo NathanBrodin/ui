@@ -645,16 +645,11 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/footer.tsx",
-        type: "registry:ui"
-      }
+        type: "registry:ui",
+      },
     ],
-    dependencies: [
-      "next/link"
-    ],
-    registryDependencies: [
-      "backgrounds",
-      "diamond"
-    ]
+    dependencies: ["next/link"],
+    registryDependencies: ["backgrounds", "diamond"],
   },
   {
     name: "typography",
@@ -662,7 +657,8 @@ export const ui: Registry["items"] = [
     files: [
       {
         path: "ui/typography.tsx",
-        type: "registry:ui"
-      }
-    ]
-  }]
+        type: "registry:ui",
+      },
+    ],
+  },
+]

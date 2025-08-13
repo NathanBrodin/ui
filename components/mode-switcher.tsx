@@ -3,7 +3,7 @@
 import * as React from "react"
 import { useTheme } from "next-themes"
 
-import { useMetaColor } from "@/hooks/use-meta-color"
+import { useMetaColor } from "@/registry/default/hooks/use-meta-color"
 import { Button } from "@/registry/default/ui/button"
 
 export function ModeSwitcher() {

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-meta-color",
+  "type": "registry:hook",
+  "dependencies": [
+    "next-themes"
+  ],
+  "files": [
+    {
+      "path": "registry/default/hooks/use-meta-color.tsx",
+      "content": "import * as React from \"react\"\nimport { useTheme } from \"next-themes\"\n\nexport const META_THEME_COLORS = {\n  light: \"#ffffff\",\n  dark: \"#0a0a0a\",\n}\n\nexport function useMetaColor() {\n  const { resolvedTheme } = useTheme()\n\n  const metaColor = React.useMemo(() => {\n    return resolvedTheme !== \"dark\"\n      ? META_THEME_COLORS.light\n      : META_THEME_COLORS.dark\n  }, [resolvedTheme])\n\n  const setMetaColor = React.useCallback((color: string) => {\n    document\n      .querySelector('meta[name=\"theme-color\"]')\n      ?.setAttribute(\"content\", color)\n  }, [])\n\n  return {\n    metaColor,\n    setMetaColor,\n  }\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

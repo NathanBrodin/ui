@@ -7,6 +7,8 @@ import { hooks } from "@/registry/registry-hooks"
 import { lib } from "@/registry/registry-lib"
 import { ui } from "@/registry/registry-ui"
 
+import { components } from "./registry-components"
+
 export const registry = {
   name: "brodin/ui",
   homepage: "https://ui.brodin.dev",
@@ -23,13 +25,10 @@ export const registry = {
           path: "styles/globals.css",
           type: "registry:style",
         },
-        {
-          path: "styles/themes.css",
-          type: "registry:style",
-        },
       ],
     },
     ...ui,
+    ...components,
     ...blocks,
     ...lib,
     ...hooks,

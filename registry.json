@@ -15,7 +15,12 @@
       "registryDependencies": [
         "utils"
       ],
-      "files": [],
+      "files": [
+        {
+          "path": "registry/default/styles/globals.css",
+          "type": "registry:style"
+        }
+      ],
       "cssVars": {}
     },
     {
@@ -172,7 +177,8 @@
       "type": "registry:ui",
       "dependencies": [
         "react-day-picker@latest",
-        "date-fns"
+        "date-fns",
+        "react-day-picker"
       ],
       "registryDependencies": [
         "button"
@@ -763,6 +769,82 @@
       ]
     },
     {
+      "name": "footer",
+      "type": "registry:ui",
+      "dependencies": [
+        "next/link"
+      ],
+      "registryDependencies": [
+        "backgrounds",
+        "diamond"
+      ],
+      "files": [
+        {
+          "path": "registry/default/ui/footer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "typography",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/default/ui/typography.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "active-theme",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/active-theme.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "theme-provider",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "registry/default/components/theme-provider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "app",
+      "type": "registry:block",
+      "description": "Setup a full next.js app with this block",
+      "dependencies": [
+        "next"
+      ],
+      "registryDependencies": [
+        "http://localhost:3000/r/use-layout.json",
+        "http://localhost:3000/r/use-meta-color.json",
+        "http://localhost:3000/r/active-theme.json",
+        "http://localhost:3000/r/theme-provider.json",
+        "http://localhost:3000/r/config.json",
+        "http://localhost:3000/r/index.json",
+        "sonner"
+      ],
+      "files": [
+        {
+          "path": "registry/default/blocks/app/app/layout.tsx",
+          "type": "registry:page",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "registry/default/assets/fonts/writer.ttf",
+          "type": "registry:file",
+          "target": "public/fonts/writer.ttf"
+        }
+      ]
+    },
+    {
       "name": "login-05",
       "type": "registry:block",
       "description": "A simple email-only login page.",
@@ -939,6 +1021,27 @@
       ]
     },
     {
+      "name": "config",
+      "type": "registry:lib",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "registry/default/lib/config.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "use-layout",
+      "type": "registry:hook",
+      "files": [
+        {
+          "path": "registry/default/hooks/use-layout.tsx",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
       "name": "use-mobile",
       "type": "registry:hook",
       "files": [
@@ -949,236 +1052,17 @@
       ]
     },
     {
-      "name": "theme-blue",
-      "type": "registry:theme",
-      "cssVars": {
-        "light": {
-          "background": "0 0% 100%",
-          "foreground": "240 10% 14%",
-          "card": "0 0% 100%",
-          "card-foreground": "240 10% 14%",
-          "popover": "0 0% 100%",
-          "popover-foreground": "240 10% 14%",
-          "primary": "240 80% 62%",
-          "primary-foreground": "240 100% 97%",
-          "secondary": "240 5% 97%",
-          "secondary-foreground": "240 10% 21%",
-          "muted": "240 5% 97%",
-          "muted-foreground": "240 10% 55%",
-          "accent": "240 5% 97%",
-          "accent-foreground": "240 10% 21%",
-          "destructive": "15 80% 58%",
-          "destructive-foreground": "0 0% 98%",
-          "border": "240 10% 92%",
-          "input": "240 10% 92%",
-          "ring": "240 80% 62%",
-          "chart-1": "35 90% 65%",
-          "chart-2": "180 60% 60%",
-          "chart-3": "220 40% 40%",
-          "chart-4": "80 80% 83%",
-          "chart-5": "65 80% 77%"
-        },
-        "dark": {
-          "background": "240 10% 14%",
-          "foreground": "0 0% 98%",
-          "card": "240 10% 21%",
-          "card-foreground": "0 0% 98%",
-          "popover": "240 10% 21%",
-          "popover-foreground": "0 0% 98%",
-          "primary": "245 90% 55%",
-          "primary-foreground": "245 60% 38%",
-          "secondary": "240 10% 27%",
-          "secondary-foreground": "0 0% 98%",
-          "muted": "240 10% 27%",
-          "muted-foreground": "240 10% 70%",
-          "accent": "240 10% 27%",
-          "accent-foreground": "0 0% 98%",
-          "destructive": "20 80% 70%",
-          "destructive-foreground": "0 0% 98%",
-          "border": "0 0% 100% / 10%",
-          "input": "0 0% 100% / 15%",
-          "ring": "245 90% 49%",
-          "chart-1": "245 90% 49%",
-          "chart-2": "160 70% 70%",
-          "chart-3": "65 80% 77%",
-          "chart-4": "305 80% 63%",
-          "chart-5": "15 90% 65%"
+      "name": "use-meta-color",
+      "type": "registry:hook",
+      "dependencies": [
+        "next-themes"
+      ],
+      "files": [
+        {
+          "path": "registry/default/hooks/use-meta-color.tsx",
+          "type": "registry:hook"
         }
-      }
-    },
-    {
-      "name": "theme-daylight",
-      "type": "registry:theme",
-      "cssVars": {
-        "light": {
-          "background": "36 39% 88%",
-          "foreground": "36 45% 15%",
-          "primary": "36 45% 70%",
-          "primary-foreground": "36 45% 11%",
-          "secondary": "40 35% 77%",
-          "secondary-foreground": "36 45% 25%",
-          "accent": "36 64% 57%",
-          "accent-foreground": "36 72% 17%",
-          "destructive": "0 84% 37%",
-          "destructive-foreground": "0 0% 98%",
-          "muted": "36 33% 75%",
-          "muted-foreground": "36 45% 25%",
-          "card": "36 46% 82%",
-          "card-foreground": "36 45% 20%",
-          "popover": "0 0% 100%",
-          "popover-foreground": "240 10% 3.9%",
-          "border": "36 45% 60%",
-          "input": "36 45% 60%",
-          "ring": "36 45% 30%",
-          "chart-1": "25 34% 28%",
-          "chart-2": "26 36% 34%",
-          "chart-3": "28 40% 40%",
-          "chart-4": "31 41% 48%",
-          "chart-5": "35 43% 53%"
-        },
-        "dark": {
-          "background": "36 39% 88%",
-          "foreground": "36 45% 15%",
-          "primary": "36 45% 70%",
-          "primary-foreground": "36 45% 11%",
-          "secondary": "40 35% 77%",
-          "secondary-foreground": "36 45% 25%",
-          "accent": "36 64% 57%",
-          "accent-foreground": "36 72% 17%",
-          "destructive": "0 84% 37%",
-          "destructive-foreground": "0 0% 98%",
-          "muted": "36 33% 75%",
-          "muted-foreground": "36 45% 25%",
-          "card": "36 46% 82%",
-          "card-foreground": "36 45% 20%",
-          "popover": "0 0% 100%",
-          "popover-foreground": "240 10% 3.9%",
-          "border": "36 45% 60%",
-          "input": "36 45% 60%",
-          "ring": "36 45% 30%",
-          "chart-1": "25 34% 28%",
-          "chart-2": "26 36% 34%",
-          "chart-3": "28 40% 40%",
-          "chart-4": "31 41% 48%",
-          "chart-5": "35 43% 53%"
-        }
-      }
-    },
-    {
-      "name": "theme-midnight",
-      "type": "registry:theme",
-      "cssVars": {
-        "light": {
-          "background": "240 5% 6%",
-          "foreground": "60 5% 90%",
-          "primary": "240 0% 90%",
-          "primary-foreground": "60 0% 0%",
-          "secondary": "240 4% 15%",
-          "secondary-foreground": "60 5% 85%",
-          "accent": "240 0% 13%",
-          "accent-foreground": "60 0% 100%",
-          "destructive": "0 60% 50%",
-          "destructive-foreground": "0 0% 98%",
-          "muted": "240 5% 25%",
-          "muted-foreground": "60 5% 85%",
-          "card": "240 4% 10%",
-          "card-foreground": "60 5% 90%",
-          "popover": "240 5% 15%",
-          "popover-foreground": "60 5% 85%",
-          "border": "240 6% 20%",
-          "input": "240 6% 20%",
-          "ring": "240 5% 90%",
-          "chart-1": "359 2% 90%",
-          "chart-2": "240 1% 74%",
-          "chart-3": "240 1% 58%",
-          "chart-4": "240 1% 42%",
-          "chart-5": "240 2% 26%"
-        },
-        "dark": {
-          "background": "240 5% 6%",
-          "foreground": "60 5% 90%",
-          "primary": "240 0% 90%",
-          "primary-foreground": "60 0% 0%",
-          "secondary": "240 4% 15%",
-          "secondary-foreground": "60 5% 85%",
-          "accent": "240 0% 13%",
-          "accent-foreground": "60 0% 100%",
-          "destructive": "0 60% 50%",
-          "destructive-foreground": "0 0% 98%",
-          "muted": "240 5% 25%",
-          "muted-foreground": "60 5% 85%",
-          "card": "240 4% 10%",
-          "card-foreground": "60 5% 90%",
-          "popover": "240 5% 15%",
-          "popover-foreground": "60 5% 85%",
-          "border": "240 6% 20%",
-          "input": "240 6% 20%",
-          "ring": "240 5% 90%",
-          "chart-1": "359 2% 90%",
-          "chart-2": "240 1% 74%",
-          "chart-3": "240 1% 58%",
-          "chart-4": "240 1% 42%",
-          "chart-5": "240 2% 26%"
-        }
-      }
-    },
-    {
-      "name": "theme-emerald",
-      "type": "registry:theme",
-      "cssVars": {
-        "light": {
-          "background": "0 0% 100%",
-          "foreground": "240 10% 3.9%",
-          "card": "0 0% 100%",
-          "card-foreground": "240 10% 3.9%",
-          "popover": "0 0% 100%",
-          "popover-foreground": "240 10% 3.9%",
-          "primary": "142 86% 28%",
-          "primary-foreground": "356 29% 98%",
-          "secondary": "240 4.8% 95.9%",
-          "secondary-foreground": "240 5.9% 10%",
-          "muted": "240 4.8% 95.9%",
-          "muted-foreground": "240 3.8% 45%",
-          "accent": "240 4.8% 95.9%",
-          "accent-foreground": "240 5.9% 10%",
-          "destructive": "0 72% 51%",
-          "destructive-foreground": "0 0% 98%",
-          "border": "240 5.9% 90%",
-          "input": "240 5.9% 90%",
-          "ring": "142 86% 28%",
-          "chart-1": "139 65% 20%",
-          "chart-2": "140 74% 44%",
-          "chart-3": "142 88% 28%",
-          "chart-4": "137 55% 15%",
-          "chart-5": "141 40% 9%"
-        },
-        "dark": {
-          "background": "240 10% 3.9%",
-          "foreground": "0 0% 98%",
-          "card": "240 10% 3.9%",
-          "card-foreground": "0 0% 98%",
-          "popover": "240 10% 3.9%",
-          "popover-foreground": "0 0% 98%",
-          "primary": "142 86% 28%",
-          "primary-foreground": "356 29% 98%",
-          "secondary": "240 4.8% 95.9%",
-          "secondary-foreground": "240 5.9% 10%",
-          "muted": "240 3.7% 15.9%",
-          "muted-foreground": "240 5% 64.9%",
-          "accent": "240 3.7% 15.9%",
-          "accent-foreground": "0 0% 98%",
-          "destructive": "0 72% 51%",
-          "destructive-foreground": "0 0% 98%",
-          "border": "240 3.7% 15.9%",
-          "input": "240 3.7% 15.9%",
-          "ring": "142 86% 28%",
-          "chart-1": "142 88% 28%",
-          "chart-2": "139 65% 20%",
-          "chart-3": "140 74% 24%",
-          "chart-4": "137 55% 15%",
-          "chart-5": "141 40% 9%"
-        }
-      }
+      ]
     },
     {
       "name": "accordion-demo",

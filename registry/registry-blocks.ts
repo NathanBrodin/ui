@@ -2,6 +2,33 @@ import { type Registry } from "shadcn/registry"
 
 export const blocks: Registry["items"] = [
   {
+    name: "app",
+    description: "Setup a full next.js app with this block",
+    type: "registry:block",
+    registryDependencies: [
+      `http://localhost:3000/r/use-layout.json`,
+      `http://localhost:3000/r/use-meta-color.json`,
+      `http://localhost:3000/r/active-theme.json`,
+      `http://localhost:3000/r/theme-provider.json`,
+      `http://localhost:3000/r/config.json`,
+      `http://localhost:3000/r/index.json`,
+      "sonner",
+    ],
+    dependencies: ["next"],
+    files: [
+      {
+        path: "blocks/app/app/layout.tsx",
+        target: "app/layout.tsx",
+        type: "registry:page",
+      },
+      {
+        path: "assets/fonts/writer.ttf",
+        target: "public/fonts/writer.ttf",
+        type: "registry:file",
+      },
+    ],
+  },
+  {
     name: "login-05",
     description: "A simple email-only login page.",
     type: "registry:block",

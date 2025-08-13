@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer",
+  "type": "registry:ui",
+  "dependencies": [
+    "next/link"
+  ],
+  "registryDependencies": [
+    "backgrounds",
+    "diamond"
+  ],
+  "files": [
+    {
+      "path": "registry/default/ui/footer.tsx",
+      "content": "import * as React from \"react\"\nimport Link from \"next/link\"\n\nimport { cn } from \"@/lib/utils\"\nimport { Noise } from \"@/registry/default/ui/backgrounds\"\nimport { Diamond } from \"@/registry/default/ui/diamond\"\n\nfunction Footer({\n  githubLink,\n  className,\n  ...props\n}: React.ComponentProps<\"footer\"> & { githubLink: string }) {\n  return (\n    <footer\n      className={cn(\n        \"bg-primary-fixed text-primary-foreground-fixed relative\",\n        className\n      )}\n      {...props}\n    >\n      <Noise variant=\"lighter\" />\n      <div className=\"border-grid/30 relative mx-3 flex border-x px-4 py-2 sm:px-6 md:mx-8 lg:mx-12\">\n        <Diamond top left />\n        <Diamond top right />\n\n        <div className=\"flex w-full items-center justify-between text-xs leading-5\">\n          <p className=\"\">\n            Built by{\" \"}\n            <Link\n              className=\"underline decoration-white/20 underline-offset-2 hover:decoration-white\"\n              href=\"https://brodin.dev\"\n            >\n              Nathan Brodin\n            </Link>{\" \"}\n            © 2025\n          </p>\n          <Link\n            className=\"underline decoration-white/20 underline-offset-2 hover:decoration-white\"\n            href={githubLink}\n          >\n            GitHub ↗\n          </Link>\n        </div>\n      </div>\n    </footer>\n  )\n}\n\nexport { Footer }\n",
+      "type": "registry:ui"
+    }
+  ]
+}

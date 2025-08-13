@@ -4,8 +4,8 @@ import * as React from "react"
 import { useTheme } from "next-themes"
 
 import { baseColors } from "@/lib/colors"
-import { useMetaColor } from "@/hooks/use-meta-color"
-import { useThemeConfig } from "@/components/active-theme"
+import { useThemeConfig } from "@/registry/default/components/active-theme"
+import { useMetaColor } from "@/registry/default/hooks/use-meta-color"
 import { cn } from "@/registry/default/lib/utils"
 import { Button } from "@/registry/default/ui/button"
 import {

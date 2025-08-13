@@ -11,8 +11,22 @@ export const Index: Record<string, any> = {
     description: "",
     type: "registry:style",
     registryDependencies: ["utils"],
-    files: [],
-    component: null,
+    files: [
+      {
+        path: "registry/default/styles/globals.css",
+        type: "registry:style",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/styles/globals.css")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
     categories: undefined,
     meta: undefined,
   },
@@ -1229,6 +1243,141 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  footer: {
+    name: "footer",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["backgrounds", "diamond"],
+    files: [
+      {
+        path: "registry/default/ui/footer.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/ui/footer.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  typography: {
+    name: "typography",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/default/ui/typography.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/ui/typography.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "active-theme": {
+    name: "active-theme",
+    description: "",
+    type: "registry:component",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/default/components/active-theme.tsx",
+        type: "registry:component",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/components/active-theme.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "theme-provider": {
+    name: "theme-provider",
+    description: "",
+    type: "registry:component",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/default/components/theme-provider.tsx",
+        type: "registry:component",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/default/components/theme-provider.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  app: {
+    name: "app",
+    description: "Setup a full next.js app with this block",
+    type: "registry:block",
+    registryDependencies: [
+      "http://localhost:3000/r/use-layout.json",
+      "http://localhost:3000/r/use-meta-color.json",
+      "http://localhost:3000/r/active-theme.json",
+      "http://localhost:3000/r/theme-provider.json",
+      "http://localhost:3000/r/config.json",
+      "http://localhost:3000/r/index.json",
+      "sonner",
+    ],
+    files: [
+      {
+        path: "registry/default/blocks/app/app/layout.tsx",
+        type: "registry:page",
+        target: "app/layout.tsx",
+      },
+      {
+        path: "registry/default/assets/fonts/writer.ttf",
+        type: "registry:file",
+        target: "public/fonts/writer.ttf",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/blocks/app/app/layout.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "login-05": {
     name: "login-05",
     description: "A simple email-only login page.",
@@ -1439,6 +1588,54 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  config: {
+    name: "config",
+    description: "",
+    type: "registry:lib",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/default/lib/config.ts",
+        type: "registry:lib",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/lib/config.ts")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "use-layout": {
+    name: "use-layout",
+    description: "",
+    type: "registry:hook",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/default/hooks/use-layout.tsx",
+        type: "registry:hook",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/hooks/use-layout.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
   "use-mobile": {
     name: "use-mobile",
     description: "",
@@ -1453,6 +1650,30 @@ export const Index: Record<string, any> = {
     ],
     component: React.lazy(async () => {
       const mod = await import("@/registry/default/hooks/use-mobile.ts")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "use-meta-color": {
+    name: "use-meta-color",
+    description: "",
+    type: "registry:hook",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/default/hooks/use-meta-color.tsx",
+        type: "registry:hook",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/hooks/use-meta-color.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>

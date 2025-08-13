@@ -1,5 +1,9 @@
 [
   {
+    "name": "app",
+    "description": "Setup a full next.js app with this block"
+  },
+  {
     "name": "login-05",
     "description": "A simple email-only login page.",
     "categories": [

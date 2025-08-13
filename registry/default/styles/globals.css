@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@import "./themes.css";
-
 @custom-variant dark (&:is(.dark *));
 @custom-variant fixed (&:is(.layout-fixed *));
 
@@ -297,6 +295,34 @@
 
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+.theme-blue {
+  --primary: #0751cf;
+  --primary-fixed: #0751cf;
+  --secondary: var(--color-blue-50);
+  --secondary-foreground: var(--color-blue-700);
+  --grid: color-mix(in oklab, var(--color-blue-200) 50%, transparent);
+  --shadow-button-primary-inset: hsl(219, 93%, 30%) 0 -2px 0 0 inset;
+  --shadow-button-primary-outer: hsl(219, 93%, 95%) 0 1px 3px 0;
+  --shadow-button-primary:
+    var(--shadow-button-primary-inset), var(--shadow-button-primary-outer);
+
+  @variant dark {
+    --main-background: hsl(218, 13%, 7.5%);
+    --nav-background: #15171bf2;
+    --background: hsl(218, 13%, 7.5%);
+    --primary: var(--color-blue-300);
+    --primary-foreground-fixed: var(--color-white);
+    --secondary: color-mix(in oklab, var(--color-blue-500) 10%, transparent);
+    --secondary-foreground: var(--color-blue-50);
+    --card: hsl(218, 13%, 6%, 0.95);
+
+    --shadow-button-primary-inset: hsl(219, 93%, 30%) 0 -2px 0 0 inset;
+    --shadow-button-primary-outer: hsl(0, 0%, 0%, 0.4) 0 1px 3px 0;
+    --shadow-button-primary:
+      var(--shadow-button-primary-inset), var(--shadow-button-primary-outer);
   }
 }
 

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "themes",
+  "type": "registry:theme",
+  "files": [
+    {
+      "path": "registry/default/styles/themes.css",
+      "content": ".theme-blue {\n  --primary: #0751cf;\n  --primary-fixed: #0751cf;\n  --secondary: var(--color-blue-50);\n  --secondary-foreground: var(--color-blue-700);\n  --grid: color-mix(in oklab, var(--color-blue-200) 50%, transparent);\n  --shadow-button-primary-inset: hsl(219, 93%, 30%) 0 -2px 0 0 inset;\n  --shadow-button-primary-outer: hsl(219, 93%, 95%) 0 1px 3px 0;\n  --shadow-button-primary:\n    var(--shadow-button-primary-inset), var(--shadow-button-primary-outer);\n\n  @variant dark {\n    --main-background: hsl(218, 13%, 7.5%);\n    --nav-background: #15171bf2;\n    --background: hsl(218, 13%, 7.5%);\n    --primary: var(--color-blue-300);\n    --primary-foreground-fixed: var(--color-white);\n    --secondary: color-mix(in oklab, var(--color-blue-500) 10%, transparent);\n    --secondary-foreground: var(--color-blue-50);\n    --card: hsl(218, 13%, 6%, 0.95);\n\n    --shadow-button-primary-inset: hsl(219, 93%, 30%) 0 -2px 0 0 inset;\n    --shadow-button-primary-outer: hsl(0, 0%, 0%, 0.4) 0 1px 3px 0;\n    --shadow-button-primary:\n      var(--shadow-button-primary-inset), var(--shadow-button-primary-outer);\n  }\n}\n",
+      "type": "registry:theme"
+    }
+  ]
+}

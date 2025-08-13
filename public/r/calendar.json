@@ -4,7 +4,8 @@
   "type": "registry:ui",
   "dependencies": [
     "react-day-picker@latest",
-    "date-fns"
+    "date-fns",
+    "react-day-picker"
   ],
   "registryDependencies": [
     "button"
