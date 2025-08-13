@@ -15,11 +15,26 @@ export const blocks: Registry["items"] = [
       "sonner",
     ],
     dependencies: ["next"],
+    devDependencies: [
+      "prettier",
+      "prettier-plugin-tailwindcss",
+      "@ianvs/prettier-plugin-sort-imports",
+    ],
     files: [
       {
         path: "blocks/app/app/layout.tsx",
         target: "app/layout.tsx",
         type: "registry:page",
+      },
+      {
+        path: "blocks/app/public/fonts/writer.ttf",
+        target: "public/fonts/writer.ttf",
+        type: "registry:file",
+      },
+      {
+        path: "blocks/app/.prettierrc.json",
+        target: ".prettierrc.json",
+        type: "registry:file",
       },
     ],
   },

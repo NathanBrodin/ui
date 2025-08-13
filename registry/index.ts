@@ -20,16 +20,14 @@ export const registry = {
       devDependencies: ["tw-animate-css"],
       registryDependencies: ["utils"],
       cssVars: {},
+      envVars: {
+        NEXT_PUBLIC_APP_URL: "http://localhost:3000",
+      },
       files: [
         {
           path: "styles/globals.css",
           type: "registry:style",
           target: "app/globals.css",
-        },
-        {
-          path: "assets/fonts/writer.ttf",
-          target: "public/fonts/writer.ttf",
-          type: "registry:file",
         },
       ],
     },

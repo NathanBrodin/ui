@@ -17,7 +17,7 @@ const lora = Lora({
 })
 
 const writer = localFont({
-  src: "../../../assets/fonts/writer.ttf",
+  src: "../public/fonts/writer.ttf",
   variable: "--font-sans",
 })
 
