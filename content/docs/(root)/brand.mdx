@@ -1,30 +1,39 @@
 ---
 title: Brand
-description: Nathan designs.
+description: A design system built for speed, clarity, and focus. Inspired by Zed's aesthetic philosophy.
 ---
+
+**This design system is my interpretation of what makes software feel fast, intentional, and effortless.**
+
+Drawing heavy inspiration from [Zed](https://zed.dev), I wanted to capture that sense of speed and focus that great tools have. Every choice here, from color contrast to typography weight—is designed to get out of your way while still feeling distinctly crafted.
 
 ## Colors
 
-brodin/ui currently comes in two themes: black and blue.
+brodin/ui ships with two carefully tuned themes: **black** and **blue**. Both prioritize high contrast and visual clarity over decorative flourishes.
 
-<ThemeVisualizer  />
+<ThemeVisualizer />
+
+The **black theme** is my default, sharp, focused, and designed for long coding sessions without eye strain. The **blue theme** offers a softer alternative while maintaining the same level of contrast and readability.
 
 ## Typography
 
-The main font is [iA Writer Quattro](
-https://github.com/iaolo/iA-Fonts/raw/master/iA%20Writer%20Quattro/Variable/iAWriterQuattroV.ttf
-) and the accent font is [Lora](https://fonts.google.com/specimen/Lora)
+Typography is where personality meets function. I use two fonts that complement each other perfectly:
 
-They allow a clean look
+- **[iA Writer Quattro](https://github.com/iaolo/iA-Fonts/raw/master/iA%20Writer%20Quattro/Variable/iAWriterQuattroV.ttf)** for body text and UI elements
+- **[Lora](https://fonts.google.com/specimen/Lora)** as an accent font for emphasis and character
+
+iA Writer Quattro was designed specifically for digital reading and writing. It's clean, highly legible, and doesn't fight for attention. Lora provides just enough personality for headings and highlights without feeling ornamental.
+
+Together, they create a hierarchy that guides the eye naturally through your interface, making complex information feel approachable.
 
 <ComponentPreview
   name="typography-demo"
-  description="A collection of typographic elements."
+  description="A collection of typographic elements showing the system in action."
   className="[&_.preview]:!h-auto"
   hideCode
 />
 
-## Logos
+## Logo & Identity
 
 <div className="mt-8 grid grid-cols-1 gap-2 md:grid-cols-3">
     <LogoCard svgContent={
@@ -38,5 +47,21 @@ They allow a clean look
               <title>Next.js</title>
               <path d="M11.5725 0c-.1763 0-.3098.0013-.3584.0067-.0516.0053-.2159.021-.3636.0328-3.4088.3073-6.6017 2.1463-8.624 4.9728C1.1004 6.584.3802 8.3666.1082 10.255c-.0962.659-.108.8537-.108 1.7474s.012 1.0884.108 1.7476c.652 4.506 3.8591 8.2919 8.2087 9.6945.7789.2511 1.6.4223 2.5337.5255.3636.04 1.9354.04 2.299 0 1.6117-.1783 2.9772-.577 4.3237-1.2643.2065-.1056.2464-.1337.2183-.1573-.0188-.0139-.8987-1.1938-1.9543-2.62l-1.919-2.592-2.4047-3.5583c-1.3231-1.9564-2.4117-3.556-2.4211-3.556-.0094-.0026-.0187 1.5787-.0235 3.509-.0067 3.3802-.0093 3.5162-.0516 3.596-.061.115-.108.1618-.2064.2134-.075.0374-.1408.0445-.495.0445h-.406l-.1078-.068a.4383.4383 0 01-.1572-.1712l-.0493-.1056.0053-4.703.0067-4.7054.0726-.0915c.0376-.0493.1174-.1125.1736-.143.0962-.047.1338-.0517.5396-.0517.4787 0 .5584.0187.6827.1547.0353.0377 1.3373 1.9987 2.895 4.3608a10760.433 10760.433 0 004.7344 7.1706l1.9002 2.8782.096-.0633c.8518-.5536 1.7525-1.3418 2.4657-2.1627 1.5179-1.7429 2.4963-3.868 2.8247-6.134.0961-.6591.1078-.854.1078-1.7475 0-.8937-.012-1.0884-.1078-1.7476-.6522-4.506-3.8592-8.2919-8.2087-9.6945-.7672-.2487-1.5836-.42-2.4985-.5232-.169-.0176-1.0835-.0366-1.6123-.037zm4.0685 7.217c.3473 0 .4082.0053.4857.047.1127.0562.204.1642.237.2767.0186.061.0234 1.3653.0186 4.3044l-.0067 4.2175-.7436-1.14-.7461-1.14v-3.066c0-1.982.0093-3.0963.0234-3.1502.0375-.1313.1196-.2346.2323-.2955.0961-.0494.1313-.054.4997-.054z" />
             </svg>
-    } name="nathan's logo"/>
+    } name="brodin/ui"/>
 </div>
+
+## Design Philosophy
+
+Every component in this system follows three core principles:
+
+**Speed First**: Nothing should feel sluggish or hesitant. Animations are snappy, transitions are purposeful, and loading states are designed to maintain momentum.
+
+**Clarity Over Decoration**: Visual elements serve the content, not the other way around. High contrast, generous whitespace, and deliberate hierarchy make interfaces scannable at speed.
+
+**Consistent but Flexible**: Components work together as a cohesive system while remaining customizable enough to adapt to different contexts and needs.
+
+This philosophy extends beyond individual components to the overall experience of building with this system. The CLI is fast, the setup is minimal, and the code is transparent, just like the interfaces it helps you create.
+
+---
+
+Every element has been tested in real projects, refined through daily use, and designed to age well as your applications grow and evolve.
