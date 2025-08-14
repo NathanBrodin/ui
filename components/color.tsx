@@ -1,9 +1,7 @@
-import { Check, Clipboard } from "lucide-react"
-
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
+import { cn } from "@/registry/default/lib/utils"
 
 export function Color({
-  name,
   cssVar,
   description,
 }: {
@@ -11,25 +9,21 @@ export function Color({
   cssVar: string
   description?: string
 }) {
-  const { isCopied, copyToClipboard } = useCopyToClipboard({ timeout: 0 })
+  const { isCopied, copyToClipboard } = useCopyToClipboard({ timeout: 1000 })
 
   return (
-    <div>
+    <div className="border-border flex items-center gap-1 rounded-sm border">
       <div
-        className="border-border group relative h-16 w-full cursor-pointer rounded-lg border-1 [&>svg]:absolute [&>svg]:top-4 [&>svg]:right-4 [&>svg]:z-10 [&>svg]:h-3.5 [&>svg]:w-3.5 [&>svg]:opacity-0 [&>svg]:transition-opacity"
+        className={cn(
+          "border-border group relative h-full w-14 cursor-copy rounded-l-xs border-r transition-all",
+          isCopied && "ring-1 ring-green-400 dark:ring-green-800"
+        )}
         style={{
           backgroundColor: cssVar.startsWith("--") ? `var(${cssVar})` : cssVar,
         }}
         onClick={() => copyToClipboard(cssVar)}
-      >
-        {isCopied ? (
-          <Check className="h-4 w-4 text-white drop-shadow-lg group-hover:opacity-100" />
-        ) : (
-          <Clipboard className="h-4 w-4 text-white drop-shadow-lg group-hover:opacity-100" />
-        )}
-      </div>
-      <div className="mt-2 space-y-1">
-        <p className="text-sm font-medium">{name}</p>
+      />
+      <div className="space-y-1 p-1">
         <code className="text-muted-foreground bg-muted rounded px-1 py-0.5 text-xs">
           {cssVar}
         </code>

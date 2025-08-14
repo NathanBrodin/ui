@@ -56,28 +56,7 @@ export default function TypographyDemo() {
         foolishness get him down: a court jester named Jokester.
       </TypographyP>
 
-      <TypographyH3 className="mt-8">Jokester&apos;s Revolt</TypographyH3>
-
-      <TypographyP>
-        Jokester began sneaking into the castle in the middle of the night and
-        leaving jokes all over the place: under the king&apos;s pillow, in his
-        soup, even in the royal toilet. The king was furious, but he
-        couldn&apos;t seem to stop Jokester.
-      </TypographyP>
-
-      <TypographyP>
-        And then, one day, the people of the kingdom discovered that the jokes
-        left by Jokester were so funny that they couldn&apos;t help but laugh.
-        And once they started laughing, they couldn&apos;t stop.
-      </TypographyP>
-
       <TypographyH3 className="mt-8">The People&apos;s Rebellion</TypographyH3>
-
-      <TypographyP>
-        The people of the kingdom, feeling uplifted by the laughter, started to
-        tell jokes and puns again, and soon the entire kingdom was in on the
-        joke.
-      </TypographyP>
 
       <TypographyTable>
         <thead>
@@ -117,12 +96,6 @@ export default function TypographyDemo() {
           </tr>
         </tbody>
       </TypographyTable>
-
-      <TypographyP>
-        The king, seeing how much happier his subjects were, realized the error
-        of his ways and repealed the joke tax. Jokester was declared a hero, and
-        the kingdom lived happily ever after.
-      </TypographyP>
 
       <TypographyP>
         The moral of the story is: never underestimate the power of a good laugh

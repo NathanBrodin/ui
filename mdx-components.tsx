@@ -10,7 +10,6 @@ import { CodeTabs } from "@/components/code-tabs"
 import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
 import { ComponentsList } from "@/components/components-list"
-import { CopyButton } from "@/components/copy-button"
 import { getIconForLanguageExtension } from "@/components/icons"
 import {
   Accordion,
@@ -31,6 +30,10 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/registry/default/ui/tabs"
+
+import { CopyButton } from "./components/copy-button"
+import { LogoCard } from "./components/logo-card"
+import ThemeVisualizer from "./components/theme-visualizer"
 
 export const mdxComponents = {
   h1: ({ className, ...props }: React.ComponentProps<"h1">) => (
@@ -355,18 +358,11 @@ export const mdxComponents = {
   ComponentSource,
   CodeCollapsibleWrapper,
   ComponentsList,
+  LogoCard,
+  ThemeVisualizer,
   Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link
       className={cn("font-medium underline underline-offset-4", className)}
-      {...props}
-    />
-  ),
-  LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
-    <Link
-      className={cn(
-        "bg-card text-card-foreground hover:bg-card/80 flex w-full flex-col items-center rounded-xl p-6 transition-colors sm:p-10",
-        className
-      )}
       {...props}
     />
   ),

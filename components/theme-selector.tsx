@@ -37,7 +37,7 @@ export function ThemeSelector({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         {variant !== "small" ? (
-          <Button variant="outline" className={cn("capitalize", className)}>
+          <Button variant="secondary" className={cn("capitalize", className)}>
             Theme: {theme} {activeTheme}
           </Button>
         ) : (
