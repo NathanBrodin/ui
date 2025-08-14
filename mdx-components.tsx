@@ -32,8 +32,8 @@ import {
 } from "@/registry/default/ui/tabs"
 
 import { CopyButton } from "./components/copy-button"
-import { LogoCard } from "./components/logo-card"
 import ThemeVisualizer from "./components/theme-visualizer"
+import { GridLogosDemo } from "./registry/default/examples/grid-logos-demo"
 
 export const mdxComponents = {
   h1: ({ className, ...props }: React.ComponentProps<"h1">) => (
@@ -358,8 +358,8 @@ export const mdxComponents = {
   ComponentSource,
   CodeCollapsibleWrapper,
   ComponentsList,
-  LogoCard,
   ThemeVisualizer,
+  GridLogosDemo,
   Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link
       className={cn("font-medium underline underline-offset-4", className)}

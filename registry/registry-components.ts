@@ -21,4 +21,14 @@ export const components: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "icon-02",
+    type: "registry:component",
+    files: [
+      {
+        path: "components/icons/Icon02.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 ]
