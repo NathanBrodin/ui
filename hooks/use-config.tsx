@@ -14,5 +14,22 @@ const configAtom = atomWithStorage<Config>("config", {
 })
 
 export function useConfig() {
-  return useAtom(configAtom)
+  const [config, setConfig] = useAtom(configAtom)
+
+  const commandPrefix = (() => {
+    switch (config.packageManager) {
+      case "npm":
+        return "npx"
+      case "yarn":
+        return "yarn"
+      case "pnpm":
+        return "pnpm dlx"
+      case "bun":
+        return "bunx"
+      default:
+        return "npx"
+    }
+  })()
+
+  return [{ ...config, commandPrefix }, setConfig] as const
 }

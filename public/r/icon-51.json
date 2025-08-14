@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon-51",
+  "type": "registry:component",
+  "files": [
+    {
+      "path": "registry/default/components/icons/icon-51.tsx",
+      "content": "import React from \"react\"\n\ninterface Icon51Props {\n  className?: string\n  size?: number\n}\n\nexport const Icon51: React.FC<Icon51Props> = ({\n  className = \"\",\n  size = 24,\n}) => {\n  return (\n    <div className={className}>\n      <svg\n        width={size}\n        height={size}\n        viewBox=\"0 0 200 200\"\n        fill=\"none\"\n        xmlns=\"http://www.w3.org/2000/svg\"\n      >\n        <g clipPath=\"url(#clip0_2868_118)\">\n          <path\n            d=\"M100 173.738C24.3644 236.944 -36.9438 175.636 26.2621 100C-36.9438 24.3644 24.3644 -36.9438 100 26.2621C175.621 -36.9438 236.944 24.3644 173.738 100C236.944 175.578 175.621 236.944 100 173.738Z\"\n            fill=\"black\"\n          />\n        </g>\n        <defs>\n          <clipPath id=\"clip0_2868_118\">\n            <rect width=\"200\" height=\"200\" fill=\"white\" />\n          </clipPath>\n        </defs>\n      </svg>\n    </div>\n  )\n}\n\nexport default Icon51\n",
+      "type": "registry:component"
+    }
+  ]
+}

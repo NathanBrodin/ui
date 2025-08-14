@@ -47,7 +47,7 @@ export function CommandMenu({
     "page" | "component" | "block" | null
   >(null)
   const [copyPayload, setCopyPayload] = React.useState("")
-  const packageManager = config.packageManager || "bun"
+  const commandPrefix = config.commandPrefix || "bunx"
 
   const handlePageHighlight = React.useCallback(
     (isComponent: boolean, item: { url: string; name?: React.ReactNode }) => {
@@ -55,22 +55,22 @@ export function CommandMenu({
         const componentName = item.url.split("/").pop()
         setSelectedType("component")
         setCopyPayload(
-          `${packageManager} dlx shadcn@latest add ${siteConfig.url}/r/${componentName}.json`
+          `${commandPrefix} shadcn@latest add ${siteConfig.url}/r/${componentName}.json`
         )
       } else {
         setSelectedType("page")
         setCopyPayload("")
       }
     },
-    [packageManager, setSelectedType, setCopyPayload]
+    [commandPrefix, setSelectedType, setCopyPayload]
   )
 
   const handleBlockHighlight = React.useCallback(
     (block: { name: string; description: string; categories: string[] }) => {
       setSelectedType("block")
-      setCopyPayload(`${packageManager} dlx shadcn@latest add ${block.name}`)
+      setCopyPayload(`${commandPrefix} shadcn@latest add ${block.name}`)
     },
-    [setSelectedType, setCopyPayload, packageManager]
+    [setSelectedType, setCopyPayload, commandPrefix]
   )
 
   const runCommand = React.useCallback((command: () => unknown) => {
@@ -109,7 +109,7 @@ export function CommandMenu({
 
     document.addEventListener("keydown", down)
     return () => document.removeEventListener("keydown", down)
-  }, [copyPayload, runCommand, selectedType, packageManager])
+  }, [copyPayload, runCommand, selectedType, commandPrefix])
 
   return (
     <>
