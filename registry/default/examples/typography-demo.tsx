@@ -11,95 +11,106 @@ import {
 export default function TypographyDemo() {
   return (
     <div>
-      <TypographyH1>Taxing Laughter: The Joke Tax Chronicles</TypographyH1>
+      <TypographyH1>The Hidden Valley Discovery</TypographyH1>
       <TypographyP>
-        The king, seeing how much happier his subjects were, realized the error
-        of his ways and repealed the joke tax.
+        After three days of hiking through dense forest, Maya finally reached
+        the ridge overlooking the mysterious valley that had appeared on no map
+        she&apos;d ever seen.
       </TypographyP>
 
       <TypographyH2 className="mt-10 transition-colors">
-        The King&apos;s Plan
+        The Ancient Trail
       </TypographyH2>
 
       <TypographyP>
-        The king thought long and hard, and finally came up with{" "}
+        The weathered stone markers led deeper into the wilderness, each one
+        carved with symbols that seemed to{" "}
         <a
           href="#"
           className="text-primary font-medium underline underline-offset-4"
         >
-          a brilliant plan
+          tell a story
         </a>
-        : he would tax the jokes in the kingdom.
+        . Local legends spoke of a civilization that vanished centuries ago,
+        leaving only traces for those bold enough to seek them.
       </TypographyP>
 
       <TypographyBlockquote>
-        &quot;After all,&quot; he said, &quot;everyone enjoys a good joke, so
-        it&apos;s only fair that they should pay for the privilege.&quot;
+        &quot;The mountains keep their secrets well, but they reward those who
+        listen to the whispers carried by the wind through the pines.&quot;
       </TypographyBlockquote>
 
-      <TypographyH3 className="mt-8">The Joke Tax</TypographyH3>
+      <TypographyH3 className="mt-8">Essential Gear</TypographyH3>
 
       <TypographyP>
-        The king&apos;s subjects were not amused. They grumbled and complained,
-        but the king was firm:
+        Maya had learned from previous expeditions that success in the
+        wilderness depended on careful preparation. Her pack contained:
       </TypographyP>
 
       <TypographyList>
-        <li>1st level of puns: 5 gold coins</li>
-        <li>2nd level of jokes: 10 gold coins</li>
-        <li>3rd level of one-liners : 20 gold coins</li>
+        <li>
+          Waterproof shelter and sleeping system rated for mountain weather
+        </li>
+        <li>
+          Navigation tools including compass, GPS, and detailed topographic maps
+        </li>
+        <li>
+          Emergency supplies with extra food, water purification, and first aid
+        </li>
       </TypographyList>
 
       <TypographyP>
-        As a result, people stopped telling jokes, and the kingdom fell into a
-        gloom. But there was one person who refused to let the king&apos;s
-        foolishness get him down: a court jester named Jokester.
+        Each item had been tested on countless adventures. In the backcountry,
+        reliability wasn&apos;t just convenience—it was survival. The weight of
+        every ounce mattered when facing steep ascents and unpredictable
+        conditions.
       </TypographyP>
 
-      <TypographyH3 className="mt-8">The People&apos;s Rebellion</TypographyH3>
+      <TypographyH3 className="mt-8">Weather Observations</TypographyH3>
 
       <TypographyTable>
         <thead>
           <tr className="even:bg-muted m-0 border-t p-0">
             <th className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
-              King&apos;s Treasury
+              Time of Day
             </th>
             <th className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
-              People&apos;s happiness
+              Conditions
             </th>
           </tr>
         </thead>
         <tbody>
           <tr className="even:bg-muted m-0 border-t p-0">
             <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-              Empty
+              Dawn
             </td>
             <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-              Overflowing
-            </td>
-          </tr>
-          <tr className="even:bg-muted m-0 border-t p-0">
-            <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-              Modest
-            </td>
-            <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-              Satisfied
+              Misty valleys, clear peaks
             </td>
           </tr>
           <tr className="even:bg-muted m-0 border-t p-0">
             <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-              Full
+              Midday
             </td>
             <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-              Ecstatic
+              Bright sun, building clouds
+            </td>
+          </tr>
+          <tr className="even:bg-muted m-0 border-t p-0">
+            <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
+              Evening
+            </td>
+            <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
+              Golden light, gentle breeze
             </td>
           </tr>
         </tbody>
       </TypographyTable>
 
       <TypographyP>
-        The moral of the story is: never underestimate the power of a good laugh
-        and always be careful of bad ideas.
+        As the sun set behind the distant peaks, Maya realized that the real
+        treasure wasn&apos;t the destination, but the journey itself and the
+        stories it would give her to share around future campfires.
       </TypographyP>
     </div>
   )
