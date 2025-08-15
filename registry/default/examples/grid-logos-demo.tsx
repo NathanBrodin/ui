@@ -88,7 +88,7 @@ export function GridLogosDemo() {
           }
         >
           <div className="mb-3 flex items-center justify-center">
-            <IconComponent className="group-hover:text-primary transition-colors duration-200" />
+            <IconComponent className="group-hover:text-primary text-foreground transition-colors duration-200" />
           </div>
 
           <div className="text-center">
