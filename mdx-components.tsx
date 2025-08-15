@@ -10,7 +10,6 @@ import { CodeTabs } from "@/components/code-tabs"
 import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
 import { ComponentsList } from "@/components/components-list"
-import { getIconForLanguageExtension } from "@/components/icons"
 import {
   Accordion,
   AccordionContent,
@@ -33,6 +32,7 @@ import {
 
 import { CopyButton } from "./components/copy-button"
 import ThemeVisualizer from "./components/theme-visualizer"
+import { getIconForLanguageExtension } from "./registry/default/components/icons"
 import { GridLogosDemo } from "./registry/default/examples/grid-logos-demo"
 
 export const mdxComponents = {

@@ -22,11 +22,21 @@ export const components: Registry["items"] = [
     ],
   },
   {
+    name: "icons",
+    type: "registry:component",
+    files: [
+      {
+        path: "components/icons.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
     name: "icon-02",
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-02.tsx",
+        path: "components/logos/icon-02.tsx",
         type: "registry:component",
       },
     ],
@@ -36,7 +46,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-08.tsx",
+        path: "components/logos/icon-08.tsx",
         type: "registry:component",
       },
     ],
@@ -46,7 +56,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-12.tsx",
+        path: "components/logos/icon-12.tsx",
         type: "registry:component",
       },
     ],
@@ -56,7 +66,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-18.tsx",
+        path: "components/logos/icon-18.tsx",
         type: "registry:component",
       },
     ],
@@ -66,7 +76,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-22.tsx",
+        path: "components/logos/icon-22.tsx",
         type: "registry:component",
       },
     ],
@@ -76,7 +86,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-23.tsx",
+        path: "components/logos/icon-23.tsx",
         type: "registry:component",
       },
     ],
@@ -86,7 +96,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-26.tsx",
+        path: "components/logos/icon-26.tsx",
         type: "registry:component",
       },
     ],
@@ -96,7 +106,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-34.tsx",
+        path: "components/logos/icon-34.tsx",
         type: "registry:component",
       },
     ],
@@ -106,7 +116,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-35.tsx",
+        path: "components/logos/icon-35.tsx",
         type: "registry:component",
       },
     ],
@@ -116,7 +126,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-36.tsx",
+        path: "components/logos/icon-36.tsx",
         type: "registry:component",
       },
     ],
@@ -126,7 +136,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-37.tsx",
+        path: "components/logos/icon-37.tsx",
         type: "registry:component",
       },
     ],
@@ -136,7 +146,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-39.tsx",
+        path: "components/logos/icon-39.tsx",
         type: "registry:component",
       },
     ],
@@ -146,7 +156,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-44.tsx",
+        path: "components/logos/icon-44.tsx",
         type: "registry:component",
       },
     ],
@@ -156,7 +166,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-51.tsx",
+        path: "components/logos/icon-51.tsx",
         type: "registry:component",
       },
     ],
@@ -166,7 +176,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-75.tsx",
+        path: "components/logos/icon-75.tsx",
         type: "registry:component",
       },
     ],
@@ -176,7 +186,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-85.tsx",
+        path: "components/logos/icon-85.tsx",
         type: "registry:component",
       },
     ],
@@ -186,7 +196,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-86.tsx",
+        path: "components/logos/icon-86.tsx",
         type: "registry:component",
       },
     ],
@@ -196,7 +206,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-87.tsx",
+        path: "components/logos/icon-87.tsx",
         type: "registry:component",
       },
     ],
@@ -206,7 +216,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-93.tsx",
+        path: "components/logos/icon-93.tsx",
         type: "registry:component",
       },
     ],
@@ -216,7 +226,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-97.tsx",
+        path: "components/logos/icon-97.tsx",
         type: "registry:component",
       },
     ],
@@ -226,7 +236,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-124.tsx",
+        path: "components/logos/icon-124.tsx",
         type: "registry:component",
       },
     ],
@@ -236,7 +246,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-137.tsx",
+        path: "components/logos/icon-137.tsx",
         type: "registry:component",
       },
     ],
@@ -246,7 +256,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-146.tsx",
+        path: "components/logos/icon-146.tsx",
         type: "registry:component",
       },
     ],
@@ -256,7 +266,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-162.tsx",
+        path: "components/logos/icon-162.tsx",
         type: "registry:component",
       },
     ],
@@ -266,7 +276,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-199.tsx",
+        path: "components/logos/icon-199.tsx",
         type: "registry:component",
       },
     ],
@@ -276,7 +286,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-213.tsx",
+        path: "components/logos/icon-213.tsx",
         type: "registry:component",
       },
     ],
@@ -286,7 +296,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-231.tsx",
+        path: "components/logos/icon-231.tsx",
         type: "registry:component",
       },
     ],
@@ -296,7 +306,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-259.tsx",
+        path: "components/logos/icon-259.tsx",
         type: "registry:component",
       },
     ],
@@ -306,7 +316,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-260.tsx",
+        path: "components/logos/icon-260.tsx",
         type: "registry:component",
       },
     ],
@@ -316,7 +326,7 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/icons/icon-261.tsx",
+        path: "components/logos/icon-261.tsx",
         type: "registry:component",
       },
     ],

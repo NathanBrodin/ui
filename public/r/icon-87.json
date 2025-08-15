@@ -4,7 +4,7 @@
   "type": "registry:component",
   "files": [
     {
-      "path": "registry/default/components/icons/icon-87.tsx",
+      "path": "registry/default/components/logos/icon-87.tsx",
       "content": "import React from \"react\"\n\ninterface Icon87Props {\n  className?: string\n  size?: number\n}\n\nexport const Icon87: React.FC<Icon87Props> = ({\n  className = \"\",\n  size = 24,\n}) => {\n  return (\n    <svg\n      className={className}\n      width={size}\n      height={size}\n      viewBox=\"0 0 200 200\"\n      fill=\"none\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n    >\n      <g clipPath=\"url(#clip0_2868_190)\">\n        <path\n          fillRule=\"evenodd\"\n          clipRule=\"evenodd\"\n          d=\"M100 22C100 9.84974 90.1503 0 78 0H22C9.84974 0 0 9.84972 0 22V78.7194C0 90.8697 9.84974 100.719 22 100.719H78C90.1503 100.719 100 110.569 100 122.719V178C100 190.15 109.85 200 122 200H178C190.15 200 200 190.15 200 178V121.28C200 109.13 190.15 99.2805 178 99.2805H122C109.85 99.2805 100 89.4308 100 77.2805V22Z\"\n          fill=\"currentColor\"\n        />\n      </g>\n      <defs>\n        <clipPath id=\"clip0_2868_190\">\n          <rect width=\"200\" height=\"200\" fill=\"currentColor\" />\n        </clipPath>\n      </defs>\n    </svg>\n  )\n}\n\nexport default Icon87\n",
       "type": "registry:component"
     }

@@ -1348,14 +1348,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-02.tsx",
+        path: "registry/default/components/logos/icon-02.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-02.tsx"
+        "@/registry/default/components/logos/icon-02.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1374,14 +1374,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-08.tsx",
+        path: "registry/default/components/logos/icon-08.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-08.tsx"
+        "@/registry/default/components/logos/icon-08.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1400,14 +1400,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-12.tsx",
+        path: "registry/default/components/logos/icon-12.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-12.tsx"
+        "@/registry/default/components/logos/icon-12.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1426,14 +1426,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-18.tsx",
+        path: "registry/default/components/logos/icon-18.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-18.tsx"
+        "@/registry/default/components/logos/icon-18.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1452,14 +1452,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-22.tsx",
+        path: "registry/default/components/logos/icon-22.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-22.tsx"
+        "@/registry/default/components/logos/icon-22.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1478,14 +1478,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-23.tsx",
+        path: "registry/default/components/logos/icon-23.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-23.tsx"
+        "@/registry/default/components/logos/icon-23.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1504,14 +1504,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-26.tsx",
+        path: "registry/default/components/logos/icon-26.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-26.tsx"
+        "@/registry/default/components/logos/icon-26.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1530,14 +1530,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-34.tsx",
+        path: "registry/default/components/logos/icon-34.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-34.tsx"
+        "@/registry/default/components/logos/icon-34.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1556,14 +1556,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-35.tsx",
+        path: "registry/default/components/logos/icon-35.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-35.tsx"
+        "@/registry/default/components/logos/icon-35.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1582,14 +1582,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-36.tsx",
+        path: "registry/default/components/logos/icon-36.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-36.tsx"
+        "@/registry/default/components/logos/icon-36.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1608,14 +1608,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-37.tsx",
+        path: "registry/default/components/logos/icon-37.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-37.tsx"
+        "@/registry/default/components/logos/icon-37.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1634,14 +1634,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-39.tsx",
+        path: "registry/default/components/logos/icon-39.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-39.tsx"
+        "@/registry/default/components/logos/icon-39.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1660,14 +1660,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-44.tsx",
+        path: "registry/default/components/logos/icon-44.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-44.tsx"
+        "@/registry/default/components/logos/icon-44.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1686,14 +1686,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-51.tsx",
+        path: "registry/default/components/logos/icon-51.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-51.tsx"
+        "@/registry/default/components/logos/icon-51.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1712,14 +1712,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-75.tsx",
+        path: "registry/default/components/logos/icon-75.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-75.tsx"
+        "@/registry/default/components/logos/icon-75.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1738,14 +1738,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-85.tsx",
+        path: "registry/default/components/logos/icon-85.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-85.tsx"
+        "@/registry/default/components/logos/icon-85.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1764,14 +1764,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-86.tsx",
+        path: "registry/default/components/logos/icon-86.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-86.tsx"
+        "@/registry/default/components/logos/icon-86.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1790,14 +1790,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-87.tsx",
+        path: "registry/default/components/logos/icon-87.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-87.tsx"
+        "@/registry/default/components/logos/icon-87.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1816,14 +1816,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-93.tsx",
+        path: "registry/default/components/logos/icon-93.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-93.tsx"
+        "@/registry/default/components/logos/icon-93.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1842,14 +1842,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-97.tsx",
+        path: "registry/default/components/logos/icon-97.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-97.tsx"
+        "@/registry/default/components/logos/icon-97.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1868,14 +1868,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-124.tsx",
+        path: "registry/default/components/logos/icon-124.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-124.tsx"
+        "@/registry/default/components/logos/icon-124.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1894,14 +1894,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-137.tsx",
+        path: "registry/default/components/logos/icon-137.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-137.tsx"
+        "@/registry/default/components/logos/icon-137.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1920,14 +1920,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-146.tsx",
+        path: "registry/default/components/logos/icon-146.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-146.tsx"
+        "@/registry/default/components/logos/icon-146.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1946,14 +1946,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-162.tsx",
+        path: "registry/default/components/logos/icon-162.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-162.tsx"
+        "@/registry/default/components/logos/icon-162.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1972,14 +1972,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-199.tsx",
+        path: "registry/default/components/logos/icon-199.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-199.tsx"
+        "@/registry/default/components/logos/icon-199.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -1998,14 +1998,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-213.tsx",
+        path: "registry/default/components/logos/icon-213.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-213.tsx"
+        "@/registry/default/components/logos/icon-213.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2024,14 +2024,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-231.tsx",
+        path: "registry/default/components/logos/icon-231.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-231.tsx"
+        "@/registry/default/components/logos/icon-231.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2050,14 +2050,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-259.tsx",
+        path: "registry/default/components/logos/icon-259.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-259.tsx"
+        "@/registry/default/components/logos/icon-259.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2076,14 +2076,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-260.tsx",
+        path: "registry/default/components/logos/icon-260.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-260.tsx"
+        "@/registry/default/components/logos/icon-260.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2102,14 +2102,14 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/icons/icon-261.tsx",
+        path: "registry/default/components/logos/icon-261.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/icons/icon-261.tsx"
+        "@/registry/default/components/logos/icon-261.tsx"
       )
       const exportName =
         Object.keys(mod).find(

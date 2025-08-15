@@ -4,7 +4,7 @@
   "type": "registry:component",
   "files": [
     {
-      "path": "registry/default/components/icons/icon-12.tsx",
+      "path": "registry/default/components/logos/icon-12.tsx",
       "content": "import React from \"react\"\n\ninterface Icon12Props {\n  className?: string\n  size?: number\n}\n\nexport const Icon12: React.FC<Icon12Props> = ({\n  className = \"\",\n  size = 24,\n}) => {\n  return (\n    <svg\n      className={className}\n      width={size}\n      height={size}\n      viewBox=\"0 0 200 200\"\n      fill=\"none\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n    >\n      <path\n        fillRule=\"evenodd\"\n        clipRule=\"evenodd\"\n        d=\"M200 50V4.37114e-06L100 0V49.9803C99.9893 22.3751 77.6077 4.37114e-06 50 4.37114e-06H2.18557e-06V100H50C22.3858 100 -1.20706e-06 122.386 0 150L2.18557e-06 200H100V150C100 177.614 122.386 200 150 200H200V100H150.02C177.625 99.9893 200 77.6077 200 50Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  )\n}\n\nexport default Icon12\n",
       "type": "registry:component"
     }

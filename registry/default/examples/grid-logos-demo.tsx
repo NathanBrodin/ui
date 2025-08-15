@@ -34,7 +34,7 @@ import {
   Icon259,
   Icon260,
   Icon261,
-} from "../components/icons"
+} from "../components/logos"
 import { siteConfig } from "../lib/config"
 
 export function GridLogosDemo() {

@@ -4,7 +4,7 @@
   "type": "registry:component",
   "files": [
     {
-      "path": "registry/default/components/icons/icon-261.tsx",
+      "path": "registry/default/components/logos/icon-261.tsx",
       "content": "import React from \"react\"\n\ninterface Icon261Props {\n  className?: string\n  size?: number\n}\n\nexport const Icon261: React.FC<Icon261Props> = ({\n  className = \"\",\n  size = 24,\n}) => {\n  return (\n    <svg\n      className={className}\n      width={size}\n      height={size}\n      viewBox=\"0 0 201 200\"\n      fill=\"none\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n    >\n      <path\n        d=\"M34.4547 0.000366211H167.182C185.759 0.000366211 200.818 14.9242 200.818 33.3337C200.818 51.7432 185.759 66.667 167.182 66.667C185.759 66.667 200.818 81.5909 200.818 100C200.818 118.41 185.759 133.334 167.182 133.334C185.759 133.334 200.818 148.258 200.818 166.667C200.818 185.077 185.759 200 167.182 200H34.4547C15.8779 200 0.818359 185.077 0.818359 166.667C0.818359 148.258 15.8779 133.334 34.4547 133.334C15.8779 133.334 0.818359 118.41 0.818359 100C0.818359 81.5909 15.8779 66.667 34.4547 66.667C15.8779 66.667 0.818359 51.7432 0.818359 33.3337C0.818359 14.9242 15.8779 0.000366211 34.4547 0.000366211Z\"\n        fill=\"currentColor\"\n      />\n    </svg>\n  )\n}\n\nexport default Icon261\n",
       "type": "registry:component"
     }
