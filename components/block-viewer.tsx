@@ -24,7 +24,7 @@ import { createFileTreeForRegistryItemFiles, FileTree } from "@/lib/registry"
 import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
-import { getIconForLanguageExtension } from "@/components/icons"
+import { getIconForLanguageExtension } from "@/registry/default/components/icons"
 import { Button } from "@/registry/default/ui/button"
 import {
   Collapsible,
