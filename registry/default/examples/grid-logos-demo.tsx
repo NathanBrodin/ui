@@ -1,5 +1,6 @@
 "use client"
 
+import { siteConfig } from "@/lib/config"
 import { useConfig } from "@/hooks/use-config"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 
@@ -35,7 +36,6 @@ import {
   Icon260,
   Icon261,
 } from "../components/logos"
-import { siteConfig } from "../lib/config"
 
 export function GridLogosDemo() {
   const icons = [

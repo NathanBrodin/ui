@@ -11,6 +11,7 @@ export const blocks: Registry["items"] = [
       `https://ui.brodin.dev/r/active-theme.json`,
       `https://ui.brodin.dev/r/theme-provider.json`,
       `https://ui.brodin.dev/r/config.json`,
+      `https://ui.brodin.dev/r/icons.json`,
       `https://ui.brodin.dev/r/index.json`,
       "sonner",
     ],
@@ -29,6 +30,11 @@ export const blocks: Registry["items"] = [
       {
         path: "blocks/app/.prettierrc.json",
         target: ".prettierrc.json",
+        type: "registry:file",
+      },
+      {
+        path: "blocks/app/icon.tsx",
+        target: "app/icon.tsx",
         type: "registry:file",
       },
     ],

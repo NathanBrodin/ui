@@ -33,14 +33,14 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
   description: siteConfig.description,
-  keywords: ["Next.js", "React", "Tailwind CSS", "Components", "shadcn"],
+  keywords: ["Next.js"],
   authors: [
     {
       name: "Nathan Brodin",
       url: "https://brodin.dev",
     },
   ],
-  creator: "nathan brodin",
+  creator: "Nathan Brodin",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -62,12 +62,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${process.env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`],
-    creator: "@shadcn",
-  },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    creator: "@nathan_brodin",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
 }

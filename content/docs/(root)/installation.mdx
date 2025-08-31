@@ -23,17 +23,30 @@ npx shadcn@latest init
 
 ### Set up brodin/ui
 
-Add the `app` component that will set up all required files:
+1. Add the `app` component that will set up all required files:
 
 ```bash
 npx shadcn@latest add https://ui.brodin.dev/r/app.json --yes --overwrite
 ```
 
-Install the fonts and place them in the [/public/fonts/](./public/fonts/) folder:
+2. Install the fonts and place them in the [/public/fonts/](./public/fonts/) folder:
 - [iA Writer Quattro](
 https://github.com/iaolo/iA-Fonts/raw/master/iA%20Writer%20Quattro/Variable/iAWriterQuattroV.ttf
 )
 - [iA Writer Mono](https://github.com/iaolo/iA-Fonts/raw/master/iA%20Writer%20Mono/Variable/iAWriterMonoV.ttf)
+
+- Set up the required environment variables in [.env file](./env):
+
+```bash
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+
+> Don't forget to add it to Vercel as well with the real url.
+
+3. Select and set the logo for your app:
+- Choose one of [the available logo](/docs/brand#logo) and click on it to copy the install command
+- Run the command to add the logo to your app
+- Import it in the [app/icon.tsx](./app/icon.tsx) file instead of the existing logo.
 
 A base next.js app is now set up with the Brodin style!
 

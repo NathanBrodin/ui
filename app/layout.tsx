@@ -4,11 +4,11 @@ import localFont from "next/font/local"
 
 import "./globals.css"
 
+import { siteConfig } from "@/lib/config"
 import { ActiveThemeProvider } from "@/registry/default/components/active-theme"
 import { ThemeProvider } from "@/registry/default/components/theme-provider"
 import { LayoutProvider } from "@/registry/default/hooks/use-layout"
 import { META_THEME_COLORS } from "@/registry/default/hooks/use-meta-color"
-import { siteConfig } from "@/registry/default/lib/config"
 import { Toaster } from "@/registry/default/ui/sonner"
 
 const lora = Lora({

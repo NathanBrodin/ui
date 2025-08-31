@@ -1,5 +1,5 @@
+import { siteConfig } from "@/lib/config"
 import { PageHeader } from "@/registry/default/blocks/page-header/page-header"
-import { siteConfig } from "@/registry/default/lib/config"
 import { Noise } from "@/registry/default/ui/backgrounds"
 import { Footer } from "@/registry/default/ui/footer"
 

@@ -4,9 +4,9 @@ import { notFound } from "next/navigation"
 import { registryItemSchema } from "shadcn/registry"
 import { z } from "zod"
 
+import { siteConfig } from "@/lib/config"
 import { getRegistryComponent, getRegistryItem } from "@/lib/registry"
 import { absoluteUrl, cn } from "@/lib/utils"
-import { siteConfig } from "@/registry/default/lib/config"
 
 export const revalidate = false
 export const dynamic = "force-static"

@@ -1,10 +1,10 @@
+import { siteConfig } from "@/lib/config"
 import { source } from "@/lib/source"
 import { CommandMenu } from "@/components/command-menu"
 import { GitHubLink } from "@/components/github-link"
 import { SiteConfig } from "@/components/site-config"
 import { ThemeSelector } from "@/components/theme-selector"
 import { Icons } from "@/registry/default/components/icons"
-import { siteConfig } from "@/registry/default/lib/config"
 import { Separator } from "@/registry/default/ui/separator"
 
 import { AppIcon } from "./components/app-icon"
