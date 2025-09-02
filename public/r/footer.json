@@ -6,8 +6,8 @@
     "next/link"
   ],
   "registryDependencies": [
-    "backgrounds",
-    "diamond"
+    "@brodin-ui/backgrounds",
+    "@brodin-ui/diamond"
   ],
   "files": [
     {

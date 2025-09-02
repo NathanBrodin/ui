@@ -6,7 +6,7 @@
     "@radix-ui/react-alert-dialog"
   ],
   "registryDependencies": [
-    "button"
+    "@brodin-ui/button"
   ],
   "files": [
     {

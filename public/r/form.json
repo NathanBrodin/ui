@@ -10,8 +10,8 @@
     "react-hook-form"
   ],
   "registryDependencies": [
-    "button",
-    "label"
+    "@brodin-ui/button",
+    "@brodin-ui/label"
   ],
   "files": [
     {

@@ -8,7 +8,7 @@
     "react-day-picker"
   ],
   "registryDependencies": [
-    "button"
+    "@brodin-ui/button"
   ],
   "files": [
     {

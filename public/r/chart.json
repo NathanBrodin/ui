@@ -7,7 +7,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "card"
+    "@brodin-ui/card"
   ],
   "files": [
     {

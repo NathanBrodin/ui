@@ -150,7 +150,7 @@ export const Index: Record<string, any> = {
     name: "alert-dialog",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: ["@brodin-ui/button"],
     files: [
       {
         path: "registry/default/ui/alert-dialog.tsx",
@@ -323,7 +323,7 @@ export const Index: Record<string, any> = {
     name: "calendar",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: ["@brodin-ui/button"],
     files: [
       {
         path: "registry/default/ui/calendar.tsx",
@@ -371,7 +371,7 @@ export const Index: Record<string, any> = {
     name: "carousel",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: ["@brodin-ui/button"],
     files: [
       {
         path: "registry/default/ui/carousel.tsx",
@@ -395,7 +395,7 @@ export const Index: Record<string, any> = {
     name: "chart",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["card"],
+    registryDependencies: ["@brodin-ui/card"],
     files: [
       {
         path: "registry/default/ui/chart.tsx",
@@ -467,7 +467,7 @@ export const Index: Record<string, any> = {
     name: "command",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["dialog"],
+    registryDependencies: ["@brodin-ui/dialog"],
     files: [
       {
         path: "registry/default/ui/command.tsx",
@@ -611,7 +611,7 @@ export const Index: Record<string, any> = {
     name: "form",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button", "label"],
+    registryDependencies: ["@brodin-ui/button", "@brodin-ui/label"],
     files: [
       {
         path: "registry/default/ui/form.tsx",
@@ -659,7 +659,11 @@ export const Index: Record<string, any> = {
     name: "hero",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["backgrounds, diamond, separator"],
+    registryDependencies: [
+      "@brodin-ui/backgrounds",
+      "@brodin-ui/diamond",
+      "@brodin-ui/separator",
+    ],
     files: [
       {
         path: "registry/default/ui/hero.tsx",
@@ -827,7 +831,7 @@ export const Index: Record<string, any> = {
     name: "pagination",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: ["@brodin-ui/button"],
     files: [
       {
         path: "registry/default/ui/pagination.tsx",
@@ -1044,13 +1048,13 @@ export const Index: Record<string, any> = {
     description: "",
     type: "registry:ui",
     registryDependencies: [
-      "button",
-      "separator",
-      "sheet",
-      "tooltip",
-      "input",
+      "@brodin-ui/button",
+      "@brodin-ui/separator",
+      "@brodin-ui/sheet",
+      "@brodin-ui/tooltip",
+      "@brodin-ui/input",
       "use-mobile",
-      "skeleton",
+      "@brodin-ui/skeleton",
     ],
     files: [
       {
@@ -1267,7 +1271,7 @@ export const Index: Record<string, any> = {
     name: "toggle-group",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["toggle"],
+    registryDependencies: ["@brodin-ui/toggle"],
     files: [
       {
         path: "registry/default/ui/toggle-group.tsx",
@@ -1315,7 +1319,7 @@ export const Index: Record<string, any> = {
     name: "footer",
     description: "",
     type: "registry:ui",
-    registryDependencies: ["backgrounds", "diamond"],
+    registryDependencies: ["@brodin-ui/backgrounds", "@brodin-ui/diamond"],
     files: [
       {
         path: "registry/default/ui/footer.tsx",

@@ -8,13 +8,13 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "button",
-    "separator",
-    "sheet",
-    "tooltip",
-    "input",
+    "@brodin-ui/button",
+    "@brodin-ui/separator",
+    "@brodin-ui/sheet",
+    "@brodin-ui/tooltip",
+    "@brodin-ui/input",
     "use-mobile",
-    "skeleton"
+    "@brodin-ui/skeleton"
   ],
   "files": [
     {

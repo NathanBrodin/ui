@@ -46,7 +46,7 @@ export const ui = [
     name: "alert-dialog",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-alert-dialog"],
-    registryDependencies: ["button"],
+    registryDependencies: ["@brodin-ui/button"],
     files: [
       {
         path: "ui/alert-dialog.tsx",
@@ -128,7 +128,7 @@ export const ui = [
     name: "calendar",
     type: "registry:ui",
     dependencies: ["react-day-picker@latest", "date-fns", "react-day-picker"],
-    registryDependencies: ["button"],
+    registryDependencies: ["@brodin-ui/button"],
     files: [
       {
         path: "ui/calendar.tsx",
@@ -155,7 +155,7 @@ export const ui = [
         type: "registry:ui",
       },
     ],
-    registryDependencies: ["button"],
+    registryDependencies: ["@brodin-ui/button"],
     dependencies: ["embla-carousel-react"],
   },
   {
@@ -167,7 +167,7 @@ export const ui = [
         type: "registry:ui",
       },
     ],
-    registryDependencies: ["card"],
+    registryDependencies: ["@brodin-ui/card"],
     dependencies: ["recharts", "lucide-react"],
   },
   {
@@ -196,7 +196,7 @@ export const ui = [
     name: "command",
     type: "registry:ui",
     dependencies: ["cmdk"],
-    registryDependencies: ["dialog"],
+    registryDependencies: ["@brodin-ui/dialog"],
     files: [
       {
         path: "ui/command.tsx",
@@ -269,7 +269,7 @@ export const ui = [
       "zod",
       "react-hook-form",
     ],
-    registryDependencies: ["button", "label"],
+    registryDependencies: ["@brodin-ui/button", "@brodin-ui/label"],
     files: [
       {
         path: "ui/form.tsx",
@@ -291,7 +291,11 @@ export const ui = [
   {
     name: "hero",
     type: "registry:ui",
-    registryDependencies: ["backgrounds, diamond, separator"],
+    registryDependencies: [
+      "@brodin-ui/backgrounds",
+      "@brodin-ui/diamond",
+      "@brodin-ui/separator",
+    ],
     files: [
       {
         path: "ui/hero.tsx",
@@ -366,7 +370,7 @@ export const ui = [
   {
     name: "pagination",
     type: "registry:ui",
-    registryDependencies: ["button"],
+    registryDependencies: ["@brodin-ui/button"],
     files: [
       {
         path: "ui/pagination.tsx",
@@ -471,13 +475,13 @@ export const ui = [
       "lucide-react",
     ],
     registryDependencies: [
-      "button",
-      "separator",
-      "sheet",
-      "tooltip",
-      "input",
+      "@brodin-ui/button",
+      "@brodin-ui/separator",
+      "@brodin-ui/sheet",
+      "@brodin-ui/tooltip",
+      "@brodin-ui/input",
       "use-mobile",
-      "skeleton",
+      "@brodin-ui/skeleton",
     ],
     files: [
       {
@@ -617,7 +621,7 @@ export const ui = [
     name: "toggle-group",
     type: "registry:ui",
     dependencies: ["@radix-ui/react-toggle-group"],
-    registryDependencies: ["toggle"],
+    registryDependencies: ["@brodin-ui/toggle"],
     files: [
       {
         path: "ui/toggle-group.tsx",
@@ -647,7 +651,7 @@ export const ui = [
       },
     ],
     dependencies: ["next/link"],
-    registryDependencies: ["backgrounds", "diamond"],
+    registryDependencies: ["@brodin-ui/backgrounds", "@brodin-ui/diamond"],
   },
   {
     name: "typography",

@@ -3,7 +3,7 @@
   "name": "pagination",
   "type": "registry:ui",
   "registryDependencies": [
-    "button"
+    "@brodin-ui/button"
   ],
   "files": [
     {

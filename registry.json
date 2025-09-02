@@ -134,7 +134,7 @@
         "@radix-ui/react-alert-dialog"
       ],
       "registryDependencies": [
-        "button"
+        "@brodin-ui/button"
       ],
       "files": [
         {
@@ -232,7 +232,7 @@
         "react-day-picker"
       ],
       "registryDependencies": [
-        "button"
+        "@brodin-ui/button"
       ],
       "files": [
         {
@@ -258,7 +258,7 @@
         "embla-carousel-react"
       ],
       "registryDependencies": [
-        "button"
+        "@brodin-ui/button"
       ],
       "files": [
         {
@@ -275,7 +275,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "card"
+        "@brodin-ui/card"
       ],
       "files": [
         {
@@ -317,7 +317,7 @@
         "cmdk"
       ],
       "registryDependencies": [
-        "dialog"
+        "@brodin-ui/dialog"
       ],
       "files": [
         {
@@ -403,8 +403,8 @@
         "react-hook-form"
       ],
       "registryDependencies": [
-        "button",
-        "label"
+        "@brodin-ui/button",
+        "@brodin-ui/label"
       ],
       "files": [
         {
@@ -430,7 +430,9 @@
       "name": "hero",
       "type": "registry:ui",
       "registryDependencies": [
-        "backgrounds, diamond, separator"
+        "@brodin-ui/backgrounds",
+        "@brodin-ui/diamond",
+        "@brodin-ui/separator"
       ],
       "files": [
         {
@@ -515,7 +517,7 @@
       "name": "pagination",
       "type": "registry:ui",
       "registryDependencies": [
-        "button"
+        "@brodin-ui/button"
       ],
       "files": [
         {
@@ -637,13 +639,13 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button",
-        "separator",
-        "sheet",
-        "tooltip",
-        "input",
+        "@brodin-ui/button",
+        "@brodin-ui/separator",
+        "@brodin-ui/sheet",
+        "@brodin-ui/tooltip",
+        "@brodin-ui/input",
         "use-mobile",
-        "skeleton"
+        "@brodin-ui/skeleton"
       ],
       "files": [
         {
@@ -797,7 +799,7 @@
         "@radix-ui/react-toggle-group"
       ],
       "registryDependencies": [
-        "toggle"
+        "@brodin-ui/toggle"
       ],
       "files": [
         {
@@ -826,8 +828,8 @@
         "next/link"
       ],
       "registryDependencies": [
-        "backgrounds",
-        "diamond"
+        "@brodin-ui/backgrounds",
+        "@brodin-ui/diamond"
       ],
       "files": [
         {

@@ -3,7 +3,9 @@
   "name": "hero",
   "type": "registry:ui",
   "registryDependencies": [
-    "backgrounds, diamond, separator"
+    "@brodin-ui/backgrounds",
+    "@brodin-ui/diamond",
+    "@brodin-ui/separator"
   ],
   "files": [
     {
