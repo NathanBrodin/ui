@@ -17,5 +17,8 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
+  "registries": {
+    "@brodin-ui": "https://ui.brodin.dev/r/{name}.json"
+  },
   "iconLibrary": "lucide"
 }

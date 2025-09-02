@@ -3,9 +3,11 @@
 import * as React from "react"
 import { useTheme } from "next-themes"
 
-import { baseColors } from "@/lib/colors"
-import { useThemeConfig } from "@/registry/default/components/active-theme"
-import { useMetaColor } from "@/registry/default/hooks/use-meta-color"
+import {
+  baseColors,
+  useThemeConfig,
+} from "@/registry/default/components/providers/active-theme-provider"
+import { useMetaColor } from "@/registry/default/hooks/use-meta-colors"
 import { cn } from "@/registry/default/lib/utils"
 import { Button } from "@/registry/default/ui/button"
 import {

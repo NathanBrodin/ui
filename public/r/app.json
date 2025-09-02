@@ -1,37 +1,46 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "app",
-  "type": "registry:block",
-  "description": "Setup a full next.js app with this block",
-  "dependencies": [
-    "next"
-  ],
-  "devDependencies": [
-    "prettier",
-    "prettier-plugin-tailwindcss",
-    "@ianvs/prettier-plugin-sort-imports"
-  ],
+  "type": "registry:page",
   "registryDependencies": [
-    "https://ui.brodin.dev/r/use-layout.json",
-    "https://ui.brodin.dev/r/use-meta-color.json",
-    "https://ui.brodin.dev/r/active-theme.json",
-    "https://ui.brodin.dev/r/theme-provider.json",
-    "https://ui.brodin.dev/r/config.json",
-    "https://ui.brodin.dev/r/index.json",
-    "sonner"
+    "@brodin-ui/design-system",
+    "@brodin-ui/config",
+    "@brodin-ui/active-theme-provider",
+    "@brodin-ui/layout-provider",
+    "@brodin-ui/theme-provider",
+    "@brodin-ui/use-meta-colors",
+    "@brodin-ui/sonner",
+    "@brodin-ui/app-icon",
+    "@brodin-ui/page-footer",
+    "@brodin-ui/page-header",
+    "@brodin-ui/backgrounds",
+    "@brodin-ui/button",
+    "@brodin-ui/hero"
   ],
   "files": [
     {
-      "path": "registry/default/blocks/app/app/layout.tsx",
-      "content": "import type { Metadata } from \"next\"\nimport { Lora } from \"next/font/google\"\nimport localFont from \"next/font/local\"\n\nimport \"@/registry/default/styles/globals.css\"\n\nimport { ActiveThemeProvider } from \"@/registry/default/components/active-theme\"\nimport { ThemeProvider } from \"@/registry/default/components/theme-provider\"\nimport { LayoutProvider } from \"@/registry/default/hooks/use-layout\"\nimport { META_THEME_COLORS } from \"@/registry/default/hooks/use-meta-color\"\nimport { siteConfig } from \"@/registry/default/lib/config\"\nimport { Toaster } from \"@/registry/default/ui/sonner\"\n\nconst lora = Lora({\n  variable: \"--font-display\",\n  subsets: [\"latin\"],\n})\n\nconst writer = localFont({\n  src: \"../public/fonts/iAWriterQuattroV.ttf\",\n  variable: \"--font-sans\",\n})\n\nconst writerMono = localFont({\n  src: \"../public/fonts/iAWriterMonoV.ttf\",\n  variable: \"--font-mono\",\n})\n\nexport const metadata: Metadata = {\n  title: {\n    default: siteConfig.name,\n    template: `%s - ${siteConfig.name}`,\n  },\n  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),\n  description: siteConfig.description,\n  keywords: [\"Next.js\", \"React\", \"Tailwind CSS\", \"Components\", \"shadcn\"],\n  authors: [\n    {\n      name: \"Nathan Brodin\",\n      url: \"https://brodin.dev\",\n    },\n  ],\n  creator: \"nathan brodin\",\n  openGraph: {\n    type: \"website\",\n    locale: \"en_US\",\n    url: process.env.NEXT_PUBLIC_APP_URL!,\n    title: siteConfig.name,\n    description: siteConfig.description,\n    siteName: siteConfig.name,\n    images: [\n      {\n        url: `${process.env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`,\n        width: 1200,\n        height: 630,\n        alt: siteConfig.name,\n      },\n    ],\n  },\n  twitter: {\n    card: \"summary_large_image\",\n    title: siteConfig.name,\n    description: siteConfig.description,\n    images: [`${process.env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`],\n    creator: \"@shadcn\",\n  },\n  icons: {\n    icon: \"/favicon.ico\",\n    shortcut: \"/favicon-16x16.png\",\n    apple: \"/apple-touch-icon.png\",\n  },\n  manifest: `${siteConfig.url}/site.webmanifest`,\n}\n\nexport default function RootLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode\n}>) {\n  return (\n    <html lang=\"en\" suppressHydrationWarning>\n      <head>\n        <script\n          dangerouslySetInnerHTML={{\n            __html: `\n              try {\n                if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {\n                  document.querySelector('meta[name=\"theme-color\"]').setAttribute('content', '${META_THEME_COLORS.dark}')\n                }\n                if (localStorage.layout) {\n                  document.documentElement.classList.add('layout-' + localStorage.layout)\n                }\n              } catch (_) {}\n            `,\n          }}\n        />\n        <meta name=\"theme-color\" content={META_THEME_COLORS.light} />\n      </head>\n      <body\n        className={`${lora.variable} ${writer.variable} ${writerMono.variable} overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]`}\n      >\n        <ThemeProvider\n          attribute=\"class\"\n          defaultTheme=\"system\"\n          enableSystem\n          disableTransitionOnChange\n        >\n          <LayoutProvider>\n            <ActiveThemeProvider>\n              {children}\n              <Toaster position=\"top-center\" />\n            </ActiveThemeProvider>\n          </LayoutProvider>\n        </ThemeProvider>\n      </body>\n    </html>\n  )\n}\n",
+      "path": "registry/default/app/layout.tsx",
+      "content": "import type { Metadata } from \"next\"\nimport { Lora } from \"next/font/google\"\nimport localFont from \"next/font/local\"\n\nimport \"./globals.css\"\n\nimport { ActiveThemeProvider } from \"@/registry/default/components/providers/active-theme-provider\"\nimport { LayoutProvider } from \"@/registry/default/components/providers/layout-provider\"\nimport { ThemeProvider } from \"@/registry/default/components/providers/theme-provider\"\nimport { META_THEME_COLORS } from \"@/registry/default/hooks/use-meta-colors\"\nimport { siteConfig } from \"@/registry/default/lib/config\"\nimport { Toaster } from \"@/registry/default/ui/sonner\"\n\nconst lora = Lora({\n  variable: \"--font-display\",\n  subsets: [\"latin\"],\n})\n\nconst writer = localFont({\n  src: \"../public/fonts/iAWriterQuattroV.ttf\",\n  variable: \"--font-sans\",\n})\n\nconst writerMono = localFont({\n  src: \"../public/fonts/iAWriterMonoV.ttf\",\n  variable: \"--font-mono\",\n})\n\nexport const metadata: Metadata = {\n  title: {\n    default: siteConfig.name,\n    template: `%s - ${siteConfig.name}`,\n  },\n  metadataBase: new URL(siteConfig.url),\n  description: siteConfig.description,\n  keywords: [\"Next.js\", \"React\", \"Tailwind CSS\", \"Components\", \"shadcn\"],\n  authors: [siteConfig.author],\n  creator: siteConfig.author.name,\n  openGraph: {\n    type: \"website\",\n    locale: \"en_US\",\n    url: siteConfig.url,\n    title: siteConfig.name,\n    description: siteConfig.description,\n    siteName: siteConfig.name,\n    images: [\n      {\n        url: siteConfig.ogImage,\n        width: 1200,\n        height: 630,\n        alt: siteConfig.name,\n      },\n    ],\n  },\n  twitter: {\n    card: \"summary_large_image\",\n    title: siteConfig.name,\n    description: siteConfig.description,\n    images: [siteConfig.ogImage],\n    creator: siteConfig.author.twitter,\n  },\n  manifest: `${siteConfig.url}/site.webmanifest`,\n}\n\nexport default function RootLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode\n}>) {\n  return (\n    <html lang=\"en\" suppressHydrationWarning>\n      <head>\n        <script\n          dangerouslySetInnerHTML={{\n            __html: `\n              try {\n                if (localStorage.theme === 'dark' || ((!('theme' in localStorage) || localStorage.theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {\n                  document.querySelector('meta[name=\"theme-color\"]').setAttribute('content', '${META_THEME_COLORS.dark}')\n                }\n                if (localStorage.layout) {\n                  document.documentElement.classList.add('layout-' + localStorage.layout)\n                }\n              } catch (_) {}\n            `,\n          }}\n        />\n        <meta name=\"theme-color\" content={META_THEME_COLORS.light} />\n      </head>\n      <body\n        className={`${lora.variable} ${writer.variable} ${writerMono.variable} overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]`}\n        suppressHydrationWarning\n      >\n        <ThemeProvider\n          attribute=\"class\"\n          defaultTheme=\"system\"\n          enableSystem\n          disableTransitionOnChange\n        >\n          <LayoutProvider>\n            <ActiveThemeProvider>\n              {children}\n              <Toaster position=\"top-center\" />\n            </ActiveThemeProvider>\n          </LayoutProvider>\n        </ThemeProvider>\n      </body>\n    </html>\n  )\n}\n",
       "type": "registry:page",
       "target": "app/layout.tsx"
     },
     {
-      "path": "registry/default/blocks/app/.prettierrc.json",
-      "content": "{\n  \"endOfLine\": \"lf\",\n  \"semi\": false,\n  \"singleQuote\": false,\n  \"tabWidth\": 2,\n  \"trailingComma\": \"es5\",\n  \"importOrder\": [\n    \"^(react/(.*)$)|^(react$)\",\n    \"^(next/(.*)$)|^(next$)\",\n    \"<THIRD_PARTY_MODULES>\",\n    \"\",\n    \"\",\n    \"^types$\",\n    \"^@/types/(.*)$\",\n    \"^@/config/(.*)$\",\n    \"^@/lib/(.*)$\",\n    \"^@/hooks/(.*)$\",\n    \"^@/components/ui/(.*)$\",\n    \"^@/components/(.*)$\",\n    \"^@/registry/(.*)$\",\n    \"^@/styles/(.*)$\",\n    \"^@/app/(.*)$\",\n    \"\",\n    \"^[./]\"\n  ],\n  \"importOrderParserPlugins\": [\"typescript\", \"jsx\", \"decorators-legacy\"],\n  \"plugins\": [\n    \"@ianvs/prettier-plugin-sort-imports\",\n    \"prettier-plugin-tailwindcss\"\n  ]\n}\n",
-      "type": "registry:file",
-      "target": ".prettierrc.json"
+      "path": "registry/default/app/icon.tsx",
+      "content": "import { ImageResponse } from \"next/og\"\n\nimport AppIcon from \"@/registry/default/components/app-icon\"\n\n// Image metadata\nexport const size = {\n  width: 32,\n  height: 32,\n}\nexport const contentType = \"image/png\"\n\nexport default function Icon() {\n  return new ImageResponse(\n    <AppIcon size={32} />,\n    // ImageResponse options\n    {\n      ...size,\n    }\n  )\n}\n",
+      "type": "registry:component",
+      "target": "app/icon.tsx"
+    },
+    {
+      "path": "registry/default/app/(app)/layout.tsx",
+      "content": "import { PageFooter } from \"@/registry/default/components/page-footer\"\nimport { PageHeader } from \"@/registry/default/components/page-header\"\nimport { Noise } from \"@/registry/default/ui/backgrounds\"\n\nexport default function AppLayout({ children }: { children: React.ReactNode }) {\n  return (\n    <div className=\"relative z-10 flex min-h-svh flex-col\">\n      <PageHeader />\n      <div className=\"container-wrapper 3xl:fixed:px-0 flex w-full flex-1 px-3 md:px-8 lg:px-12\">\n        <main className=\"3xl:fixed:container border-grid relative mx-auto w-full border-x px-0!\">\n          {children}\n        </main>\n      </div>\n      <Noise />\n      <div className=\"absolute top-0 left-0 z-[-1] h-full w-3 md:w-8 lg:w-12\" />\n      <div className=\"absolute top-0 right-0 z-[-1] h-full w-3 md:w-8 lg:w-12\" />\n      <PageFooter />\n    </div>\n  )\n}\n",
+      "type": "registry:page",
+      "target": "app/(app)/layout.tsx"
+    },
+    {
+      "path": "registry/default/app/(app)/page.tsx",
+      "content": "import Link from \"next/link\"\n\nimport { Button } from \"@/registry/default/ui/button\"\nimport {\n  Hero,\n  HeroActions,\n  HeroDescription,\n  HeroHeading,\n} from \"@/registry/default/ui/hero\"\n\nexport default function Home() {\n  return (\n    <>\n      <Hero>\n        <HeroHeading>Nathan&apos;s Template</HeroHeading>\n        <HeroDescription>\n          Starter app with the brodin/ui component library\n        </HeroDescription>\n        <HeroActions>\n          <Button asChild>\n            <Link href=\"/somewhere\">Get Started</Link>\n          </Button>\n          <Button asChild variant=\"outline\">\n            <Link href=\"https://ui.brodin.dev/docs\">Read the docs</Link>\n          </Button>\n        </HeroActions>\n      </Hero>\n      <section>Content of the page</section>\n    </>\n  )\n}\n",
+      "type": "registry:page",
+      "target": "app/(app)/page.tsx"
     }
   ]
 }

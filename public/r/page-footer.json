@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "page-footer",
+  "type": "registry:component",
+  "registryDependencies": [
+    "@brodin-ui/config",
+    "@brodin-ui/diamond",
+    "@brodin-ui/backgrounds"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/page-footer.tsx",
+      "content": "import * as React from \"react\"\nimport Link from \"next/link\"\n\nimport { siteConfig } from \"@/registry/default/lib/config\"\nimport { cn } from \"@/registry/default/lib/utils\"\nimport { Noise } from \"@/registry/default/ui/backgrounds\"\nimport { Diamond } from \"@/registry/default/ui/diamond\"\n\nexport function PageFooter({\n  className,\n  ...props\n}: React.ComponentProps<\"footer\">) {\n  return (\n    <footer\n      className={cn(\n        \"bg-primary-fixed text-primary-foreground-fixed relative\",\n        className\n      )}\n      {...props}\n    >\n      <Noise variant=\"lighter\" />\n      <div className=\"container-wrapper 3xl:fixed:px-0 px-3 md:px-8 lg:px-12\">\n        <div className=\"3xl:fixed:container border-grid/30 relative flex gap-2 border-x px-4 py-2 sm:px-6\">\n          <Diamond top left />\n          <Diamond top right />\n          <div className=\"flex w-full items-center justify-between text-xs leading-5\">\n            <p className=\"\">\n              Built by{\" \"}\n              <Link\n                className=\"underline decoration-white/20 underline-offset-2 hover:decoration-white\"\n                href=\"https://brodin.dev\"\n              >\n                Nathan Brodin\n              </Link>{\" \"}\n              © 2025\n            </p>\n            <Link\n              className=\"underline decoration-white/20 underline-offset-2 hover:decoration-white\"\n              href={siteConfig.links.github}\n            >\n              GitHub ↗\n            </Link>\n          </div>\n        </div>\n      </div>\n    </footer>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

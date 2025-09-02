@@ -1,33 +1,30 @@
-import { type Registry } from "shadcn/registry"
-
-export const hooks: Registry["items"] = [
+export const hooks = [
   {
-    name: "use-layout",
+    name: "use-meta-colors",
     type: "registry:hook",
     files: [
       {
-        path: "hooks/use-layout.tsx",
+        path: "hooks/use-meta-colors.tsx",
         type: "registry:hook",
       },
     ],
   },
   {
-    name: "use-mobile",
+    name: "use-is-mac",
     type: "registry:hook",
     files: [
       {
-        path: "hooks/use-mobile.ts",
+        path: "hooks/use-is-mac.tsx",
         type: "registry:hook",
       },
     ],
   },
   {
-    name: "use-meta-color",
+    name: "use-mutation-observer",
     type: "registry:hook",
-    dependencies: ["next-themes"],
     files: [
       {
-        path: "hooks/use-meta-color.tsx",
+        path: "hooks/use-mutation-observer.tsx",
         type: "registry:hook",
       },
     ],

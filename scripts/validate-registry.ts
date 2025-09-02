@@ -1,7 +1,8 @@
 #!/usr/bin/env tsx
 import { promises as fs } from "fs"
 import path from "path"
-import type { Registry } from "shadcn/registry"
+
+import { type Registry } from "@/lib/schema"
 
 interface ValidationIssue {
   file: string

@@ -1,11 +1,11 @@
 import * as React from "react"
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { registryItemSchema } from "shadcn/registry"
 import { z } from "zod"
 
 import { siteConfig } from "@/lib/config"
 import { getRegistryComponent, getRegistryItem } from "@/lib/registry"
+import { registryItemSchema } from "@/lib/schema"
 import { absoluteUrl, cn } from "@/lib/utils"
 
 export const revalidate = false

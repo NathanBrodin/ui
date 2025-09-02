@@ -11,6 +11,19 @@ import {
 const COOKIE_NAME = "active_theme"
 const DEFAULT_THEME = "default"
 
+export const baseColors = [
+  {
+    name: "default",
+    label: "Default",
+  },
+  {
+    name: "blue",
+    label: "Zed",
+  },
+] as const
+
+export type BaseColor = (typeof baseColors)[number]
+
 function setThemeCookie(theme: string) {
   if (typeof window === "undefined") return
 

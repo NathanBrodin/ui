@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og"
 
-import { Icons } from "@/registry/default/components/icons"
+import { Icons } from "@/components/icons"
 
 // Image metadata
 export const size = {

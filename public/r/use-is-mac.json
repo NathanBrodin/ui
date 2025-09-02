@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-is-mac",
+  "type": "registry:hook",
+  "files": [
+    {
+      "path": "registry/default/hooks/use-is-mac.tsx",
+      "content": "import { useEffect, useState } from \"react\"\n\nexport function useIsMac() {\n  const [isMac, setIsMac] = useState(true)\n\n  useEffect(() => {\n    setIsMac(navigator.platform.toUpperCase().includes(\"MAC\"))\n  }, [])\n\n  return isMac\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

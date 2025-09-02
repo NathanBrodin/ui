@@ -1,15 +1,20 @@
 export const siteConfig = {
   name: "My App",
-  url: "https://myapp.brodin.dev",
-  ogImage: "https://myapp.brodin.brodin/og.jpg",
   description: "My new app",
+  url: "https://myapp.brodin.dev",
+  ogImage: "https://myapp.brodin.brodin/opengraph-image.png",
   links: {
     twitter: "https://twitter.com/nathan_brodin",
     github: "https://github.com/NathanBrodin/myapp",
   },
+  author: {
+    name: "Nathan Brodin",
+    url: "https://brodin.dev",
+    twitter: "@nathan_brodin",
+  },
   navItems: [
     {
-      href: "/home",
+      href: "/",
       label: "Home",
     },
   ],

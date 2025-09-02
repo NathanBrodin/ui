@@ -3,11 +3,13 @@
 import * as React from "react"
 import { GalleryHorizontalIcon } from "lucide-react"
 
-import { cn } from "@/lib/utils"
-import { useLayout } from "@/registry/default/hooks/use-layout"
+import { useLayout } from "@/registry/default/components/providers/layout-provider"
+import { cn } from "@/registry/default/lib/utils"
 import { Button } from "@/registry/default/ui/button"
 
-export function SiteConfig({ className }: React.ComponentProps<typeof Button>) {
+export function LayoutSelector({
+  className,
+}: React.ComponentProps<typeof Button>) {
   const { layout, setLayout } = useLayout()
 
   return (

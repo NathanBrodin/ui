@@ -1,0 +1,36 @@
+import React from "react"
+
+interface AppIconProps {
+  className?: string
+  size?: number
+}
+
+export const AppIcon: React.FC<AppIconProps> = ({
+  className = "",
+  size = 24,
+}) => {
+  return (
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      viewBox="0 0 200 200"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_2868_340)">
+        <path
+          d="M194.736 96.2076C209.557 69.6751 191.41 37.8094 161.189 34.7997L150.161 33.7008C142.118 32.8989 134.934 29.4141 128.964 22.7133C108.189 -0.605088 69.5038 5.15313 56.769 33.168C53.6674 39.9907 48.0588 45.4485 40.9768 48.5368L25.4404 55.3103C0.675124 66.1071 -7.72138 96.0658 7.92162 117.491L17.7795 130.992C19.9205 133.925 21.4834 137.167 22.4252 140.628L27.3205 158.625C34.0264 183.279 61.9905 196.602 86.3991 186.239L88.489 185.352C94.7003 182.715 101.767 182.076 108.384 183.549L140.434 190.686C171.658 197.638 199.181 170.539 192.208 140.754L188.152 123.429C186.51 116.416 187.556 109.062 191.099 102.721L194.736 96.2076Z"
+          fill="currentColor"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_2868_340">
+          <rect width="200" height="200" fill="currentColor" />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
+
+export default AppIcon

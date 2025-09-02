@@ -31,8 +31,8 @@ import {
 } from "@/registry/default/ui/tabs"
 
 import { CopyButton } from "./components/copy-button"
+import { getIconForLanguageExtension } from "./components/icons"
 import ThemeVisualizer from "./components/theme-visualizer"
-import { getIconForLanguageExtension } from "./registry/default/components/icons"
 import { GridLogosDemo } from "./registry/default/examples/grid-logos-demo"
 
 export const mdxComponents = {

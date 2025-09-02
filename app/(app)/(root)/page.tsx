@@ -3,8 +3,8 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { PageNav } from "@/components/page-nav"
-import { ThemeSelector } from "@/components/theme-selector"
 import { Demo } from "@/registry/default/blocks/demo"
+import { ThemeSelector } from "@/registry/default/components/theme-selector"
 import { Button } from "@/registry/default/ui/button"
 import {
   Hero,

@@ -2,12 +2,12 @@ import type { Metadata } from "next"
 import { Lora } from "next/font/google"
 import localFont from "next/font/local"
 
-import "@/registry/default/styles/globals.css"
+import "./globals.css"
 
-import { ActiveThemeProvider } from "@/registry/default/components/active-theme"
-import { ThemeProvider } from "@/registry/default/components/theme-provider"
-import { LayoutProvider } from "@/registry/default/hooks/use-layout"
-import { META_THEME_COLORS } from "@/registry/default/hooks/use-meta-color"
+import { ActiveThemeProvider } from "@/registry/default/components/providers/active-theme-provider"
+import { LayoutProvider } from "@/registry/default/components/providers/layout-provider"
+import { ThemeProvider } from "@/registry/default/components/providers/theme-provider"
+import { META_THEME_COLORS } from "@/registry/default/hooks/use-meta-colors"
 import { siteConfig } from "@/registry/default/lib/config"
 import { Toaster } from "@/registry/default/ui/sonner"
 
@@ -31,26 +31,21 @@ export const metadata: Metadata = {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+  metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
-  keywords: ["Next.js"],
-  authors: [
-    {
-      name: "Nathan Brodin",
-      url: "https://brodin.dev",
-    },
-  ],
-  creator: "Nathan Brodin",
+  keywords: ["Next.js", "React", "Tailwind CSS", "Components", "shadcn"],
+  authors: [siteConfig.author],
+  creator: siteConfig.author.name,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: process.env.NEXT_PUBLIC_APP_URL!,
+    url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`,
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -61,8 +56,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [`${process.env.NEXT_PUBLIC_APP_URL}/opengraph-image.png`],
-    creator: "@nathan_brodin",
+    images: [siteConfig.ogImage],
+    creator: siteConfig.author.twitter,
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
 }
@@ -93,6 +88,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${lora.variable} ${writer.variable} ${writerMono.variable} overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]`}
+        suppressHydrationWarning
       >
         <ThemeProvider
           attribute="class"

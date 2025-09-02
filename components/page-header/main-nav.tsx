@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/registry/default/lib/utils"
 import { Button } from "@/registry/default/ui/button"
 
 export function MainNav({
@@ -29,7 +29,7 @@ export function MainNav({
             href={item.href}
             className={cn(pathname === item.href && "text-primary")}
           >
-            {item.label}
+            {item.label ?? item.href}
           </Link>
         </Button>
       ))}

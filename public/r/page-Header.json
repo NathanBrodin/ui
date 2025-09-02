@@ -1,17 +1,51 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "page-Header",
-  "type": "registry:block",
-  "description": "Page Heading",
-  "registryDependencies": [],
+  "name": "page-header",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@brodin-ui/config",
+    "@brodin-ui/app-icon",
+    "@brodin-ui/command-menu",
+    "@brodin-ui/layout-selector",
+    "@brodin-ui/theme-selector",
+    "@brodin-ui/diamond",
+    "@brodin-ui/button",
+    "@brodin-ui/separator",
+    "@brodin-ui/drawer"
+  ],
   "files": [
     {
-      "path": "registry/default/blocks/page-header/page-header.tsx",
-      "content": "import { source } from \"@/lib/source\"\nimport { CommandMenu } from \"@/components/command-menu\"\nimport { GitHubLink } from \"@/components/github-link\"\nimport { SiteConfig } from \"@/components/site-config\"\nimport { ThemeSelector } from \"@/components/theme-selector\"\nimport { Icons } from \"@/registry/default/components/icons\"\nimport { siteConfig } from \"@/registry/default/lib/config\"\nimport { Separator } from \"@/registry/default/ui/separator\"\n\nimport { AppIcon } from \"./components/app-icon\"\nimport { Header } from \"./components/header\"\nimport { MainNav } from \"./components/main-nav\"\nimport { MobileNav } from \"./components/mobile-nav\"\nimport { Toolbar } from \"./components/toolbar\"\n\nexport function PageHeader() {\n  const pageTree = source.pageTree\n\n  return (\n    <Header>\n      <AppIcon>\n        <Icons.logo className=\"size-5\" />\n      </AppIcon>\n      <MainNav items={siteConfig.navItems} className=\"hidden lg:flex\" />\n      <Toolbar>\n        <div className=\"hidden w-full flex-1 md:flex md:w-auto md:flex-none\">\n          <CommandMenu tree={pageTree} navItems={siteConfig.navItems} />\n        </div>\n        <Separator orientation=\"vertical\" className=\"ml-2 hidden lg:block\" />\n        <GitHubLink />\n        <Separator orientation=\"vertical\" className=\"3xl:flex hidden\" />\n        <SiteConfig className=\"3xl:flex hidden\" />\n        <Separator orientation=\"vertical\" />\n        <ThemeSelector variant=\"small\" />\n      </Toolbar>\n      <MobileNav\n        tree={pageTree}\n        items={siteConfig.navItems}\n        className=\"flex justify-end lg:hidden\"\n      />\n    </Header>\n  )\n}\n",
-      "type": "registry:block"
+      "path": "registry/default/components/page-header/index.tsx",
+      "content": "import Link from \"next/link\"\n\nimport AppIcon from \"@/registry/default/components/app-icon\"\nimport { CommandMenu } from \"@/registry/default/components/command-menu\"\nimport { LayoutSelector } from \"@/registry/default/components/layout-selector\"\nimport { ThemeSelector } from \"@/registry/default/components/theme-selector\"\nimport { siteConfig } from \"@/registry/default/lib/config\"\nimport { Button } from \"@/registry/default/ui/button\"\nimport { Separator } from \"@/registry/default/ui/separator\"\n\nimport { Header } from \"./header\"\nimport { MainNav } from \"./main-nav\"\nimport { MobileNav } from \"./mobile-nav\"\nimport { Toolbar } from \"./toolbar\"\n\nexport function PageHeader() {\n  return (\n    <Header>\n      <Button asChild variant=\"ghost\" size=\"icon\" className=\"flex size-8\">\n        <Link href=\"/\" className=\"[&_svg]:text-primary\">\n          <AppIcon className=\"size-5\" />\n        </Link>\n      </Button>\n      <MainNav items={siteConfig.navItems} className=\"hidden lg:flex\" />\n      <Toolbar>\n        <div className=\"hidden w-full flex-1 md:flex md:w-auto md:flex-none\">\n          <CommandMenu navItems={siteConfig.navItems} />\n        </div>\n        <Separator orientation=\"vertical\" className=\"3xl:flex hidden\" />\n        <LayoutSelector className=\"3xl:flex hidden\" />\n        <Separator orientation=\"vertical\" />\n        <ThemeSelector variant=\"small\" />\n      </Toolbar>\n      <MobileNav\n        items={siteConfig.navItems}\n        className=\"flex justify-end lg:hidden\"\n      />\n    </Header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/page-header/index.tsx"
+    },
+    {
+      "path": "registry/default/components/page-header/header.tsx",
+      "content": "import { ReactNode } from \"react\"\n\nimport { Diamond } from \"@/registry/default/ui/diamond\"\n\nexport function Header({ children }: { children: ReactNode }) {\n  return (\n    <header className=\"border-grid bg-nav-background sticky top-0 z-50 w-full border-b\">\n      <div className=\"container-wrapper 3xl:fixed:px-0 px-3 md:px-8 lg:px-12\">\n        <div className=\"3xl:fixed:container border-grid relative flex h-(--header-height) items-center gap-2 border-x px-2 **:data-[slot=separator]:!h-4 md:px-6\">\n          <Diamond left bottom />\n          <Diamond right bottom />\n          {children}\n        </div>\n      </div>\n    </header>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/page-header/header.tsx"
+    },
+    {
+      "path": "registry/default/components/page-header/main-nav.tsx",
+      "content": "\"use client\"\n\nimport Link from \"next/link\"\nimport { usePathname } from \"next/navigation\"\n\nimport { cn } from \"@/registry/default/lib/utils\"\nimport { Button } from \"@/registry/default/ui/button\"\n\nexport function MainNav({\n  items,\n  className,\n  ...props\n}: React.ComponentProps<\"nav\"> & {\n  items: { href: string; label?: string }[]\n}) {\n  const pathname = usePathname()\n\n  return (\n    <nav className={cn(\"items-center gap-0.5\", className)} {...props}>\n      {items.map((item) => (\n        <Button\n          key={item.href}\n          className=\"font-light\"\n          variant=\"ghost\"\n          asChild\n          size=\"sm\"\n        >\n          <Link\n            href={item.href}\n            className={cn(pathname === item.href && \"text-primary\")}\n          >\n            {item.label ?? item.href}\n          </Link>\n        </Button>\n      ))}\n    </nav>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/page-header/main-nav.tsx"
+    },
+    {
+      "path": "registry/default/components/page-header/mobile-nav.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport Link, { LinkProps } from \"next/link\"\nimport { useRouter } from \"next/navigation\"\nimport { ChevronRightIcon, MenuIcon } from \"lucide-react\"\n\nimport { cn } from \"@/registry/default/lib/utils\"\nimport { Button } from \"@/registry/default/ui/button\"\nimport {\n  Drawer,\n  DrawerContent,\n  DrawerTitle,\n  DrawerTrigger,\n} from \"@/registry/default/ui/drawer\"\nimport { Separator } from \"@/registry/default/ui/separator\"\n\nexport function MobileNav({\n  items,\n  className,\n}: {\n  items: { href: string; label?: string }[]\n  className?: string\n}) {\n  const [open, setOpen] = React.useState(false)\n\n  return (\n    <Drawer open={open} onOpenChange={setOpen}>\n      <DrawerTrigger asChild>\n        <Button variant=\"ghost\" className={cn(\"border\", className)}>\n          <MenuIcon className=\"text-primary size-4\" />\n        </Button>\n      </DrawerTrigger>\n      <DrawerContent className=\"no-scrollbar overflow-y-auto\">\n        <DrawerTitle className=\"hidden\">Menu</DrawerTitle>\n        <div className=\"flex flex-col gap-1 overflow-auto p-2.5\">\n          <div className=\"mb-4 flex flex-col gap-4\">\n            <div className=\"text-primary font-display text-md font-medium\">\n              Menu\n            </div>\n            <div className=\"flex flex-col gap-3\">\n              {items.map((item, index) => (\n                <MobileLink key={index} href={item.href} onOpenChange={setOpen}>\n                  {item.label}\n                </MobileLink>\n              ))}\n            </div>\n            <Separator />\n          </div>\n        </div>\n      </DrawerContent>\n    </Drawer>\n  )\n}\n\nfunction MobileLink({\n  href,\n  onOpenChange,\n  className,\n  children,\n  ...props\n}: LinkProps & {\n  onOpenChange?: (open: boolean) => void\n  children: React.ReactNode\n  className?: string\n}) {\n  const router = useRouter()\n  return (\n    <Link\n      href={href}\n      onClick={() => {\n        router.push(href.toString())\n        onOpenChange?.(false)\n      }}\n      className={cn(\n        \"text-popover-foreground flex items-center justify-start gap-3 text-sm tracking-tight\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n      <ChevronRightIcon className=\"text-primary ml-auto size-4\" />\n    </Link>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/page-header/mobile-nav.tsx"
+    },
+    {
+      "path": "registry/default/components/page-header/toolbar.tsx",
+      "content": "import { ReactNode } from \"react\"\n\nexport function Toolbar({ children }: { children: ReactNode }) {\n  return (\n    <div className=\"ml-auto flex items-center gap-2 md:flex-1 md:justify-end\">\n      {children}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/page-header/toolbar.tsx"
     }
-  ],
-  "categories": [
-    "page-layout"
   ]
 }

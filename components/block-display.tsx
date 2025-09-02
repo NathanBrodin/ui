@@ -1,5 +1,4 @@
 import * as React from "react"
-import { registryItemFileSchema } from "shadcn/registry"
 import { z } from "zod"
 
 import { highlightCode } from "@/lib/highlight-code"
@@ -7,6 +6,7 @@ import {
   createFileTreeForRegistryItemFiles,
   getRegistryItem,
 } from "@/lib/registry"
+import { registryItemFileSchema } from "@/lib/schema"
 import { cn } from "@/lib/utils"
 import { BlockViewer } from "@/components/block-viewer"
 import { ComponentPreview } from "@/components/component-preview"

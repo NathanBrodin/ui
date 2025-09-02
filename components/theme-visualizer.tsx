@@ -1,5 +1,6 @@
 "use client"
 
+import { ThemeSelector } from "@/registry/default/components/theme-selector"
 import {
   Accordion,
   AccordionContent,
@@ -9,7 +10,6 @@ import {
 import { Button } from "@/registry/default/ui/button"
 
 import { Color } from "./color"
-import { ThemeSelector } from "./theme-selector"
 
 export default function ThemeVisualizer() {
   const foundationColors = [

@@ -1,75 +1,92 @@
 ---
 title: Installation
-description: Install and configure brodin/ui for any framework.
+description: Get brodin/ui running in minutes. Fast setup, zero friction, maximum focus.
 ---
+
+**Ready to build something that feels as fast as it looks? Let's get you set up.**
+
+This isn't your typical component library installation. I've streamlined everything to get you from zero to building in under 5 minutes. No configuration hell, no decision paralysis—just the essentials you need to start shipping.
 
 <Steps>
 
-### Set up Next.js
-
-Run the following command to set up a Next.js project:
-
+1. **Start with a fresh Next.js app**
 ```bash
-npx create-next-app@latest
+bunx --bun create-next-app@latest
 ```
 
-### Set up shadcn/ui
-
-Run the `init` command to create a new project or to setup an existing one:
-
+2. **Clear out the Next.js defaults**
 ```bash
-npx shadcn@latest init
+rm app/page.tsx app/favicon.ico && rm -rf public/*
+```
+Fresh slate. We're building something better than the default landing page anyway.
+
+3. **Install shadcn/ui as the foundation**
+```bash
+bunx --bun shadcn@latest init --base-color neutral
 ```
 
-### Set up brodin/ui
+4. **Add brodin/ui to your registry**
 
-1. Add the `app` component that will set up all required files:
+Update your `components.json` with my registry. This is where the magic happens:
 
-```bash
-npx shadcn@latest add https://ui.brodin.dev/r/app.json --yes --overwrite
-```
-
-2. Install the fonts and place them in the [/public/fonts/](./public/fonts/) folder:
-- [iA Writer Quattro](
-https://github.com/iaolo/iA-Fonts/raw/master/iA%20Writer%20Quattro/Variable/iAWriterQuattroV.ttf
-)
-- [iA Writer Mono](https://github.com/iaolo/iA-Fonts/raw/master/iA%20Writer%20Mono/Variable/iAWriterMonoV.ttf)
-
-- Set up the required environment variables in [.env file](./env):
-
-```bash
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-```
-
-> Don't forget to add it to Vercel as well with the real url.
-
-3. Select and set the logo for your app:
-- Choose one of [the available logo](/docs/brand#logo) and click on it to copy the install command
-- Run the command to add the logo to your app
-- Import it in the [app/icon.tsx](./app/icon.tsx) file instead of the existing logo.
-
-A base next.js app is now set up with the Brodin style!
-
-### Add Components
-
-You can now start adding components to your project.
-
-```bash
-npx shadcn@latest add https://ui.brodin.dev/r/button.json
-```
-
-The command above will add the `Button` component to your project. You can then import it like this:
-
-```tsx {1,6} showLineNumbers title="app/page.tsx"
-import { Button } from "@/components/ui/button"
-
-export default function Home() {
-  return (
-    <div>
-      <Button>Click me</Button>
-    </div>
-  )
+```json
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "iconLibrary": "lucide",
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "registries": {
+    "@brodin-ui": "https://ui.brodin.dev/r/{name}.json"
+  }
 }
 ```
 
+5. **Install the starter template**
+```bash
+bunx --bun shadcn@latest add @brodin-ui/app --yes --overwrite
+```
+This gives you a complete app structure that actually looks good out of the box. No more staring at unstyled components.
+
+6. **Set up the typography**
+
+Download these fonts and drop them in `/public/fonts/`:
+- [iA Writer Quattro](https://github.com/iaolo/iA-Fonts/raw/master/iA%20Writer%20Quattro/Variable/iAWriterQuattroV.ttf)
+- [iA Writer Mono](https://github.com/iaolo/iA-Fonts/raw/master/iA%20Writer%20Mono/Variable/iAWriterMonoV.ttf)
+
+> The shadcn CLI sometimes mangles font files during installation, so manual download is the reliable way.
+
+7. **Pick your project logo**
+
+Browse the [available logos](/docs/brand#logo) and click any one to copy its install command. Then:
+- Run the install command
+- Import your chosen logo in `app/icon.tsx` to replace the placeholder
+
+Every logo has been hand-picked to work perfectly with this design system.
+
+8. **Ship it**
+```bash
+bun dev
+```
+
+That's it. Your app is ready to build on.
+
 </Steps>
+
+---
+
+**What you just built:** A Next.js app with my complete design system, optimized for speed and focus. Every component you add from here will feel consistent and intentional.

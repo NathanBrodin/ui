@@ -1,6 +1,6 @@
 import { FileIcon } from "lucide-react"
 
-import { Icon162 } from "./logos"
+import { Icon162 } from "@/registry/default/components/logos"
 
 type IconProps = React.HTMLAttributes<SVGElement> & {
   size?: number

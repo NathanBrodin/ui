@@ -1,44 +1,4 @@
-import { type Registry } from "shadcn/registry"
-
-export const blocks: Registry["items"] = [
-  {
-    name: "app",
-    description: "Setup a full next.js app with this block",
-    type: "registry:block",
-    registryDependencies: [
-      `https://ui.brodin.dev/r/use-layout.json`,
-      `https://ui.brodin.dev/r/use-meta-color.json`,
-      `https://ui.brodin.dev/r/active-theme.json`,
-      `https://ui.brodin.dev/r/theme-provider.json`,
-      `https://ui.brodin.dev/r/config.json`,
-      `https://ui.brodin.dev/r/icons.json`,
-      `https://ui.brodin.dev/r/index.json`,
-      "sonner",
-    ],
-    dependencies: ["next"],
-    devDependencies: [
-      "prettier",
-      "prettier-plugin-tailwindcss",
-      "@ianvs/prettier-plugin-sort-imports",
-    ],
-    files: [
-      {
-        path: "blocks/app/app/layout.tsx",
-        target: "app/layout.tsx",
-        type: "registry:page",
-      },
-      {
-        path: "blocks/app/.prettierrc.json",
-        target: ".prettierrc.json",
-        type: "registry:file",
-      },
-      {
-        path: "blocks/app/icon.tsx",
-        target: "app/icon.tsx",
-        type: "registry:file",
-      },
-    ],
-  },
+export const blocks = [
   {
     name: "login-05",
     description: "A simple email-only login page.",
@@ -156,33 +116,6 @@ export const blocks: Registry["items"] = [
         path: "blocks/demo/team-members.tsx",
         target: "components/demo/team-members.tsx",
         type: "registry:component",
-      },
-    ],
-    categories: ["page-layout"],
-  },
-  {
-    name: "page-main",
-    description: "Temporary",
-    type: "registry:block",
-    registryDependencies: [],
-    files: [
-      {
-        path: "blocks/page-main/page.tsx",
-        target: "app/page-main/page.tsx",
-        type: "registry:page",
-      },
-    ],
-    categories: ["page-layout"],
-  },
-  {
-    name: "page-Header",
-    description: "Page Heading",
-    type: "registry:block",
-    registryDependencies: [],
-    files: [
-      {
-        path: "blocks/page-header/page-header.tsx",
-        type: "registry:block",
       },
     ],
     categories: ["page-layout"],

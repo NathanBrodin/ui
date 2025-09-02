@@ -2,7 +2,8 @@
 import { promises as fs } from "fs"
 import path from "path"
 import * as readline from "readline"
-import type { Registry } from "shadcn/registry"
+
+import { type Registry } from "@/lib/schema"
 
 interface Fix {
   type: "add-component" | "add-dependency" | "add-registry-dependency"

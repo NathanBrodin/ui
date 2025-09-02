@@ -1,4 +1,4 @@
-@import "../registry/default/styles/globals.css";
+@import "../registry/default/app/globals.css";
 
 @theme inline {
   --color-code: var(--code);

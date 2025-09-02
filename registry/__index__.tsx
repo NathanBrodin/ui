@@ -6,20 +6,88 @@
 import * as React from "react"
 
 export const Index: Record<string, any> = {
-  index: {
-    name: "index",
+  "design-system": {
+    name: "design-system",
     description: "",
     type: "registry:style",
-    registryDependencies: ["utils"],
+    registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/styles/globals.css",
-        type: "registry:style",
+        path: "registry/default/app/globals.css",
+        type: "registry:file",
         target: "app/globals.css",
+      },
+      {
+        path: "registry/default/utils/prettier.config.cjs",
+        type: "registry:file",
+        target: "~/prettier.config.cjs",
+      },
+      {
+        path: "registry/default/assets/iAWriterMonoV.ttf",
+        type: "registry:file",
+        target: "public/fonts/iAWriterMonoV.ttf",
+      },
+      {
+        path: "registry/default/assets/iAWriterQuattroV.ttf",
+        type: "registry:file",
+        target: "public/fonts/iAWriterQuattroV.ttf",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/styles/globals.css")
+      const mod = await import("@/registry/default/app/globals.css")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  app: {
+    name: "app",
+    description: "",
+    type: "registry:page",
+    registryDependencies: [
+      "@brodin-ui/design-system",
+      "@brodin-ui/config",
+      "@brodin-ui/active-theme-provider",
+      "@brodin-ui/layout-provider",
+      "@brodin-ui/theme-provider",
+      "@brodin-ui/use-meta-colors",
+      "@brodin-ui/sonner",
+      "@brodin-ui/app-icon",
+      "@brodin-ui/page-footer",
+      "@brodin-ui/page-header",
+      "@brodin-ui/backgrounds",
+      "@brodin-ui/button",
+      "@brodin-ui/hero",
+    ],
+    files: [
+      {
+        path: "registry/default/app/layout.tsx",
+        type: "registry:page",
+        target: "app/layout.tsx",
+      },
+      {
+        path: "registry/default/app/icon.tsx",
+        type: "registry:component",
+        target: "app/icon.tsx",
+      },
+      {
+        path: "registry/default/app/(app)/layout.tsx",
+        type: "registry:page",
+        target: "app/(app)/layout.tsx",
+      },
+      {
+        path: "registry/default/app/(app)/page.tsx",
+        type: "registry:page",
+        target: "app/(app)/page.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/app/layout.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1291,20 +1359,22 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "active-theme": {
-    name: "active-theme",
+  "active-theme-provider": {
+    name: "active-theme-provider",
     description: "",
     type: "registry:component",
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/active-theme.tsx",
+        path: "registry/default/components/providers/active-theme-provider.tsx",
         type: "registry:component",
-        target: "",
+        target: "components/providers/active-theme-provider.tsx",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/components/active-theme.tsx")
+      const mod = await import(
+        "@/registry/default/components/providers/active-theme-provider.tsx"
+      )
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -1322,14 +1392,261 @@ export const Index: Record<string, any> = {
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/components/theme-provider.tsx",
+        path: "registry/default/components/providers/theme-provider.tsx",
+        type: "registry:component",
+        target: "components/providers/theme-provider.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/default/components/providers/theme-provider.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "theme-provider": {
+    name: "theme-provider",
+    description: "",
+    type: "registry:component",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/default/components/providers/theme-provider.tsx",
         type: "registry:component",
         target: "",
       },
     ],
     component: React.lazy(async () => {
       const mod = await import(
-        "@/registry/default/components/theme-provider.tsx"
+        "@/registry/default/components/providers/theme-provider.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "layout-provider": {
+    name: "layout-provider",
+    description: "",
+    type: "registry:component",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/default/components/providers/layout-provider.tsx",
+        type: "registry:component",
+        target: "components/providers/layout-provider.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/default/components/providers/layout-provider.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "page-header": {
+    name: "page-header",
+    description: "",
+    type: "registry:component",
+    registryDependencies: [
+      "@brodin-ui/config",
+      "@brodin-ui/app-icon",
+      "@brodin-ui/command-menu",
+      "@brodin-ui/layout-selector",
+      "@brodin-ui/theme-selector",
+      "@brodin-ui/diamond",
+      "@brodin-ui/button",
+      "@brodin-ui/separator",
+      "@brodin-ui/drawer",
+    ],
+    files: [
+      {
+        path: "registry/default/components/page-header/index.tsx",
+        type: "registry:component",
+        target: "components/page-header/index.tsx",
+      },
+      {
+        path: "registry/default/components/page-header/header.tsx",
+        type: "registry:component",
+        target: "components/page-header/header.tsx",
+      },
+      {
+        path: "registry/default/components/page-header/main-nav.tsx",
+        type: "registry:component",
+        target: "components/page-header/main-nav.tsx",
+      },
+      {
+        path: "registry/default/components/page-header/mobile-nav.tsx",
+        type: "registry:component",
+        target: "components/page-header/mobile-nav.tsx",
+      },
+      {
+        path: "registry/default/components/page-header/toolbar.tsx",
+        type: "registry:component",
+        target: "components/page-header/toolbar.tsx",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/default/components/page-header/index.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "page-footer": {
+    name: "page-footer",
+    description: "",
+    type: "registry:component",
+    registryDependencies: [
+      "@brodin-ui/config",
+      "@brodin-ui/diamond",
+      "@brodin-ui/backgrounds",
+    ],
+    files: [
+      {
+        path: "registry/default/components/page-footer.tsx",
+        type: "registry:component",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/components/page-footer.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "app-icon": {
+    name: "app-icon",
+    description: "",
+    type: "registry:component",
+    registryDependencies: undefined,
+    files: [
+      {
+        path: "registry/default/components/app-icon.tsx",
+        type: "registry:component",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/components/app-icon.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "command-menu": {
+    name: "command-menu",
+    description: "",
+    type: "registry:component",
+    registryDependencies: [
+      "@brodin-ui/use-is-mac",
+      "@brodin-ui/use-mutation-observer",
+      "@brodin-ui/button",
+      "@brodin-ui/command",
+      "@brodin-ui/kbd",
+    ],
+    files: [
+      {
+        path: "registry/default/components/command-menu.tsx",
+        type: "registry:component",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import("@/registry/default/components/command-menu.tsx")
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "layout-selector": {
+    name: "layout-selector",
+    description: "",
+    type: "registry:component",
+    registryDependencies: ["@brodin-ui/layout-provider", "@brodin-ui/button"],
+    files: [
+      {
+        path: "registry/default/components/layout-selector.tsx",
+        type: "registry:component",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/default/components/layout-selector.tsx"
+      )
+      const exportName =
+        Object.keys(mod).find(
+          (key) =>
+            typeof mod[key] === "function" || typeof mod[key] === "object"
+        ) || item.name
+      return { default: mod.default || mod[exportName] }
+    }),
+    categories: undefined,
+    meta: undefined,
+  },
+  "theme-selector": {
+    name: "theme-selector",
+    description: "",
+    type: "registry:component",
+    registryDependencies: [
+      "@brodin-ui/active-theme-provider",
+      "@brodin-ui/use-meta-colors",
+      "@brodin-ui/button",
+      "@brodin-ui/dropdown-menu",
+    ],
+    files: [
+      {
+        path: "registry/default/components/theme-selector.tsx",
+        type: "registry:component",
+        target: "",
+      },
+    ],
+    component: React.lazy(async () => {
+      const mod = await import(
+        "@/registry/default/components/theme-selector.tsx"
       )
       const exportName =
         Object.keys(mod).find(
@@ -2121,43 +2438,6 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  app: {
-    name: "app",
-    description: "Setup a full next.js app with this block",
-    type: "registry:block",
-    registryDependencies: [
-      "https://ui.brodin.dev/r/use-layout.json",
-      "https://ui.brodin.dev/r/use-meta-color.json",
-      "https://ui.brodin.dev/r/active-theme.json",
-      "https://ui.brodin.dev/r/theme-provider.json",
-      "https://ui.brodin.dev/r/config.json",
-      "https://ui.brodin.dev/r/index.json",
-      "sonner",
-    ],
-    files: [
-      {
-        path: "registry/default/blocks/app/app/layout.tsx",
-        type: "registry:page",
-        target: "app/layout.tsx",
-      },
-      {
-        path: "registry/default/blocks/app/.prettierrc.json",
-        type: "registry:file",
-        target: ".prettierrc.json",
-      },
-    ],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/default/blocks/app/app/layout.tsx")
-      const exportName =
-        Object.keys(mod).find(
-          (key) =>
-            typeof mod[key] === "function" || typeof mod[key] === "object"
-        ) || item.name
-      return { default: mod.default || mod[exportName] }
-    }),
-    categories: undefined,
-    meta: undefined,
-  },
   "login-05": {
     name: "login-05",
     description: "A simple email-only login page.",
@@ -2294,56 +2574,6 @@ export const Index: Record<string, any> = {
     categories: ["page-layout"],
     meta: undefined,
   },
-  "page-main": {
-    name: "page-main",
-    description: "Temporary",
-    type: "registry:block",
-    registryDependencies: [],
-    files: [
-      {
-        path: "registry/default/blocks/page-main/page.tsx",
-        type: "registry:page",
-        target: "app/page-main/page.tsx",
-      },
-    ],
-    component: React.lazy(async () => {
-      const mod = await import("@/registry/default/blocks/page-main/page.tsx")
-      const exportName =
-        Object.keys(mod).find(
-          (key) =>
-            typeof mod[key] === "function" || typeof mod[key] === "object"
-        ) || item.name
-      return { default: mod.default || mod[exportName] }
-    }),
-    categories: ["page-layout"],
-    meta: undefined,
-  },
-  "page-Header": {
-    name: "page-Header",
-    description: "Page Heading",
-    type: "registry:block",
-    registryDependencies: [],
-    files: [
-      {
-        path: "registry/default/blocks/page-header/page-header.tsx",
-        type: "registry:block",
-        target: "",
-      },
-    ],
-    component: React.lazy(async () => {
-      const mod = await import(
-        "@/registry/default/blocks/page-header/page-header.tsx"
-      )
-      const exportName =
-        Object.keys(mod).find(
-          (key) =>
-            typeof mod[key] === "function" || typeof mod[key] === "object"
-        ) || item.name
-      return { default: mod.default || mod[exportName] }
-    }),
-    categories: ["page-layout"],
-    meta: undefined,
-  },
   utils: {
     name: "utils",
     description: "",
@@ -2392,20 +2622,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "use-layout": {
-    name: "use-layout",
+  "use-meta-colors": {
+    name: "use-meta-colors",
     description: "",
     type: "registry:hook",
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/hooks/use-layout.tsx",
+        path: "registry/default/hooks/use-meta-colors.tsx",
         type: "registry:hook",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/hooks/use-layout.tsx")
+      const mod = await import("@/registry/default/hooks/use-meta-colors.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -2416,20 +2646,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "use-mobile": {
-    name: "use-mobile",
+  "use-is-mac": {
+    name: "use-is-mac",
     description: "",
     type: "registry:hook",
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/hooks/use-mobile.ts",
+        path: "registry/default/hooks/use-is-mac.tsx",
         type: "registry:hook",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/hooks/use-mobile.ts")
+      const mod = await import("@/registry/default/hooks/use-is-mac.tsx")
       const exportName =
         Object.keys(mod).find(
           (key) =>
@@ -2440,20 +2670,22 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "use-meta-color": {
-    name: "use-meta-color",
+  "use-mutation-observer": {
+    name: "use-mutation-observer",
     description: "",
     type: "registry:hook",
     registryDependencies: undefined,
     files: [
       {
-        path: "registry/default/hooks/use-meta-color.tsx",
+        path: "registry/default/hooks/use-mutation-observer.tsx",
         type: "registry:hook",
         target: "",
       },
     ],
     component: React.lazy(async () => {
-      const mod = await import("@/registry/default/hooks/use-meta-color.tsx")
+      const mod = await import(
+        "@/registry/default/hooks/use-mutation-observer.tsx"
+      )
       const exportName =
         Object.keys(mod).find(
           (key) =>

@@ -4,7 +4,7 @@
   "type": "registry:component",
   "files": [
     {
-      "path": "registry/default/components/theme-provider.tsx",
+      "path": "registry/default/components/providers/theme-provider.tsx",
       "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { ThemeProvider as NextThemesProvider } from \"next-themes\"\n\nexport function ThemeProvider({\n  children,\n  ...props\n}: React.ComponentProps<typeof NextThemesProvider>) {\n  return <NextThemesProvider {...props}>{children}</NextThemesProvider>\n}\n",
       "type": "registry:component"
     }

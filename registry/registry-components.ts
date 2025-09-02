@@ -1,13 +1,12 @@
-import { type Registry } from "shadcn/registry"
-
-export const components: Registry["items"] = [
+export const components = [
   {
-    name: "active-theme",
+    name: "active-theme-provider",
     type: "registry:component",
     files: [
       {
-        path: "components/active-theme.tsx",
+        path: "components/providers/active-theme-provider.tsx",
         type: "registry:component",
+        target: "components/providers/active-theme-provider.tsx",
       },
     ],
   },
@@ -16,17 +15,144 @@ export const components: Registry["items"] = [
     type: "registry:component",
     files: [
       {
-        path: "components/theme-provider.tsx",
+        path: "components/providers/theme-provider.tsx",
+        type: "registry:component",
+        target: "components/providers/theme-provider.tsx",
+      },
+    ],
+  },
+  {
+    name: "theme-provider",
+    type: "registry:component",
+    files: [
+      {
+        path: "components/providers/theme-provider.tsx",
         type: "registry:component",
       },
     ],
   },
   {
-    name: "icons",
+    name: "layout-provider",
     type: "registry:component",
     files: [
       {
-        path: "components/icons.tsx",
+        path: "components/providers/layout-provider.tsx",
+        type: "registry:component",
+        target: "components/providers/layout-provider.tsx",
+      },
+    ],
+  },
+  {
+    name: "page-header",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "@brodin-ui/config",
+      "@brodin-ui/app-icon",
+      "@brodin-ui/command-menu",
+      "@brodin-ui/layout-selector",
+      "@brodin-ui/theme-selector",
+      "@brodin-ui/diamond",
+      "@brodin-ui/button",
+      "@brodin-ui/separator",
+      "@brodin-ui/drawer",
+    ],
+    files: [
+      {
+        path: "components/page-header/index.tsx",
+        type: "registry:component",
+        target: "components/page-header/index.tsx",
+      },
+      {
+        path: "components/page-header/header.tsx",
+        type: "registry:component",
+        target: "components/page-header/header.tsx",
+      },
+      {
+        path: "components/page-header/main-nav.tsx",
+        type: "registry:component",
+        target: "components/page-header/main-nav.tsx",
+      },
+      {
+        path: "components/page-header/mobile-nav.tsx",
+        type: "registry:component",
+        target: "components/page-header/mobile-nav.tsx",
+      },
+      {
+        path: "components/page-header/toolbar.tsx",
+        type: "registry:component",
+        target: "components/page-header/toolbar.tsx",
+      },
+    ],
+  },
+  {
+    name: "page-footer",
+    type: "registry:component",
+    registryDependencies: [
+      "@brodin-ui/config",
+      "@brodin-ui/diamond",
+      "@brodin-ui/backgrounds",
+    ],
+    files: [
+      {
+        path: "components/page-footer.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "app-icon",
+    type: "registry:component",
+    files: [
+      {
+        path: "components/app-icon.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "command-menu",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: [
+      "@brodin-ui/use-is-mac",
+      "@brodin-ui/use-mutation-observer",
+      "@brodin-ui/button",
+      "@brodin-ui/command",
+      "@brodin-ui/kbd",
+    ],
+    files: [
+      {
+        path: "components/command-menu.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "layout-selector",
+    type: "registry:component",
+    dependencies: ["lucide-react"],
+    registryDependencies: ["@brodin-ui/layout-provider", "@brodin-ui/button"],
+    files: [
+      {
+        path: "components/layout-selector.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  {
+    name: "theme-selector",
+    type: "registry:component",
+    dependencies: ["next-themes"],
+    registryDependencies: [
+      "@brodin-ui/active-theme-provider",
+      "@brodin-ui/use-meta-colors",
+      "@brodin-ui/button",
+      "@brodin-ui/dropdown-menu",
+    ],
+    files: [
+      {
+        path: "components/theme-selector.tsx",
         type: "registry:component",
       },
     ],

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "theme-selector",
+  "type": "registry:component",
+  "dependencies": [
+    "next-themes"
+  ],
+  "registryDependencies": [
+    "@brodin-ui/active-theme-provider",
+    "@brodin-ui/use-meta-colors",
+    "@brodin-ui/button",
+    "@brodin-ui/dropdown-menu"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/theme-selector.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { useTheme } from \"next-themes\"\n\nimport {\n  baseColors,\n  useThemeConfig,\n} from \"@/registry/default/components/providers/active-theme-provider\"\nimport { useMetaColor } from \"@/registry/default/hooks/use-meta-colors\"\nimport { cn } from \"@/registry/default/lib/utils\"\nimport { Button } from \"@/registry/default/ui/button\"\nimport {\n  DropdownMenu,\n  DropdownMenuContent,\n  DropdownMenuLabel,\n  DropdownMenuRadioGroup,\n  DropdownMenuRadioItem,\n  DropdownMenuSeparator,\n  DropdownMenuTrigger,\n} from \"@/registry/default/ui/dropdown-menu\"\n\nexport function ThemeSelector({\n  variant,\n  className,\n}: {\n  variant?: \"small\"\n  className?: string\n}) {\n  const { activeTheme, setActiveTheme } = useThemeConfig()\n  const { setTheme, resolvedTheme: theme } = useTheme()\n  const { setMetaColor, metaColor } = useMetaColor()\n\n  React.useEffect(() => {\n    setMetaColor(metaColor)\n  }, [metaColor, setMetaColor])\n\n  return (\n    <DropdownMenu>\n      <DropdownMenuTrigger asChild>\n        {variant !== \"small\" ? (\n          <Button variant=\"secondary\" className={cn(\"capitalize\", className)}>\n            Theme: {theme} {activeTheme}\n          </Button>\n        ) : (\n          <Button\n            variant=\"ghost\"\n            size=\"icon\"\n            className=\"group/toggle size-8\"\n            title=\"Toggle theme\"\n          >\n            <svg\n              xmlns=\"http://www.w3.org/2000/svg\"\n              width=\"24\"\n              height=\"24\"\n              viewBox=\"0 0 24 24\"\n              fill=\"none\"\n              stroke=\"currentColor\"\n              strokeWidth=\"2\"\n              strokeLinecap=\"round\"\n              strokeLinejoin=\"round\"\n              className=\"size-4.5\"\n            >\n              <path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\" />\n              <path d=\"M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0\" />\n              <path d=\"M12 3l0 18\" />\n              <path d=\"M12 9l4.65 -4.65\" />\n              <path d=\"M12 14.3l7.37 -7.37\" />\n              <path d=\"M12 19.6l8.85 -8.85\" />\n            </svg>\n            <span className=\"sr-only\">Toggle theme</span>\n          </Button>\n        )}\n      </DropdownMenuTrigger>\n      <DropdownMenuContent className=\"w-36\">\n        <DropdownMenuLabel>Mode</DropdownMenuLabel>\n        <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>\n          <DropdownMenuRadioItem value=\"light\">Light</DropdownMenuRadioItem>\n          <DropdownMenuRadioItem value=\"dark\">Dark</DropdownMenuRadioItem>\n        </DropdownMenuRadioGroup>\n        <DropdownMenuSeparator />\n        <DropdownMenuLabel>Theme</DropdownMenuLabel>\n        <DropdownMenuRadioGroup\n          value={activeTheme}\n          onValueChange={setActiveTheme}\n        >\n          {baseColors.map((color) => (\n            <DropdownMenuRadioItem key={color.name} value={color.name}>\n              {color.label}\n            </DropdownMenuRadioItem>\n          ))}\n        </DropdownMenuRadioGroup>\n      </DropdownMenuContent>\n    </DropdownMenu>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

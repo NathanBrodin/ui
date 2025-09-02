@@ -3,9 +3,8 @@
 import * as React from "react"
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
 
-import { cn } from "@/lib/utils"
-
-import { Diamond } from "./diamond"
+import { cn } from "@/registry/default/lib/utils"
+import { Diamond } from "@/registry/default/ui/diamond"
 
 function Separator({
   className,
@@ -29,7 +28,7 @@ function Separator({
 
 function Divider() {
   return (
-    <section className="-mx-3 flex items-center justify-center md:-mx-12">
+    <section className="3xl:fixed:-mx-[calc(50vw-50%)] -mx-3 flex items-center justify-center md:-mx-12">
       <hr className="border-grid w-full border-t" />
     </section>
   )

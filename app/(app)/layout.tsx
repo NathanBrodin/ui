@@ -1,19 +1,20 @@
-import { siteConfig } from "@/lib/config"
-import { PageHeader } from "@/registry/default/blocks/page-header/page-header"
+import { PageHeader } from "@/components/page-header"
+import { PageFooter } from "@/registry/default/components/page-footer"
 import { Noise } from "@/registry/default/ui/backgrounds"
-import { Footer } from "@/registry/default/ui/footer"
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative z-10 flex min-h-svh flex-col">
       <PageHeader />
-      <main className="border-grid 3xl:fixed:container mx-3 flex flex-1 flex-col border-x md:mx-8 lg:mx-12">
-        {children}
-      </main>
+      <div className="container-wrapper 3xl:fixed:px-0 flex w-full flex-1 px-3 md:px-8 lg:px-12">
+        <main className="3xl:fixed:container border-grid relative mx-auto w-full border-x px-0!">
+          {children}
+        </main>
+      </div>
       <Noise />
       <div className="absolute top-0 left-0 z-[-1] h-full w-3 md:w-8 lg:w-12" />
       <div className="absolute top-0 right-0 z-[-1] h-full w-3 md:w-8 lg:w-12" />
-      <Footer githubLink={siteConfig.links.github} />
+      <PageFooter />
     </div>
   )
 }

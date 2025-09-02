@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-mutation-observer",
+  "type": "registry:hook",
+  "files": [
+    {
+      "path": "registry/default/hooks/use-mutation-observer.tsx",
+      "content": "import * as React from \"react\"\n\nexport const useMutationObserver = (\n  ref: React.RefObject<HTMLElement | null>,\n  callback: MutationCallback,\n  options: MutationObserverInit = {\n    attributes: true,\n    characterData: true,\n    childList: true,\n    subtree: true,\n  }\n) => {\n  React.useEffect(() => {\n    if (ref.current) {\n      const observer = new MutationObserver(callback)\n      observer.observe(ref.current, options)\n      return () => observer.disconnect()\n    }\n  }, [ref, callback, options])\n}\n",
+      "type": "registry:hook"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "layout-selector",
+  "type": "registry:component",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@brodin-ui/layout-provider",
+    "@brodin-ui/button"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/layout-selector.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { GalleryHorizontalIcon } from \"lucide-react\"\n\nimport { useLayout } from \"@/registry/default/components/providers/layout-provider\"\nimport { cn } from \"@/registry/default/lib/utils\"\nimport { Button } from \"@/registry/default/ui/button\"\n\nexport function LayoutSelector({\n  className,\n}: React.ComponentProps<typeof Button>) {\n  const { layout, setLayout } = useLayout()\n\n  return (\n    <Button\n      variant=\"ghost\"\n      size=\"icon\"\n      onClick={() => {\n        const newLayout = layout === \"fixed\" ? \"full\" : \"fixed\"\n        setLayout(newLayout)\n      }}\n      className={cn(\"size-8\", className)}\n      title=\"Toggle layout\"\n    >\n      <span className=\"sr-only\">Toggle layout</span>\n      <GalleryHorizontalIcon />\n    </Button>\n  )\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}
