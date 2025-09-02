@@ -125,6 +125,32 @@ async function buildBlocksIndex() {
   )
 }
 
+async function fixCapitalizedFilenames() {
+  const publicDir = path.join(process.cwd(), "public/r")
+
+  try {
+    const files = await fs.readdir(publicDir)
+
+    for (const file of files) {
+      if (file.includes("-") && file !== file.toLowerCase()) {
+        const oldPath = path.join(publicDir, file)
+        const newPath = path.join(publicDir, file.toLowerCase())
+
+        try {
+          await fs.rename(oldPath, newPath)
+          console.log(`📝 Fixed filename: ${file} → ${file.toLowerCase()}`)
+          /* eslint-disable-next-line */
+        } catch (error: any) {
+          console.warn(`⚠️  Could not rename ${file}:`, error.message)
+        }
+      }
+    }
+    /* eslint-disable-next-line */
+  } catch (error: any) {
+    console.warn("⚠️  Could not read public/r directory:", error.message)
+  }
+}
+
 async function main() {
   try {
     console.log("🗂️ Building registry/__index__.tsx...")
@@ -138,6 +164,9 @@ async function main() {
 
     console.log("🏗️ Building registry...")
     await buildRegistry()
+
+    console.log("🔧 Fixing capitalized filenames...")
+    await fixCapitalizedFilenames()
   } catch (error) {
     console.error(error)
     process.exit(1)
