@@ -6,7 +6,7 @@
   "files": [
     {
       "path": "registry/default/lib/config.ts",
-      "content": "export const siteConfig = {\n  name: \"My App\",\n  description: \"My new app\",\n  url: \"https://myapp.brodin.dev\",\n  ogImage: \"https://myapp.brodin.brodin/opengraph-image.png\",\n  links: {\n    twitter: \"https://twitter.com/nathan_brodin\",\n    github: \"https://github.com/NathanBrodin/myapp\",\n  },\n  author: {\n    name: \"Nathan Brodin\",\n    url: \"https://brodin.dev\",\n    twitter: \"@nathan_brodin\",\n  },\n  navItems: [\n    {\n      href: \"/\",\n      label: \"Home\",\n    },\n  ],\n}\n",
+      "content": "export const siteConfig = {\n  name: \"My App\",\n  description: \"My new app\",\n  url: \"https://myapp.brodin.dev\",\n  ogImage: \"https://myapp.brodin.dev/opengraph-image.png\",\n  links: {\n    twitter: \"https://twitter.com/nathan_brodin\",\n    github: \"https://github.com/NathanBrodin/myapp\",\n  },\n  author: {\n    name: \"Nathan Brodin\",\n    url: \"https://brodin.dev\",\n    twitter: \"@nathan_brodin\",\n  },\n  navItems: [\n    {\n      href: \"/\",\n      label: \"Home\",\n    },\n  ],\n}\n",
       "type": "registry:lib"
     }
   ]

@@ -11,6 +11,8 @@ import { CardsShare } from "@/registry/default/blocks/demo/share"
 import { CardsStats } from "@/registry/default/blocks/demo/stats"
 import { CardsTeamMembers } from "@/registry/default/blocks/demo/team-members"
 
+import { Bookmarks } from "./bookmarks"
+
 export function Demo() {
   return (
     <div className="md:grids-col-2 grid **:data-[slot=card]:shadow-none md:gap-4 lg:grid-cols-10 xl:grid-cols-11">
@@ -47,8 +49,11 @@ export function Demo() {
             <CardsActivityGoal />
           </div>
           <div className="pt-3 sm:col-span-2 xl:pt-3">
-            <CardsExerciseMinutes />
+            <Bookmarks />
           </div>
+        </div>
+        <div className="hidden md:block">
+          <CardsExerciseMinutes />
         </div>
         <div className="hidden md:block">
           <CardsPayments />

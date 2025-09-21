@@ -1,8 +1,10 @@
 import Link from "next/link"
 
 import { siteConfig } from "@/lib/config"
+import { source } from "@/lib/source"
+import { CommandMenu } from "@/components/command-menu"
+import blocks from "@/registry/__blocks__.json"
 import AppIcon from "@/registry/default/components/app-icon"
-import { CommandMenu } from "@/registry/default/components/command-menu"
 import { LayoutSelector } from "@/registry/default/components/layout-selector"
 import { ThemeSelector } from "@/registry/default/components/theme-selector"
 import { Button } from "@/registry/default/ui/button"
@@ -25,7 +27,11 @@ export function PageHeader() {
       <MainNav items={siteConfig.navItems} className="hidden lg:flex" />
       <Toolbar>
         <div className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
-          <CommandMenu navItems={siteConfig.navItems} />
+          <CommandMenu
+            tree={source.pageTree}
+            navItems={siteConfig.navItems}
+            blocks={blocks}
+          />
         </div>
         <Separator orientation="vertical" className="3xl:flex hidden" />
         <GitHubLink />
