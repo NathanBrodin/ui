@@ -10,8 +10,9 @@ This isn't your typical component library installation. I've streamlined everyth
 <Steps>
 
 1. **Start with a fresh Next.js app**
+
 ```bash
-bunx --bun create-next-app@latest
+npx create-next-app@latest
 ```
 
 2. **Clear out the Next.js defaults**
@@ -22,7 +23,7 @@ Fresh slate. We're building something better than the default landing page anywa
 
 3. **Install shadcn/ui as the foundation**
 ```bash
-bunx --bun shadcn@latest init --base-color neutral
+npx shadcn@latest init --base-color neutral
 ```
 
 4. **Add brodin/ui to your registry**
@@ -58,7 +59,7 @@ Update your `components.json` with my registry. This is where the magic happens:
 
 5. **Install the starter template**
 ```bash
-bunx --bun shadcn@latest add @brodin-ui/app --yes --overwrite
+npx shadcn@latest add @brodin-ui/app --yes --overwrite
 ```
 This gives you a complete app structure that actually looks good out of the box. No more staring at unstyled components.
 
@@ -80,7 +81,7 @@ Every logo has been hand-picked to work perfectly with this design system.
 
 8. **Ship it**
 ```bash
-bun dev
+npm run dev
 ```
 
 That's it. Your app is ready to build on.

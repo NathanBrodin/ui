@@ -1,4 +1,4 @@
-import { AlertCircleIcon, BadgeCheckIcon, CheckIcon } from "lucide-react"
+import { BadgeCheckIcon } from "lucide-react"
 
 import { Badge } from "@/registry/default/ui/badge"
 
@@ -34,6 +34,17 @@ export default function BadgeDemo() {
         >
           20+
         </Badge>
+      </div>
+      <div className="flex w-full flex-wrap gap-2">
+        <Badge variant="purple">Inspirations</Badge>
+        <Badge variant="blue">Registries</Badge>
+        <Badge variant="cyan">Portfolios</Badge>
+        <Badge variant="orange">Tools</Badge>
+        <Badge variant="green">Articles</Badge>
+        <Badge variant="teal">Services</Badge>
+        <Badge variant="fuchsia">Templates</Badge>
+        <Badge variant="yellow">My Stuff</Badge>
+        <Badge variant="gray">Others</Badge>
       </div>
     </div>
   )

@@ -151,11 +151,11 @@
   --primary-foreground: var(--color-stone-800);
   --primary-fixed: var(--color-stone-200);
   --primary-foreground-fixed: var(--color-stone-950);
-  --secondary: var(--color-stone-700);
+  --secondary: var(--color-stone-800);
   --secondary-foreground: var(--color-stone-50);
   --muted: var(--color-stone-700);
   --muted-foreground: var(--color-stone-400);
-  --accent: var(--color-stone-700);
+  --accent: var(--color-stone-800);
   --accent-foreground: var(--color-stone-50);
   --destructive: var(--color-red-500);
   --border: color-mix(in oklab, var(--color-stone-50) 10%, transparent);
@@ -262,11 +262,11 @@
 }
 
 @utility container-wrapper {
-    @apply 3xl:fixed:max-w-[calc(var(--breakpoint-2xl)+2rem)] mx-auto w-full px-2;
+  @apply 3xl:fixed:max-w-[calc(var(--breakpoint-2xl)+2rem)] mx-auto w-full px-2;
 }
 
 @utility container {
-    @apply 3xl:max-w-screen-2xl mx-auto max-w-[1400px] px-4 lg:px-8;
+  @apply 3xl:max-w-screen-2xl mx-auto max-w-[1400px] px-4 lg:px-8;
 }
 
 @utility no-scrollbar {
@@ -300,6 +300,37 @@
     --card: hsl(218, 13%, 6%, 0.95);
 
     --shadow-button-primary-inset: hsl(219, 93%, 30%) 0 -2px 0 0 inset;
+    --shadow-button-primary-outer: hsl(0, 0%, 0%, 0.4) 0 1px 3px 0;
+    --shadow-button-primary:
+      var(--shadow-button-primary-inset), var(--shadow-button-primary-outer);
+  }
+}
+
+.theme-green {
+  --primary: #00997e;
+  --primary-fixed: #00997e;
+  --background: #fdfff4;
+  --main-background: #fdfff4;
+  --nav-background: #fdfff4;
+  --secondary: color-mix(in oklab, #deffeb 60%, transparent);
+  --secondary-foreground: #005343;
+  --grid: color-mix(in oklab, #00c4a0 10%, transparent);
+  --shadow-button-primary-inset: #005343 0 -2px 0 0 inset;
+  --shadow-button-primary-outer: hsl(219, 93%, 95%) 0 1px 3px 0;
+  --shadow-button-primary:
+    var(--shadow-button-primary-inset), var(--shadow-button-primary-outer);
+
+  @variant dark {
+    --main-background: hsl(218, 13%, 7.5%);
+    --nav-background: #15171bf2;
+    --background: hsl(218, 13%, 7.5%);
+    --primary: var(--color-green-300);
+    --primary-foreground-fixed: var(--color-white);
+    --secondary: color-mix(in oklab, var(--color-green-500) 10%, transparent);
+    --secondary-foreground: var(--color-green-50);
+    --card: hsl(218, 13%, 6%, 0.95);
+
+    --shadow-button-primary-inset: #005343 0 -2px 0 0 inset;
     --shadow-button-primary-outer: hsl(0, 0%, 0%, 0.4) 0 1px 3px 0;
     --shadow-button-primary:
       var(--shadow-button-primary-inset), var(--shadow-button-primary-outer);

@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "My App",
   description: "My new app",
   url: "https://myapp.brodin.dev",
-  ogImage: "https://myapp.brodin.brodin/opengraph-image.png",
+  ogImage: "https://myapp.brodin.dev/opengraph-image.png",
   links: {
     twitter: "https://twitter.com/nathan_brodin",
     github: "https://github.com/NathanBrodin/myapp",

@@ -18,7 +18,11 @@ export const baseColors = [
   },
   {
     name: "blue",
-    label: "Zed",
+    label: "Blue",
+  },
+  {
+    name: "green",
+    label: "Green",
   },
 ] as const
 

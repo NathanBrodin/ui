@@ -55,7 +55,7 @@ export default function IndexPage() {
             <Link href="/docs">Get Started</Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="/blocks">Browse Blocks</Link>
+            <Link href="/docs/brand">Explore the brand</Link>
           </Button>
         </HeroActions>
       </Hero>
